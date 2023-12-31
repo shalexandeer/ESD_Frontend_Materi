@@ -1,36 +1,25 @@
-function cariTersangka(urutanKedatangan, kebiasaan, fotoKueUtuh) {
-    let kueUtuh = true;
-  
-    for (let i = 0; i < urutanKedatangan.length; i++) {
-      const tamu = urutanKedatangan[i];
-      switch (tamu) {
-        case 'Ningguang':
-          if (kueUtuh) return 'Ningguang';
-          break;
-        case 'Hutao':
-          break;
-        case 'Xiao':
-          break;
-        case 'Childe':
-          break;
-      }
-  
-      if (tamu === 'Xiao') {
-        kueUtuh = fotoKueUtuh;
-      }
-    }
-    return 'Hutao';
-  }
-
-  const urutanKedatangan = ['Ningguang', 'Hutao', 'Xiao', 'Childe'];
+function cariPencuri() {
+  const kedatangan = ["Ningguang", "Hutao", "Xiao", "Childe"];
+  let kueUtuh = true;
   const kebiasaan = {
-    'Ningguang': 'Memeriksa kue sebelum memberikan kado.',
-    'Hutao': 'Langsung memberikan kado tanpa memperhatikan kue.',
-    'Xiao': 'Memotret apa pun yang dia lihat pertama kali di ruangan.',
-    'Childe': 'Membawa air mineral dan meletakkannya di meja sebelum memberikan kado.'
+    Ningguang: "memeriksa kue",
+    Hutao: "memberikan kado",
+    Xiao: "memotret",
+    Childe: "meletakkan air mineral",
   };
-  
-  const fotoKueUtuh = true;
-  const tersangka = cariTersangka(urutanKedatangan, kebiasaan, fotoKueUtuh);
-  console.log(`Berdasarkan investigasi, tersangka yang paling mungkin mengambil kue adalah: ${tersangka}`);
-  
+  kedatangan.forEach((x) => {console.log(`${x} masuk ruang jamu istana`);
+    if (x === "Xiao" && kueUtuh === true) {
+      kue = true;
+      console.log("Xiao memotret ruang jamu, foto menunjukkan kue utuh");
+    }else if (x === "Xiao" && kueUtuh === false){
+      kue = false;
+      console.log("Foto xiao menunjukkan kue sudah tidak utuh");
+    }else{
+      console.log(`Setelah itu ${x} ${kebiasaan[x]}`);
+    }
+  });
+  if (!kueUtuh){console.log("Berdasarkan informasi, yang mungkin mengambil kue adalah Ningguang");} 
+  else {console.log("Berdasarkan bukti kejadian, yang paling mungkin mengambil kue adalah Childe")}
+}
+console.log("Reka Ulang Kejadian:")
+cariPencuri();
