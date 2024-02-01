@@ -5,19 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Frontend Week 2</title>
 </head>
-<body>
+<body style="display: flex; flex-direction: column; gap: 32px;">
   <!-- dont forget to install "live server extension" -->
 
   <!-- 
     BODY Elements 
   -->
   <!-- Heading -->
-  <h1></h1>
-  <h2></h2>
-  <h3></h3>
-  <h4></h4>
-  <h5></h5>
-  <h6></h6>
+  <div>
+    <h1></h1>
+    <h2></h2>
+    <h3></h3>
+    <h4></h4>
+    <h5></h5>
+    <h6></h6>
+  </div>
 
   <!-- Paragraph -->
   <p></p>
@@ -30,54 +32,93 @@
 
   <!-- div: grouping section -->
   <div>
-    <h1></h1>
-    <p></p>
-  </div>
-  <div>
-    <h1></h1>
-    <p></p>
+    <div>
+      <h1>this is group 1</h1>
+      <p>paragraph group 1</p>
+    </div>
+    <div>
+      <h1>this is group 2</h1>
+      <p>paragraph group 2</p>
+    </div>
   </div>
 
   <!-- span : grouping inline elements -->
-  <span></span>
+  <h1>Halo <span style="background-color: aqua;">ESD Laboratory</span></h1>
 
   <!-- 
     Image Elements
    -->
   <!-- img: place an image -->
-  <img src="" alt="if src not loaded, then load this instead">
+  <div style="width: 300px;">
+    <img src="" alt="if src not loaded, then load this instead" 
+    style="width: 100%; height: auto;" />
+  </div>
 
   <!-- 
     Style Elements
   -->
-  <strong></strong>
-  <em></em>
-  <cite></cite>
-  <code></code>
-  <!-- bold -->
-  <b></b>
-  <!-- italic -->
-  <i></i>
-  <!-- underline -->
-  <u></u> 
+  <div style="display: flex; flex-direction: column;">
+    <strong>Strong Text</strong>
+    <em>Emphasis Text</em>
+    <cite>never use it before</cite>
+    <code>
+      let a = 1;
+      let b = 2;
+      function sum(a, b) {
+        return a + b;
+      }
+    </code>
+    <!-- bold -->
+    <b></b>
+    <!-- italic -->
+    <i></i>
+    <!-- underline -->
+    <u></u>
+  </div>
 
   <!-- 
     Link Elements
   -->
   <!-- a: anchor -->
-  <a href="link goes here">
+  <a href="another webpage">
     <!-- elements goes here -->
+    <h1></h1>
   </a>
+
+  <div>
+    <!--
+      List
+    -->
+    <!-- ul: unordered list -->
+    <ul>
+      <li>list item 1</li>
+      <li>list item 2</li>
+      <li>list item 3</li>
+    </ul>
+    <!-- ol: ordered list -->
+    <ol>
+      <li>list item 1</li>
+      <li>list item 2</li>
+      <li>list item 3</li>
+    </ol>
+    <!-- dl: description list -->
+    <dl>
+      <dt>list item 1</dt>
+      <dd>list item 1 description</dd>
+      <dt>list item 2</dt>
+      <dd>list item 2 description</dd>
+      <dt>list item 3</dt>
+      <dd>list item 3 description</dd>
+    </dl>
+    
+  </div>
+
 
   <!-- 
     Form Elements
   -->
   <!-- form: form element -->
-  <form action="action.php" method="get">
-    <!-- elements goes here -->
-    <input type="text">
-    <input type="number">
-
+  <form action="action.php" method="get" style="display: flex; flex-direction: column; gap: 16px;">
     <!-- elements with label -->
     <label for="name">Name:</label>
     <input type="text" id="name" name="name">
@@ -96,6 +137,7 @@
     <!-- submit button -->
     <input type="submit" value="Submit">
 
+    
     <!-- 
       HTML Semantics 
     -->
@@ -114,6 +156,8 @@
     <!-- footer -->
     <footer></footer>
 
+
+    <a href="./2-stylingpage.html">Lanjut CSS</a>
   </form>
   </body>
 </html>
