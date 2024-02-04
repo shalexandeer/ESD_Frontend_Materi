@@ -5,22 +5,105 @@
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      :root {
-        --primary-color: #466bf3;
-        --shade-blue-color: #d3dbf7;
-        /* semua warna yang dibutuhin dibikin variable disini biar enak make nya lagi */
-        /* agar variable warna ini bisa dipake, kita pindah semua variable ke external css aja */
-      }
-    </style>
+    <title>Tuku</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Task nya suruh slicing ya ges</h1>
-    <h1>link figma</h1>
-    <p>
-      https://www.figma.com/file/4efNS3RXUHhVdsh26wi5Ik/Frontend-Design-Task?type=design&node-id=0%3A1&mode=design&t=REPnpMrbAzJZSXyU-1
-    </p>
+    <nav>
+      <img src="./assets/images/logo.svg" alt="Logo" class="nav-logo">
+      <ul>
+        <li class="nav">Halaman Utama</li>
+        <li class="nav-active">Produk</li>
+        <li class="nav">Hubungi Kami</li>
+      </ul>
+      <div class="nav-button">
+        <p>Keranjang</p>
+        <img src="./assets/images/mdi_cart-outline.svg" alt="Cart">
+      </div>
+    </nav>
+    <main>
+      <div class="header">
+        <h3>Produk Kami</h3>
+        <h1>Temukan Produk Yang Cocok</h1>
+      </div>
+      <ul>
+        <li class="category-selected">Semua Produk</li>
+        <li class="category-disabled">Peralatan</li>
+        <li class="category">Obat-obatan</li>
+        <li class="category">Skin Care</li>
+      </ul>
+      <div class="wrapper">
+        <div class="card">
+          <div class="content-wrap">
+            <img class="product-img" src="./assets/images/img-1.svg" alt="">
+            <div class="label-wrap">
+              <div class="tag-rating">
+                <span class="product-tag">Peralatan</span>
+                <span class="product-rating">⭐⭐⭐⭐⭐</span>
+              </div>
+              <div class="detail-product">
+                <p class="product-name">Obeng 2ml</p>
+                <p class="product-price">Rp. 100.000,00</p>
+              </div>
+            </div>
+          </div>
+          <div class="button-wrap">
+            <button class="button-buy">
+              Beli Sekarang
+            </button>
+            <button class="button-detail">
+              Lihat detail
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="content-wrap">
+            <img class="product-img" src="./assets/images/img-2.svg" alt="">
+            <div class="label-wrap">
+              <div class="tag-rating">
+                <span class="product-tag">Obat-obatan</span>
+                <span class="product-rating">⭐⭐⭐⭐⭐</span>
+              </div>
+              <div class="detail-product">
+                <p class="product-name">Paracetamol</p>
+                <p class="product-price">Rp. 20.000,00</p>
+              </div>
+            </div>
+          </div>
+          <div class="button-wrap">
+            <button class="button-buy">
+              Beli Sekarang
+            </button>
+            <button class="button-detail">
+              Lihat detail
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="content-wrap">
+            <img class="product-img" src="./assets/images/img-3.svg" alt="">
+            <div class="label-wrap">
+              <div class="tag-rating">
+                <span class="product-tag">Skincare</span>
+                <span class="product-rating">⭐⭐⭐⭐⭐</span>
+              </div>
+              <div class="detail-product">
+                <p class="product-name">Skincare</p>
+                <p class="product-price">Rp. 200.000,00</p>
+              </div>
+            </div>
+          </div>
+          <div class="button-wrap">
+            <button class="button-buy">
+              Beli Sekarang
+            </button>
+            <button class="button-detail">
+              Lihat detail
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
 
     <!-- 
         guidelines:
