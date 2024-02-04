@@ -1,7 +1,354 @@
-.external-class-selector{
-  color: blue;
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-#external-id-selector{
-  color: brown;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 0 7rem;
+  height: 5rem;
+}
+
+.judul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 75px;
+  height: 35px;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.judul::before {
+  content: "";
+  position: absolute;
+  width: 23px;
+  height: 250%;
+  background: linear-gradient(#00ccff, #d400d4);
+  animation: animate 4s linear infinite;
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.judul:hover::before {
+  opacity: 100;
+  transition: 0.3s ease;
+}
+
+.judul::after {
+  content: "";
+  position: absolute;
+  background: white;
+  inset: 2px;
+  border-radius: 0.3rem;
+}
+
+@keyframes animate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.judul h1 {
+  position: relative;
+  color: #466bf3;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #9c9c9c;
+  cursor: pointer;
+  height: 100%;
+}
+
+.section p {
+  transition: 0.2s;
+  margin: 0;
+  padding: 1.75rem;
+}
+
+.section p:hover {
+  background-color: #ecf1fe;
+}
+
+.section p:nth-child(2) {
+  color: rgba(70, 107, 243);
+}
+
+.tombolKeranjang {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(70, 107, 243, 0.1);
+  color: rgba(70, 107, 243);
+  padding: 0.7rem 1.3rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  z-index: 10;
+}
+
+.animate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.6rem;
+  padding: 0.2rem;
+}
+
+.animate::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 350%;
+  background: linear-gradient(#00ccff, #d400d4);
+  animation: animate 4s linear infinite;
+  transition: 0.3s ease;
+  opacity: 0;
+}
+
+.animate:hover::before {
+  opacity: 100;
+  transition: 0.3s ease;
+}
+
+.animate::after {
+  content: "";
+  position: absolute;
+  background: white;
+  inset: 2px;
+  border-radius: 0.5rem;
+}
+
+@keyframes animate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.kategori {
+  display: flex;
+  gap: 1rem;
+}
+
+.laman {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  padding: 3rem 7rem;
+  background-color: #f4f4f4;
+}
+
+.laman div:first-child {
+  color: #3258e8;
+  font-weight: bolder;
+  font-size: 1.2rem;
+}
+
+.laman div:nth-child(2) {
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+.kategori a {
+  cursor: pointer;
+  border: solid;
+  border-width: 1px;
+  border-color: #e9ecef;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  font-size: small;
+  color: #3e5569;
+  border-color: #e9ecef;
+  font-weight: bolder;
+  transition: 0.2s;
+}
+
+.kategori a:hover {
+  background-color: #ecf1fe;
+  border-color: #0d6efd;
+}
+
+.kategori a:first-child {
+  color: #0d6efd;
+  background-color: #ecf1fe;
+  border-color: #0d6efd;
+}
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  border-radius: 10px;
+  margin-top: 0.7rem;
+}
+
+.card section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 21rem;
+  background-color: white;
+  padding: 1.75rem;
+  border-radius: 1.5rem;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  border-radius: 1.5rem;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #e9ecef;
+  border-radius: 1.5rem;
+  line-height: 0;
+}
+
+.card section img {
+  object-fit: cover;
+  width: 100%;
+  height: 18rem;
+  transition: transform 0.5s ease;
+  cursor: crosshair;
+  transform-origin: center center;
+}
+
+.card section img:hover {
+  transform: scale(2);
+}
+
+.bintang {
+  display: flex;
+  justify-content: start;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.bintang p:first-child {
+  font-size: 1rem;
+  padding: 0.25rem 1rem;
+  border-radius: 0.75rem;
+  color: #3258e8;
+  background-color: rgba(50, 88, 232, 0.1);
+  margin: auto 0;
+}
+
+.bintang p:nth-child(2) {
+  font-size: 1rem;
+  margin: auto 0;
+}
+
+.produk {
+  font-size: 1.5rem;
+  font-weight: bolder;
+  margin: 0;
+}
+
+.harga {
+  font-size: 1.1rem;
+  font-weight: bolder;
+  color: #ff4e4e;
+  margin-top: 0.75rem;
+}
+
+.produk-btn {
+  margin-top: 0.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.produk-btn a:first-child {
+  background-color: #3258e8;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.produk-btn a:first-child:hover {
+  background-color: #0d6efd;
+}
+
+.produk-btn a:nth-child(2) {
+  font-size: 1.1rem;
+  padding: 0.75rem 1.5rem;
+  color: #3258e8;
+  transition: 0.2s;
+  cursor: pointer;
+  border-radius: 0.75rem;
+}
+
+.produk-btn a:nth-child(2):hover {
+  background-color: #ecf1fe;
+}
+
+@media screen and (max-width: 1240px) {
+  .navbar {
+    padding: 0 3rem;
+  }
+
+  .laman {
+    padding: 3rem;
+  }
+}
+
+@media screen and (max-width: 1120px) {
+  .navbar {
+    padding: 0 1rem;
+  }
+
+  .laman {
+    padding: 1rem 2rem;
+  }
+
+  .card {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .section {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .kategori {
+    flex-wrap: wrap;
+  }
+
+  .navbar {
+    padding: 0 2rem;
+  }
+
+  .laman {
+    padding: 3rem 2rem;
+  }
 }

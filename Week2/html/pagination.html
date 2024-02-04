@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Poppins"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="judul">
+        <h1>Tuku</h1>
+      </div>
+      <section class="section">
+        <p>Halaman Utama</p>
+        <p>Produk kami</p>
+        <p>Hubungi kami</p>
+      </section>
+      <div class="animate">
+        <button class="tombolKeranjang">
+          Keranjang <img src="../assets/keranjang.svg" alt="keranjang" />
+        </button>
+      </div>
+    </nav>
+
+    <main class="laman">
+      <div>Produk kami</div>
+      <div>Temukan Produk Yang Cocok</div>
+      <div class="kategori">
+        <a>Semua Produk</a>
+        <a>Peralatan</a>
+        <a>Obat-obatan</a>
+        <a>Skincare</a>
+      </div>
+      <div class="card">
+        <section>
+          <div class="image-container">
+            <img src="../assets/obeng.svg" alt="obeng" />
+          </div>
+          <div class="bintang">
+            <p>Peralatan</p>
+            <p>⭐⭐⭐⭐⭐</p>
+          </div>
+          <h1 class="produk">Obeng 2ml</h1>
+          <p class="harga">Rp. 100.000,00</p>
+          <div class="produk-btn">
+            <a>Beli Sekarang</a>
+            <a>Lihat detail</a>
+          </div>
+        </section>
+        <section>
+          <div class="image-container">
+            <img src="../assets/paracetamol.svg" alt="paracetamol" />
+          </div>
+          <div class="bintang">
+            <p>Obat-obatan</p>
+            <p>⭐⭐⭐⭐⭐</p>
+          </div>
+          <h1 class="produk">Paracetamol</h1>
+          <p class="harga">Rp. 20.000,00</p>
+          <div class="produk-btn">
+            <a>Beli Sekarang</a>
+            <a>Lihat detail</a>
+          </div>
+        </section>
+        <section>
+          <div class="image-container">
+            <img src="../assets/skincare.svg" alt="skincare" />
+          </div>
+          <div class="bintang">
+            <p>Skincare</p>
+            <p>⭐⭐⭐⭐⭐</p>
+          </div>
+          <h1 class="produk">Skincare</h1>
+          <p class="harga">Rp. 100.000,00</p>
+          <div class="produk-btn">
+            <a>Beli Sekarang</a>
+            <a>Lihat detail</a>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const containers = document.querySelectorAll(".image-container");
+        containers.forEach((container) => {
+          const img = container.querySelector(".card section img");
+          container.addEventListener("mousemove", function (e) {
+            if (img.style.transform !== "scale(2)") {
+              img.style.transform = "scale(2)";
+            }
+            const rect = container.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const originX = (x / rect.width) * 100;
+            const originY = (y / rect.height) * 100;
+            img.style.transformOrigin = `${originX}% ${originY}%`;
+          });
+          container.addEventListener("mouseleave", function () {
+            img.style.transform = "scale(1)";
+          });
+          img.addEventListener("transitionend", function (e) {
+            if (e.propertyName === "transform") {
+              if (img.style.transform === "scale(1)") {
+                img.style.transformOrigin = "center center";
+              }
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
