@@ -1,37 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      :root {
-        --primary-color: #466bf3;
-        --shade-blue-color: #d3dbf7;
-        /* semua warna yang dibutuhin dibikin variable disini biar enak make nya lagi */
-        /* agar variable warna ini bisa dipake, kita pindah semua variable ke external css aja */
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Task nya suruh slicing ya ges</h1>
-    <h1>link figma</h1>
-    <p>
-      https://www.figma.com/file/4efNS3RXUHhVdsh26wi5Ik/Frontend-Design-Task?type=design&node-id=0%3A1&mode=design&t=REPnpMrbAzJZSXyU-1
-    </p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1 : Slicing</title>
 
-    <!-- 
-        guidelines:
-        pastikan kalian menggunakan flexbox dan grid untuk layout karena kemarin udah belajar latihan kan.
-
-        - use flexbox untuk navbar section
-        - use grid untuk daftar produk
-        selain itu kalian bebas mau pake flexbox atau grid untuk section yang lain. berkreasilah sesuai kemampuan kalian.
-        
-        untuk pengumpulan, kalian bikin branch baru dengan nama FE/nama kalian, lalu push ke branch kalian
-        nanti bakal kucek di branch kalian.
-    -->
-  </body>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="tab-bar">
+        <nav class="nav-custom">
+            <div class="logo" style="font-size: 24px;">Tuku</div>
+            <div class="nav-custom-link">
+                <a href="#">Halaman Utama</a>
+                <a href="#" style="color: #3258e8;">Produk</a>
+                <a href="#">Hubungi Kami</a>
+            </div>
+            <div class="nav-cta">
+                <button class="cta-button">
+                    Keranjang
+                    <img src="image/keranjang.png" alt="Keranjang">
+                </button>
+            </div>
+        </nav>
+    </div>
+    <div class="content">
+        <div class="frame1">
+            <h2>Produk Kami</h2>
+            <h1>Temukan Produk Yang Cocok</h1>
+        </div>
+        <div class="frame2">
+            <button class="button1" style="background-color: #ECF1FE; color:#0d6efd;border-color: #0D6EFD;">Semua Produk</button>
+            <button class="button2">Peralatan</button>
+            <button class="button3">Obat-obatan</button>
+            <button class="button4">Skincare</button>
+        </div>
+        <div class="frame3">
+            <div class="product">
+                <div class="content-wrap">
+                    <div class="frame-img">
+                        <img src="image/produk1.png" alt="">
+                    </div>
+                    <div class="label-wrap">
+                        <div class="tag-rating">
+                            <p class="tag">Peralatan</p>
+                            <div class="Rating">
+                                <img src="image/Star.png" alt="">
+                                <img src="image/Star.png" alt="">
+                                <img src="image/Star.png" alt="">
+                                <img src="image/Star.png" alt="">
+                                <img src="image/Star.png" alt="">
+                            </div>
+                        </div>
+                        <div class="place">
+                            <div class="nama-produk">Obeng 2ml</div>
+                            <div class="harga">Rp. 100.000,00</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="button-wrap">
+                    <div class="primary-button">
+                        Beli Sekarang
+                    </div>
+                    <div class="sec-button">
+                        Lihat detail
+                    </div>
+                </div>
+            </div>
+            <div class="product">
+                <div class="content-wrap">
+                    <div class="frame-img">
+                        <img src="image/produk2.png" alt="">
+                    </div>
+                    <div class="label-wrap">
+                        <div class="tag-rating">
+                            <p class="tag">Peralatan</p>
+                            <div class="Rating">
+                                <img src="image/Star.png" alt="">
+                                <img src="image/Star.png" alt="">
+                                <img src="image/Star.png" alt="">
+                                <img src="image/Star.png" alt="">
+                                <img src="image/Star.png" alt="">
+                            </div>
+                        </div>
+                        <div class="place">
+                            <div class="nama-produk">Paracetamol</div>
+                            <div class="harga">Rp. 20.000,00</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="button-wrap">
+                    <div class="primary-button">
+                        Beli Sekarang
+                    </div>
+                    <div class="sec-button">
+                        Lihat detail
+                    </div>
+                </div>
+            </div>
+            <div class="product">
+                <div class="content-wrap">
+                    <div class="frame-img">
+                        <img src="image/produk3.png" alt="">
+                    </div>
+                    <div class="label-wrap">
+                        <div class="tag-rating">
+                            <p class="tag">Peralatan</p>
+                            <div class="Rating">
+                                <img src="image/Star.png" alt="">
+                                <img src="image/Star.png" alt="">
+                                <img src="image/Star.png" alt="">
+                                <img src="image/Star.png" alt="">
+                                <img src="image/Star.png" alt="">
+                            </div>
+                        </div>
+                        <div class="place">
+                            <div class="nama-produk">Skincare</div>
+                            <div class="harga">Rp. 200.000,00</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="button-wrap">
+                    <div class="primary-button">
+                        Beli Sekarang
+                    </div>
+                    <div class="sec-button">
+                        Lihat detail
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
 </html>
