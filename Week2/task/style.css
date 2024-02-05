@@ -1,0 +1,84 @@
+body {
+    background-color: #F4F4F4;
+}
+.cart-button {
+    background-color: rgba(70, 107, 243, 0.1);  /* Adjust the color to match the button in the image */
+    color: #466BF3; /* Adjust text color if needed */
+    border: 1px solid #000000;
+    padding: 10px 20px; /* Adjust padding to match the size in the image */
+    text-align: center; /* Center the text inside the button */
+    text-decoration: none; /* No underline on the text */
+    display: inline-block; /* Allows setting the margin */
+    font-size: 16px; /* Adjust font size if needed */
+    margin: 4px 2px; /* Space around the button */
+    transition-duration: 0.4s; /* Smooth transition for hover effect */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 10px; /* Rounded corners, adjust as needed */
+}
+
+.cart-button:hover {
+    background-color: #555; /* Darker background on hover */
+    box-shadow: 0 2px #666; /* Slightly different shadow on hover */
+    transform: translateY(-2px); /* Slight move up effect on hover */
+}
+
+.cart-button1 {
+    background-color: rgba(70, 107, 243, 0.1);  /* Adjust the color to match the button in the image */
+    color: #466BF3; /* Adjust text color if needed */
+    border: 1px solid #466BF3;
+    font-weight: 600;
+    text-decoration: none; /* No underline on the text */
+    display: inline-block; /* Allows setting the margin */
+    font-size: 16px; /* Adjust font size if needed */
+    transition-duration: 0.4s; /* Smooth transition for hover effect */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 10px; /* Rounded corners, adjust as needed */
+}
+
+.cart-button2 {
+    background-color: rgba(255, 255, 255, 0.1);  /* Adjust the color to match the button in the image */
+    color: #3E5569; /* Adjust text color if needed */
+    border: 1px solid #e1e8ff;
+    font-weight: 600;
+    text-decoration: none; /* No underline on the text */
+    display: inline-block; /* Allows setting the margin */
+    font-size: 16px; /* Adjust font size if needed */
+    transition-duration: 0.4s; /* Smooth transition for hover effect */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 7px; /* Rounded corners, adjust as needed */
+}
+
+.cart-button3 {
+    color: #3258E8; /* Adjust text color if needed */
+    width: 100px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(70, 107, 243, 0.1);
+    font-size: 14px; /* Adjust font size if needed */
+    transition-duration: 0.4s; /* Smooth transition for hover effect */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 10px; /* Rounded corners, adjust as needed */
+}
+
+.cart-button4 {
+    color: #3258E8; /* Adjust text color if needed */
+    width: 130px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(70, 107, 243, 0.1);
+    font-size: 14px; /* Adjust font size if needed */
+    transition-duration: 0.4s; /* Smooth transition for hover effect */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 10px; /* Rounded corners, adjust as needed */
+}
+.active {
+    color: #466BF3;
+}
+
+.bintang {
+    color: #FF9900;
+}
