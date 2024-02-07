@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(236, 235, 235);
+    font-family:  "Poppins", sans-serif;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 10px 30px;
+    height: 62px;
+}
+
+header, #putih, #satu{
+    background-color: white;
+}
+
+header .tombol{
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    background-color: #c8d2f7;
+    padding: 10px 20px;
+}
+
+.awal, .navigasi, .halo, #k1{
+    color: #466bf3;
+    font-size: 16px;
+}
+
+.navigasi ul li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.navigasi ul li, .halo{
+    cursor: pointer;
+}
+
+#satu{
+    color: black;
+}
+
+.logo{
+    width: 24px;
+    height: 24px;
+    background-color: #c8d2f7;
+}
+
+.halo{
+    border: none;
+    background-color: #c8d2f7;
+    padding: 0px;
+}
+
+.kalimatAwal{
+    padding: 50px 30px 10px 30px;
+}
+#k2{
+    padding: 10px 0px;
+}
+
+.list{
+    padding: 0px 15px;
+}
+
+.list button{
+    padding: 12px 10px;
+    margin: 0px 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 750;
+}
+.list .b1{
+    background-color: #c8d2f7;
+    color: #466bf3;
+    border-style: solid;
+    border-color: #466bf3
+}
+
+.card{
+    margin: 50px 0px;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card1, .card2, .card3{
+    background-color: white;
+    border-radius: 24px;
+    width: 384px;
+    height: 529px;
+}
+
+.img1, .img2, .img3{
+    width: 336px;
+    height: 280px;
+    padding: 0px;
+    margin: 25px 10px 10px 10px;
+    background-color: white;
+    border-radius: 24px;
+    border-style: solid;
+    border-color: rgb(236, 235, 235);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bintang{
+    width: 120px;
+    height: 24px;
+}
+
+.info{
+    padding: 10px;
+    border-radius: 24px;
+}
+
+.rating{
+    display: flex;
+}
+
+.rating p{
+    padding: 0px 15px;
+    border-radius: 20px;
+    background-color: #c8d2f7;
+    color: #466bf3;
+}
+
+.card h2{
+    padding: 15px 0px 0px 0px;
+}
+
+.card h3{
+    padding: 10px 0px 20px 0px;
+    color: red;
+}
+
+.card button{
+    background-color: #466bf3;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 30px;
+    margin: 10px 0px;
+    color: #466bf3;
+    cursor: pointer;
+}
+
+.card .infoButton{
+    display: flex;
+    justify-content: space-between;
+    border-radius: 60px
+}
+
+.card #random{
+    color: white;
+}
