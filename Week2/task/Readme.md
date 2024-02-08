@@ -1,4 +1,4 @@
-
+v
 
 guidelines:
 pastikan kalian menggunakan flexbox dan grid untuk layout karena kemarin udah belajar latihan kan.

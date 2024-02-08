@@ -1,0 +1,59 @@
+body {
+    font-family: 'Poppins';
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --primary-color: #466bf3;
+    --shade-blue-color: #d3dbf7;
+    --inactive-gray-color: #9c9c9c;
+    --title-black-color: #232631;
+    --activeforeground-blue-color: #4467e9;
+    --pricetag-red-color: #ff9292;
+    --btnbg-ltblue-color: #ebeefd;
+        }
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 100px;
+    margin: 7px;
+}
+.tokotuku{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.navbutton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--inactive-gray-color);
+}
+.keranjang{
+    display: flex;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--primary-color);
+    background-color: var(--btnbg-ltblue-color);
+    border-radius: 15px;
+    padding: 0 24px;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+.content{
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 24px;
+}
+.contentHeading{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0 100px;
+}

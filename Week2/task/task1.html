@@ -3,25 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      :root {
-        --primary-color: #466bf3;
-        --shade-blue-color: #d3dbf7;
-        /* semua warna yang dibutuhin dibikin variable disini biar enak make nya lagi */
-        /* agar variable warna ini bisa dipake, kita pindah semua variable ke external css aja */
-      }
-    </style>
+    name="viewport"
+    content="width=device-width, initial-scale=1.0" />
+    <title>Webset tuku</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap" rel="stylesheet" /> 
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
+    crossorigin="anonymous" 
+    referrerpolicy="no-referrer" />
   </head>
   <body>
-    <h1>Task nya suruh slicing ya ges</h1>
-    <h1>link figma</h1>
-    <p>
-      https://www.figma.com/file/4efNS3RXUHhVdsh26wi5Ik/Frontend-Design-Task?type=design&node-id=0%3A1&mode=design&t=REPnpMrbAzJZSXyU-1
-    </p>
 
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="tokotuku">
+      <p style="font-size: 24px;font-weight: 600;color: var(--primary-color);">Tuku</p>
+    </div>
+    <div class="navbutton">
+      <p >Halaman Utama</p>
+      <p >Produk</p>
+      <p >Hubungi Kami</p>
+    </div>
+    <div class="keranjang">
+      <p>Keranjang</p>
+      <i class="fa-solid fa-cart-shopping"></i>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="content">
+    <div class="contentHeading">
+      <p>Produk kami</p>
+      <p style="font-size: 36px;font-weight: 700;">Temukan produk yang cocok</p>
+    </div>
+  </div>
     <!-- 
         guidelines:
         pastikan kalian menggunakan flexbox dan grid untuk layout karena kemarin udah belajar latihan kan.
