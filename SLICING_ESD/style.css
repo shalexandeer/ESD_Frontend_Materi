@@ -1,0 +1,65 @@
+body {
+    background-color: #f8f8f8;
+    font-family: Arial, sans-serif;
+  }
+  
+  nav {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  nav ul li {   
+    float: left;
+  }
+  
+  nav ul li a {
+    margin-left: 100px;
+    margin-right: 100px;
+    
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+    color: #bebebe;
+  }
+  
+  nav ul li a:hover {
+    color: #0099ff;
+
+  }
+
+  .product-container {
+    margin-top: 250px;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: ;
+  }
+  
+  .product-box {
+    background-color: #ffffff;
+    padding: 50px;
+    width: 20%;
+    height: 490px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .product-box img {
+    width: 100%;
+    border-radius: 10px;
+    flex-grow: 1; /* Mengatur gambar agar memenuhi ruang yang tersedia */
+  }
+  
