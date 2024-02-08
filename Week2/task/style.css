@@ -1,0 +1,195 @@
+body {
+  font-family: 'Poppins';
+  
+  background-color: #F4F4F4;
+}
+
+.topnav {
+  display: flex;
+  margin-left: 100px;
+  background-color: white;
+}
+
+.topnav a{
+  text-decoration: none !important;
+}
+
+.title {
+  margin: 13px 0px;
+  margin-right: auto;
+  font-weight: 600;
+  font-size: 24px;
+  color: #466BF3;
+}
+
+.sect {
+  width: 75%;
+  margin: 0 auto;
+}
+
+.daftar-menu {
+  margin: 19px 0px;
+  margin-right: auto;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.daftar-menu a {
+  padding: 0px 30px;
+}
+
+.daftar-menu .inactive {
+  color: #9C9C9C;
+}
+
+.daftar-menu .active {
+  color: #466BF3;
+}
+
+.btn {
+  cursor: pointer;
+}
+
+.keranjang {
+  font-family: 'Poppins';
+  display:inline-flex;
+  margin: 7px 100px 7px 0px;
+ padding: 12px 24px;
+ justify-content: center;
+ align-items: center;
+ border: #5546F310;
+ border-radius: 12px;
+ background-color: #5546F310;
+ font-size: 16px;
+  font-weight: 500;
+  color: #466BF3;
+}
+
+.keranjang img {
+  margin-left: 10px;
+}
+
+.sect1 {
+  display: grid;
+  margin-top: 48px;
+}
+
+.sect1 p {
+  font-size: 18px;
+  font-weight: 600;
+  color: #3258E8;
+  margin-bottom: 12px;
+  margin-top: 0;
+}
+
+.sect1 h3 {
+  margin: 0px;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.sect2 {
+  display: flex;
+  margin: 24px 0px;
+}
+
+.sect2 a{
+  text-decoration: none !important;
+}
+
+.jenis-produk a{
+  font-size: 14px;
+  font-weight: 600;
+  margin-right: 12px;
+  padding: 12px;
+}
+
+.jenis-produk .active {
+  border: 1px solid #0D6EFD;
+  border-radius: 8px;
+  color: #0D6EFD;
+}
+
+.jenis-produk .inactive {
+  color: #3E5569;
+  border: none;
+}
+
+.sect3 {
+  display: flex;
+  padding: 24px;
+}
+
+.gambar-obeng {
+  padding: 11px 54px 32px 30px;
+  margin-bottom: 16px;
+}
+
+
+.paracetamol {
+  margin: 0px 43px;
+}
+
+.gambar-obat {
+  padding: 13px 16px;
+  margin-bottom: 16px;
+}
+
+
+.gambar-skincare {
+  margin-bottom: 16px;
+}
+
+.rating {
+  display: flex;
+  margin-bottom: 12px;
+}
+
+.rating p {
+  margin: 3.5px 6px;
+  padding: 5px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 12px;
+  color: #3258E8;
+  background-color: #3258E810;
+}
+
+.detail {
+  margin-bottom: 24px;
+}
+
+.nama-barang {
+  margin: 0;
+  margin-bottom: 4px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.harga {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 500;
+  color: #FF4E4E;
+}
+
+.tombol-barang {
+  display: flex;
+}
+
+.tombol-beli {
+  padding: 12px 24px;
+  border-radius: 12px;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  background-color: #3258E8;
+}
+
+.tombol-detail {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #3258E8;
+}

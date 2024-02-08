@@ -1,37 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      :root {
-        --primary-color: #466bf3;
-        --shade-blue-color: #d3dbf7;
-        /* semua warna yang dibutuhin dibikin variable disini biar enak make nya lagi */
-        /* agar variable warna ini bisa dipake, kita pindah semua variable ke external css aja */
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Task nya suruh slicing ya ges</h1>
-    <h1>link figma</h1>
-    <p>
-      https://www.figma.com/file/4efNS3RXUHhVdsh26wi5Ik/Frontend-Design-Task?type=design&node-id=0%3A1&mode=design&t=REPnpMrbAzJZSXyU-1
-    </p>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+<body>
+  <!-- navbar -->
+  <div class="topnav">
+    <a class="title" href="#">Tuku</a>
+    <div class="daftar-menu">
+      <a class="inactive" href="#">Halaman Utama</a>
+      <a class="active" href="#">Produk</a>
+      <a class="inactive" href="#">Hubungi Kami</a>
+    </div>
+    <button class="btn keranjang">
+      Keranjang
+      <img src="assets/keranjang.svg" alt="">
+    </button>
+  </div>
+<section class="sect">
+  <!-- section 1 -->
+  <section class="sect1">
+    <p>Produk Kami</p>
+    <h3>Temukan Produk Yang Cocok</h3>
+  </section>
 
-    <!-- 
-        guidelines:
-        pastikan kalian menggunakan flexbox dan grid untuk layout karena kemarin udah belajar latihan kan.
+  <!-- section 2 -->
+  <section class="sect2">
+    <div class="jenis-produk">
+      <a href="#" class="active">
+        Semua Produk
+      </a>
+      <a href="#" class="inactive">
+        Peralatan
+      </a>
+      <a href="#" class="inactive">
+        Obat-obatan
+      <a href="#" class="inactive">
+        Skincare
+      </a>
+    </div>
+  </section>
 
-        - use flexbox untuk navbar section
-        - use grid untuk daftar produk
-        selain itu kalian bebas mau pake flexbox atau grid untuk section yang lain. berkreasilah sesuai kemampuan kalian.
-        
-        untuk pengumpulan, kalian bikin branch baru dengan nama FE/nama kalian, lalu push ke branch kalian
-        nanti bakal kucek di branch kalian.
-    -->
-  </body>
+  <!-- section 3 -->
+  <section class="sect3">
+    <div class="obeng">
+      <div class="gambar-obeng">
+        <img src="assets/obeng.png" alt="">
+      </div>
+
+      <div class="rating">
+        <p>Peralatan</p>
+        <img src="assets/bintang.svg" alt="">
+      </div>
+      <div class="detail">
+        <p class="nama-barang">Obeng 2ml</p>
+        <p class="harga">Rp.100.000,00</p>
+      </div>
+      
+      <div class="tombol-barang">
+        <button class="tombol-beli">Beli Sekarang</button>
+        <a class="tombol-detail">Lihat detail</a>
+      </div>
+    </div>
+
+
+    <div class="paracetamol">
+      <div class="gambar-obat">
+        <img src="assets/obat.png" alt="">
+      </div>
+
+      <div class="rating">
+        <p>Obat-Obatan</p>
+        <img src="assets/bintang.svg" alt="">
+      </div>
+      <div class="detail">
+        <p class="nama-barang">Paracetamol</p>
+        <p class="harga">Rp.20.000,00</p>
+      </div>
+      
+      <div class="tombol-barang">
+        <button class="tombol-beli">Beli Sekarang</button>
+        <a class="tombol-detail">Lihat detail</a>
+      </div>
+    </div>
+
+
+    <div class="skincare">
+      <div class="gambar-skincare">
+        <img src="assets/skincare.png" alt="">
+      </div>
+
+      <div class="rating">
+        <p>Skincare</p>
+        <img src="assets/bintang.svg" alt="">
+      </div>
+      <div class="detail">
+        <p class="nama-barang">Skincare</p>
+        <p class="harga">Rp.200.000,00</p>
+      </div>
+      
+      <div class="tombol-barang">
+        <button class="tombol-beli">Beli Sekarang</button>
+        <a class="tombol-detail">Lihat detail</a>
+      </div>
+    </div>
+  </section>
+</section>
+</body>
 </html>
