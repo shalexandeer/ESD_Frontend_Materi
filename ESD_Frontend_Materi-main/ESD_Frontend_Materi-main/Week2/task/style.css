@@ -1,0 +1,219 @@
+.set{
+    --primary-color: #466bf3;
+    --secondary-color: #9C9C9C;
+    --shade-blue-color: #ECF0FE;
+    --primary-black: #232631;
+    --blue-color: #3258E8;
+    --red-color: #FF4E4E;
+
+    /* semua warna yang dibutuhin dibikin variable disini biar enak make nya lagi */
+    /* agar variable warna ini bisa dipake, kita pindah semua variable ke external css aja */
+}
+
+* {
+    box-sizing: border-box;
+  }
+
+@font-face{
+    font-family: 'PoppinMedium';
+    src: url('../font/poppinsmedium.ttf') format('truetype');
+  }
+@font-face{
+    font-family: 'PoppinBold';
+    src: url('../font/poppinsbold.ttf') format('truetype');
+  }
+@font-face{
+    font-family: 'PoppinSemibold';
+    src: url('../font/poppinssemibold.ttf') format('truetype');
+  }
+
+body, h1, h2, h3, h4, p{
+    margin: 0;
+    padding: 0;
+    font-family: 'PoppinMedium', sans-serif;
+}
+
+body{
+  background-color: #f4f4f4;
+}
+  
+header{
+    background-color:white;
+    color: var(--primary-color);
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
+    margin: 48px 100px;
+}
+  
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 76px;
+    margin: 0 100px;
+}
+  
+.logo{
+    font-size: 24px;
+    color: var(--primary-color);
+    background-color: white;
+    font-weight: bold;
+}
+  
+.menu-options{
+    display: flex;
+    gap: 30px;
+} 
+.menu-options a.active{
+    color: var(--blue-color);
+  }
+.menu-options a:not(.active){
+    color: var(--secondary-color);
+  }
+  
+.cart-button{
+    width: 166px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--shade-blue-color);
+    color: var(--primary-color);
+    font-size: 16px;
+    font-family: 'PoppinMedium', sans-serif;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+h4{
+    color: var(--blue-color);
+    font-family: 'PoppinSemibold', sans-serif;
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+h1{
+    color: var(--primary-black);
+    font-family: 'PoppinBold', sans-serif;
+    font-size: 36px;
+}
+
+.cat{
+    margin-top: 24px;
+}
+
+.button-container {
+    display: flex;
+    gap: 12px;
+  }
+
+.btn{
+    background-color: #f4f4f4;
+    padding: 12px;
+    border: 1px solid #E9ECEF;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #3E5569;
+    font-size: 14px;
+    font-family: 'PoppinSemibold', sans-serif;
+}
+
+.btn-active {
+    background-color: var(--shade-blue-color); 
+    color: var(--blue-color);
+    border: 1px solid var(--blue-color);
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 43px;
+}
+
+@media screen and (max-width: 768px) {
+  .card-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 43px;
+  }
+}
+  
+.card {
+    background-color: white;
+    padding: 24px;
+    border-radius: 24px;
+  }
+  
+.img-produk {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 16px;
+    border: 1px solid #E9ECEF;
+    border-radius: 24px;
+  }
+
+.category{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 3px;
+  margin-bottom: 12px;
+}
+
+.tag{
+    background-color: var(--shade-blue-color);
+    color: var(--blue-color);
+    font-size: 14px;
+    font-family: 'PoppinMedium', sans-serif;
+    padding: 5px 16px;
+    margin-right: 6px;
+    border: none;
+    border-radius: 12px;
+  }
+
+h2{
+    margin-bottom: 4px;
+    font-family: 'PoppinSemibold', sans-serif;
+    color: var(--primary-black);
+  }
+
+.price{
+    margin-bottom: 24px;
+    color: var(--red-color);
+    font-size: 20px;
+  }
+
+.btn-contain{
+    display: flex;
+  }
+
+.btn-primary{
+    width: 168px;
+    height: 48px;
+    padding: 12px 24px;
+    background-color: var(--primary-color);
+    color: white;
+    font-family: 'PoppinSemibold', sans-serif;
+    font-size: 16px;
+    border: none;
+    border-radius: 12px;
+  }
+
+.btn-detail{
+    width: 168px;
+    height: 48px;
+    padding: 12px 24px;
+    background-color: white;
+    color: var(--primary-color);
+    font-family: 'PoppinSemibold', sans-serif;
+    font-size: 16px;
+    border: none;
+    border-radius: 12px;
+  }
+
