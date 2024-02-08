@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Layout</title>
+    <style>
+      /* for flex */
+      .flex-container {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .content-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* for grid */
+      .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 20px;
+      }
+
+      @media screen and (max-width: 768px) {
+        .grid-container {
+          display: grid;
+          column-gap: 20px;
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div style="display: flex; flex-direction: column; gap: 64px">
+      <!-- CSS Flexbox -->
+      <div class="flex-container">
+        <div
+          class="content-wrapper"
+          style="background-color: brown; padding: 20px">
+          <h1>box</h1>
+          <p>oke</p>
+        </div>
+        <div style="background-color: green; padding: 20px">
+          <h1>box</h1>
+        </div>
+        <div style="background-color: blue; padding: 20px">
+          <h1>box</h1>
+        </div>
+      </div>
+
+      <!-- Grid -->
+      <div class="grid-container">
+        <div style="background-color: brown; padding: 20px">
+          <h1>box</h1>
+        </div>
+        <div style="background-color: green; padding: 20px">
+          <h1>box</h1>
+        </div>
+        <div style="background-color: blue; padding: 20px">
+          <h1>box</h1>
+        </div>
+        <div style="background-color: blue; padding: 20px">
+          <h1>box</h1>
+        </div>
+        <div style="background-color: blue; padding: 20px">
+          <h1>box</h1>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: space-between">
+        <a href="./3-boxmodel.html">Box Model - Sebelumnya</a>
+      </div>
+    </div>
+  </body>
+</html>
