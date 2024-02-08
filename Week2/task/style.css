@@ -23,7 +23,7 @@ a {
 }
 
 .sect {
-  width: 75%;
+  width: 85%;
   margin: 0 auto;
 }
 
@@ -34,15 +34,12 @@ a {
   font-weight: 500;
 }
 
-.daftar-menu a {
-  padding: 0px 30px;
-}
-
 .daftar-menu .inactive {
   color: #9C9C9C;
 }
 
 .daftar-menu .active {
+  padding: 0px 30px;
   color: #466BF3;
 }
 
@@ -112,38 +109,55 @@ a {
 }
 
 .sect3 {
-  display: flex;
+  display: grid;
+  grid-template-columns: 384px 384px 384px;
+  grid-template-rows: 529px;
   padding: 24px;
+  gap: 0 43px;
+  width: 100%;
+}
+
+.img {
+  height: 280px;
+}
+
+.obeng {
+  padding: 24px
 }
 
 .gambar-obeng {
-  padding: 11px 54px 32px 30px;
   margin-bottom: 16px;
 }
 
-
-.paracetamol {
-  margin: 0px 43px;
+ .paracetamol {
+  padding: 24px
 }
 
 .gambar-obat {
-  padding: 13px 16px;
   margin-bottom: 16px;
 }
 
+.skincare {
+  padding: 24px
+}
 
 .gambar-skincare {
   margin-bottom: 16px;
 }
 
 .rating {
-  display: flex;
+  display: grid;
+  grid-template-columns: 102px 120px;
+  grid-template-rows: 31px;
+  height: 31px;
   margin-bottom: 12px;
+  align-items: center;
 }
 
 .rating p {
-  margin: 3.5px 6px;
-  padding: 5px 16px;
+  display: grid;
+  align-items: center;
+  justify-content: center;
   font-size: 14px;
   font-weight: 500;
   border-radius: 12px;
@@ -152,12 +166,14 @@ a {
 }
 
 .detail {
+  display: grid;
+  grid-template-rows: 36px 30px;
+  gap: 0px 4px;
   margin-bottom: 24px;
 }
 
 .nama-barang {
   margin: 0;
-  margin-bottom: 4px;
   font-size: 24px;
   font-weight: 600;
 }
@@ -170,11 +186,12 @@ a {
 }
 
 .tombol-barang {
-  display: flex;
+  display: grid;
+  grid-template-columns: 168px 168px;
+  grid-template-rows: 48px;
 }
 
 .tombol-beli {
-  padding: 12px 24px;
   border-radius: 12px;
   border: none;
   font-size: 16px;
@@ -185,7 +202,9 @@ a {
 }
 
 .tombol-detail {
-  padding: 12px 24px;
+  display: grid;
+  align-items: center;
+  justify-content: center;
   font-size: 16px;
   font-weight: 500;
   color: #3258E8;
