@@ -14,24 +14,79 @@
         /* agar variable warna ini bisa dipake, kita pindah semua variable ke external css aja */
       }
     </style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
   </head>
   <body>
-    <h1>Task nya suruh slicing ya ges</h1>
-    <h1>link figma</h1>
-    <p>
-      https://www.figma.com/file/4efNS3RXUHhVdsh26wi5Ik/Frontend-Design-Task?type=design&node-id=0%3A1&mode=design&t=REPnpMrbAzJZSXyU-1
-    </p>
+    <header class="header">
+      <img src="/Week2/task/Assets/logo.svg" class="logo">
+      <nav class="navbar">
+        <ul>
+          <li><a href="#" id="Utama">Halaman Utama</a></li>
+          <li><a href="#" id="Prd">Produk</a></li>
+          <li><a href="#"id="Contact">Hubungi Kami</a></li>
+        </ul>
+      </nav>
+      <div class="keranjang">
+        <p>keranjang</p>
+        <img src = "/Week2/task/Assets/mdi_cart-outline.png" class="icon_keranjang">
+      </div>
+    </header>
+    <main class="main">
+      <div class="big-Title"> 
+        <p class="Kami">Produk Kami</p>
+        <h1>Temukan Produk Yang Cocok</h1>
+      </div>
+      <div class="Type-product">
+        <ul>
+          <li><a href="#" id="Semua">Semua Produk</a></li>
+          <li><a href="#" id="Peralatan">Peralatan</a></li>
+          <li><a href="#"id="Obat">Obat-obatan</a></li>
+          <li><a href="#"id="Skincare">Skincare</a></li>
+        </ul>
+      </div>
 
-    <!-- 
-        guidelines:
-        pastikan kalian menggunakan flexbox dan grid untuk layout karena kemarin udah belajar latihan kan.
-
-        - use flexbox untuk navbar section
-        - use grid untuk daftar produk
-        selain itu kalian bebas mau pake flexbox atau grid untuk section yang lain. berkreasilah sesuai kemampuan kalian.
-        
-        untuk pengumpulan, kalian bikin branch baru dengan nama FE/nama kalian, lalu push ke branch kalian
-        nanti bakal kucek di branch kalian.
-    -->
+      <div class="Card">
+        <div class="Produk1">
+          <img src="/Week2/task/Assets/Frame 1402.png" class="Obeng">
+          <div class="Tagar">
+            <p span class="Tagg">Peralatan</p>
+            <img src="/Week2/task/Assets/Ratings.png" class="Ratings">
+          </div>
+          <h3 class="title">Obeng 2ml</h3>
+          <p class="harga">Rp. 100.000,00</p>
+          <div class="Button-Wrap">
+            <h6 class="Beli">Beli Sekarang</h6>
+            <h6 class="Detail">Lihat Detail</h6>
+          </div>
+        </div>
+        <div class="Produk2">
+          <img src="/Week2/task/Assets/Frame 1403.png" class="Obat-obatan">
+          <div class="Tagar">
+            <p span class="Tagg">Obat-obatan</p>
+            <img src="/Week2/task/Assets/Ratings.png" class="Ratings">
+          </div>
+          <h3 class="title">Paracetamol</h3>
+          <p class="harga">Rp. 20.000,00</p>
+          <div class="Button-Wrap">
+            <h6 class="Beli">Beli Sekarang</h6>
+            <h6 class="Detail">Lihat Detail</h6>
+        </div>
+        </div>
+        <div class="Produk3">
+          <img src="/Week2/task/Assets/Frame 1404.png" class="Skin">
+          <div class="Tagar">
+            <p span class="Tagg">Skincare</p>
+            <img src="/Week2/task/Assets/Ratings.png" class="Ratings">
+          </div>
+          <h3 class="title">Skincare</h3>
+          <p class="harga">Rp. 200.000,00</p>
+          <div class="Button-Wrap">
+            <h6 class="Beli">Beli Sekarang</h6>
+            <h6 class="Detail">Lihat Detail</h6>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
