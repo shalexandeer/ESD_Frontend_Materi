@@ -1,0 +1,198 @@
+:root {
+    --primary-color: #466bf3;
+    --shade-blue-color: #d3dbf7;
+    /* semua warna yang dibutuhin dibikin variable disini biar enak make nya lagi */
+    /* agar variable warna ini bisa dipake, kita pindah semua variable ke external css aja */
+  }
+
+  @font-face {
+    font-family: reg;
+    src: url(Poppins/Poppins-Regular.ttf);
+  }
+
+  @font-face {
+    font-family: med;
+    src: url(Poppins/Poppins-Medium.ttf);
+  }
+
+  @font-face {
+    font-family: bol;
+    src: url(Poppins/Poppins-Bold.ttf);
+  }
+
+  @font-face {
+    font-family: sem;
+    src: url(Poppins/Poppins-SemiBold.ttf);
+  }
+
+  body {
+    margin: 0;
+  }
+
+  .inpo {
+    height: 100%;
+    width: 100%;
+    background-color: #f4f4f4;
+  }
+
+  nav {
+    height: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 100px;
+    padding-right: 100px;
+    background-color: #ffffff;
+  }
+
+  .logo {
+    font-family: sem;
+    color: #466bf3;
+    font-size: 24px;
+  }
+
+  nav ul li {
+    font-family: med;
+    font-size: 16px;
+    list-style-type: none;
+    display: inline-block;
+    padding: 19px 30px;
+  }
+
+  nav ul li a {
+    color: #9C9C9C;
+    text-decoration: none;
+  }
+
+  nav ul li a:hover {
+    color: #466bf3;
+  }
+
+  button {
+    font-family: med;
+    font-size: 16px;
+    border: none;
+    background: #d3dbf7;
+    color: #466bf3;
+    border-radius: 12px;
+    padding-top: 12px;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-bottom: 12px;
+  }
+
+  .content {
+    background-color: #f4f4f4;
+    padding-top: 48px;
+    padding-bottom: 48px;
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+
+  .judul {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .pilihan {
+    display: flex;
+    font-family: sem;
+    font-size: 14px;
+    flex-direction: row;
+    gap: 12px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+
+  .pilihan button {
+    padding: 12px;
+    border: 1px solid;
+    border-color: #E9ECEF;
+    background-color: #3E5569;
+    font-family: sem;
+    font-size: 14px;
+    color: #3E5569;
+    background-color: #f4f4f4;
+  }
+
+  .pilihan button:hover {
+    padding: 12px;
+    background-color: #ECF1FE;
+    border: 1px solid;
+    font-family: sem;
+    font-size: 14px;
+    border-color: #466bf3;
+    color: #466bf3;
+  }
+
+  .barang {
+    display: grid;
+    width: 1238px;
+    grid-auto-flow: column;
+    column-gap: 43px;
+  }
+
+  .barang .box {
+    width: 390px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .barang .box .deskrip {
+    width: 336px;
+    gap: 0px;
+  }
+
+  .barang .box button {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .barang .box .buttons {
+    display: flex;
+    width: 336px;
+    flex-direction: row;
+    gap: 0px;
+  }
+
+  .barang .box .buttons .beli {
+    background-color: #466bf3;
+    color: #ffffff;
+    font-size: 16px;
+    font-family: sem;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+
+  .barang .box .buttons .detail {
+    background-color: #ffffff;
+    color: #466bf3;
+    font-size: 16px;
+    font-family: med;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 39.5px;
+    padding-right: 39.5px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .barang {
+      display: grid;
+      column-gap: 20px;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .box {
+    background-color: #ffffff;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    border-radius: 24px;
+  }
