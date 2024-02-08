@@ -4,14 +4,14 @@ body {
   background-color: #F4F4F4;
 }
 
+a {
+  text-decoration: none !important;
+}
+
 .topnav {
   display: flex;
   margin-left: 100px;
   background-color: white;
-}
-
-.topnav a{
-  text-decoration: none !important;
 }
 
 .title {
@@ -91,10 +91,6 @@ body {
 .sect2 {
   display: flex;
   margin: 24px 0px;
-}
-
-.sect2 a{
-  text-decoration: none !important;
 }
 
 .jenis-produk a{
@@ -185,6 +181,7 @@ body {
   font-weight: 600;
   color: white;
   background-color: #3258E8;
+  cursor: pointer;
 }
 
 .tombol-detail {
