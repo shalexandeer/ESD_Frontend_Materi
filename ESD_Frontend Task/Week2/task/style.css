@@ -1,0 +1,136 @@
+:root {
+  --primary-color: #466bf3;
+  --shade-blue-color: #d3dbf7;
+  /* semua warna yang dibutuhin dibikin variable disini biar enak make nya lagi */
+  /* agar variable warna ini bisa dipake, kita pindah semua variable ke external css aja */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.navbar__logo {
+  font-size: 1.5rem;
+}
+
+.navbar__menu {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.navbar__menu a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+
+
+.navbar__menu a {
+  color: grey;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.categories {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.category-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.category-item {
+  color: #333;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+.category-item.active {
+  background-color: #466bf3;
+  color: #fff;
+  border-radius: 5px;
+}
+.beli-sekarang-btn {
+  background-color: var(--primary-color); 
+  color: white; 
+  padding: 0.5rem 1rem; 
+  border-radius: 5px; 
+  cursor: pointer; 
+}
+
+.beli-sekarang-btn:hover {
+  background-color: #3455db; 
+}
+
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--shade-blue-color);
+}
+
+.hero__content {
+  text-align: center;
+}
+
+.hero__content h1 {
+  font-size: 3rem;
+}
+
+.hero__content p {
+  font-size: 1.5rem;
+}
+
+.product {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 2rem;
+}
+.kotak {
+  border: 1px solid #3455db; 
+  padding: 0.2rem 0.5rem; 
+  border-radius: 5px; 
+}
+
+.product__item {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.product__item img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.product__item h3 {
+  margin: 1rem 0;
+}
+
+.product__item p {
+  color: var(--primary-color);
+}
+
