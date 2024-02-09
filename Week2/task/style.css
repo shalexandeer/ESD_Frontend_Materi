@@ -1,0 +1,262 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins", "sans-serif";
+}
+
+.head {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 62px;
+    padding: 20px 100px;
+    background: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo{
+    background: transparent;
+    font-size: 28px;
+    color: #3258E8;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.navbar a{
+    background-color: none;
+    font-size: 16px;
+    color: #9C9C9C;
+    text-decoration: none;
+    margin-left: 40px;
+}
+
+.navbar a:hover{
+    color: #3258E8;
+}
+
+.keranjangButton{
+    height: 48px;
+    width: 166px;
+    background-color: rgba(85, 70, 243, 0.1);
+    padding: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+}
+.keranjangButton a{
+    color: #3258E8;
+    text-decoration: none;
+    margin-left: 10px;
+    font-size: 16px;
+}
+.keranjangButton img{
+    width: 24px;
+    height: 24px;
+}
+
+.main {
+    position: fixed;
+    top: 62px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px 100px;
+    background: #F4F4F4;
+    display: flex;
+    z-index: 100;
+}
+
+section h3{
+    padding-top: 30px;
+    color: #3258E8;
+    margin-bottom: 24px;
+}
+
+section h1{
+    font-size: 36px;
+    margin-bottom: 24px;
+}
+
+.kategori{
+    margin-bottom: 24px;
+}
+
+.kategori a{
+    background-color: none;
+    font-size: 14px;
+    color: #9C9C9C;
+    text-decoration: none;
+    margin-right: 5px;
+    border-color: rgba(0, 0, 0, 1);
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 8px;
+}
+
+.kategori a:first-child{
+    background-color: rgba(13, 110, 253, 0.1);
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 8px;
+    border: 1px solid #0D6EFD;
+    color: #0D6EFD;
+}
+
+.kategori a:hover{
+    background-color: rgba(13, 110, 253, 0.1);
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 8px;
+    border: 1px solid #0D6EFD;
+    color: #0D6EFD;
+}
+
+
+.produk{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 120px;
+    height: 529px;
+    width: 100%;
+    justify-content: space-between;
+    border-radius: 24px;
+}
+
+.produk1{
+    width: 336px;
+    height: 280px;
+    border: 1px ;
+    border-radius: 24px;
+}
+
+.produk1 img{
+    width: 100%;
+    height: 100%;
+    border-radius: 24px;
+    border: 1px solid rgba(128, 128, 128, 0.1);
+}
+
+.item{
+    border-radius: 24px;
+}
+
+.buttonCard{
+    font: 14px;
+    background-color: rgba(13, 110, 253, 0.1);
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 12px;
+    color: #0D6EFD;
+    margin-bottom: 16px;
+}
+
+.active-button{
+    background-color: #3258E8;
+    border: none;
+    border-radius: 12px;
+    color: #ffffff; 
+    width: 168px;
+    height: 48px;
+}
+
+.unactive-button{
+    background-color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    color: #3258E8; 
+    width: 168px;
+    height: 48px;
+}
+
+@media  screen and (max-width: 600px){
+    .head {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 62px;
+        padding: 20px 25px;
+        background: #ffffff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100;
+    }
+
+    .logo{
+        background: transparent;
+        font-size: 28px;
+        color: #3258E8;
+        text-decoration: none;
+        font-weight: 600;
+    }
+    
+    .navbar a{
+        background-color: none;
+        font-size: 12px;
+        color: #9C9C9C;
+        text-decoration: none;
+        margin-left: 40px;
+    }
+    
+    .navbar a:hover{
+        color: #3258E8;
+    }
+    
+    .keranjangButton{
+        height: 48px;
+        width: 120px;
+        background-color: rgba(85, 70, 243, 0.1);
+        padding: 10px;
+        padding-left: 12px;
+        padding-right: 12px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+    }
+
+    .keranjangButton a{
+        color: #3258E8;
+        text-decoration: none;
+        margin-left: 10px;
+        font-size: 14px;
+    }
+    .keranjangButton img{
+        width: 20px;
+        height: 20px;
+    }
+
+    .main {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 1800px;
+        padding: 20px 50px;
+        background: #F4F4F4;
+        display: flex;
+        z-index: 100;
+    }
+    
+    .produk{
+        display: flex;
+        flex-direction: column; 
+        gap: 24px;
+        height: 529px;
+        width: 100%;
+        border-radius: 24px;
+    }
+
+    
+}

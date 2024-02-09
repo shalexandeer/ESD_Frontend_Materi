@@ -12,7 +12,7 @@ cara pengumpulan,
   cd pathfolder 
   folder path github clone kalian
 3. buat branch baru
-    git checkout -b frontend/namakalian 
+    git checkout -b   
   ex: frontend/sultanhafizh
 4. git status untuk track perubahan,
 5. Bila tidak ada perubahan, 

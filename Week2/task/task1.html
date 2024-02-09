@@ -6,32 +6,96 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style>
-      :root {
-        --primary-color: #466bf3;
-        --shade-blue-color: #d3dbf7;
-        /* semua warna yang dibutuhin dibikin variable disini biar enak make nya lagi */
-        /* agar variable warna ini bisa dipake, kita pindah semua variable ke external css aja */
-      }
-    </style>
+    <link rel="stylesheet" href="/Week2/task/style.css">
   </head>
   <body>
-    <h1>Task nya suruh slicing ya ges</h1>
-    <h1>link figma</h1>
-    <p>
-      https://www.figma.com/file/4efNS3RXUHhVdsh26wi5Ik/Frontend-Design-Task?type=design&node-id=0%3A1&mode=design&t=REPnpMrbAzJZSXyU-1
-    </p>
 
-    <!-- 
-        guidelines:
-        pastikan kalian menggunakan flexbox dan grid untuk layout karena kemarin udah belajar latihan kan.
+    <header class="head">
+      <a href="#" class="logo">Tuku</a>
+      <nav class="navbar">
+        <a href="#">Halaman Utama</a>
+        <a href="#" style="color: #3258E8;">Produk</a>
+        <a href="#">Hubungi Kami</a>
+      </nav>
+      <div>
+        <div class="keranjangButton">
+          <a href="">Keranjang</a>
+          <a href="">
+            <img src="/Week2/task/Vector.png" alt="">
+          </a>
+        </div>
+      </div>
+    </header>
 
-        - use flexbox untuk navbar section
-        - use grid untuk daftar produk
-        selain itu kalian bebas mau pake flexbox atau grid untuk section yang lain. berkreasilah sesuai kemampuan kalian.
+    <main class="main">
+      <section>
+        <h3 href="">Produk Kami</h3>
+        <h1>Temukan Produk yang cocok</h1>
+        <nav class="kategori">
+          <a href="">Semua Produk</a>
+          <a href="">Peralatan</a>
+          <a href="">Obat-obatan</a>
+          <a href="">Skincare</a>
+        </nav>
+
         
-        untuk pengumpulan, kalian bikin branch baru dengan nama FE/nama kalian, lalu push ke branch kalian
-        nanti bakal kucek di branch kalian.
-    -->
+        <div class="produk">
+          <div class="item" style="background-color: white; padding: 20px;">
+            <div class="produk1">
+              <img src="/Week2/task/obeng.png" alt="">
+            </div>
+            <div style="display: flex; align-items: center; margin-top: 16px; gap: 10px;">
+              <div class="buttonCard">
+                <p>Peralatan</p>
+              </div>
+              ⭐⭐⭐⭐⭐
+            </div>
+            <h2 style="margin-bottom: 10px;">Obeng 2ml</h2>
+            <h4 style="color: #FF4E4E;">Rp.100.000,00</h4>
+            <div style="display: flex; align-items: center; margin-top: 16px;">
+              <button type="button" class="active-button">Beli Sekarang</button>
+              <button type="button" class="unactive-button">Lihat Detail</button>
+            </div>
+          </div>
+
+          <div class="item" style="background-color: white; padding: 20px;">
+            <div class="produk1">
+              <img src="/Week2/task/obat.png" alt="">
+            </div>
+            <div style="display: flex; align-items: center; margin-top: 16px; gap: 10px;">
+              <div class="buttonCard">
+                <p>Obat-obatan</p>
+              </div>
+              ⭐⭐⭐⭐⭐
+            </div>
+            <h2 style="margin-bottom: 10px;">Paracetamol</h2>
+            <h4 style="color: #FF4E4E;">Rp.20.000,00</h4>
+            <div style="display: flex; align-items: center; margin-top: 16px;">
+              <button type="button" class="active-button">Beli Sekarang</button>
+              <button type="button" class="unactive-button">Lihat Detail</button>
+            </div>
+          </div>
+
+          <div class="item" style="background-color: white; padding: 20px;">
+            <div class="produk1">
+              <img src="/Week2/task/skincare.png" alt="">
+            </div>
+            <div style="display: flex; align-items: center; margin-top: 16px; gap: 10px;">
+              <div class="buttonCard">
+                <p>Skincare</p>
+              </div>
+              ⭐⭐⭐⭐⭐
+            </div>
+            <h2 style="margin-bottom: 10px;">Skincare</h2>
+            <h4 style="color: #FF4E4E;">Rp.200.000,00</h4>
+            <div style="display: flex; align-items: center; margin-top: 16px;">
+              <button type="button" class="active-button">Beli Sekarang</button>
+              <button type="button" class="unactive-button">Lihat Detail</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
   </body>
 </html>
