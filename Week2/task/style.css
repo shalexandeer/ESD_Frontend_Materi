@@ -94,7 +94,7 @@ section h1{
     color: #9C9C9C;
     text-decoration: none;
     margin-right: 5px;
-    border-color: rgba(0, 0, 0, 1);
+    border: 1px solid rgba(128, 128, 128, 0.1);
     padding: 10px;
     padding-left: 15px;
     padding-right: 15px;
@@ -151,15 +151,25 @@ section h1{
 }
 
 .buttonCard{
-    font: 14px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.box{
     background-color: rgba(13, 110, 253, 0.1);
+    font: 14px;
     padding: 5px;
     padding-left: 15px;
     padding-right: 15px;
     border-radius: 12px;
     color: #0D6EFD;
-    margin-bottom: 16px;
 }
+
+.fa-star{
+    margin-left: 10px;
+}
+
 
 .active-button{
     background-color: #3258E8;
