@@ -1,34 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      :root {
-        --primary-color: #466bf3;
-        --shade-blue-color: #d3dbf7;
-        /* semua warna yang dibutuhin dibikin variable disini biar enak make nya lagi */
-        /* agar variable warna ini bisa dipake, kita pindah semua variable ke external css aja */
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Task nya suruh slicing ya ges</h1>
-    <h1>link figma</h1>
-    <p>
-      https://www.figma.com/file/4efNS3RXUHhVdsh26wi5Ik/Frontend-Design-Task?type=design&node-id=0%3A1&mode=design&t=REPnpMrbAzJZSXyU-1
-    </p>
-
-    <!-- 
-        guidelines:
-        pastikan kalian menggunakan flexbox dan grid untuk layout karena kemarin udah belajar latihan kan.
-
-        - use flexbox untuk navbar section
-        - use grid untuk daftar produk
-        selain itu kalian bebas mau pake flexbox atau grid untuk section yang lain. berkreasilah sesuai kemampuan kalian.
-    -->
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuku</title>
+    <link rel="stylesheet" href="../css/style.css"/>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h4>Tuku</h4>
+        </div>
+        <nav>
+          <ul class ="nav_links">
+              <li><a href="">Halaman Utama</a></li>
+              <li><a href="">Produk</a></li>
+              <li><a href="">Hubungi Kami</a></li>
+          </ul>
+        </nav>
+       <button class="keranjang">Keranjang</button>
+     </header>
+     <div class="container">
+        <div class="hero">
+            <p class="sub-headline">Produk Kami</p> 
+            <h1 class="headline">Temukan Produk yang cocok</h1>
+        </div>
+        
+        <div class="filter">
+            <ul class="filter_links">
+                <li><button class="satu">Semua Produk</button></li>
+                <li><button class="dua">Peralatan</button></li>
+                <li><button class="tiga">Obat-obatan</button></li>
+                <li><button class="empat">Skincare</button></li>
+            </ul>
+        </div>
+        <div class="listproduk">
+            <div class="cards">
+                <div class="obeng">
+                    <div class="gambar">
+                        <img src="../assets/obeng.svg" alt="obeng2ml">
+                    </div>
+                    <div class="kategori">
+                        <button class="label">Peralatan</button>
+                    </div>
+                    <div class="rating"></div>
+                    <div class="nama">Obeng 2ml</div>
+                    <div class="harga">Rp. 100.000,00</div>
+                    <div class="footercard">
+                        <button class="beli">Beli Sekarang</button>
+                        <button class="detail">Lihat Detail</button>
+                    </div>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="paracetamol">
+                    <div class="gambar">
+                        <img src="../assets/paracetamol.svg" alt="paracetamol">
+                    </div>
+                    <div class="kategori">
+                        <button class="label">Obat-obatan</button>
+                    </div>
+                    <div class="rating"></div>
+                    <div class="nama">Paracetamol</div>
+                    <div class="harga">Rp. 20.000,00</div>
+                    <div class="footercard">
+                        <button class="beli">Beli Sekarang</button>
+                        <button class="detail">Lihat Detail</button>
+                    </div>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="skincare">
+                    <div class="gambar">
+                        <img src="../assets/soap.svg" alt="skincare">
+                    </div>
+                    <div class="kategori">
+                        <button class="label">skincare</button>
+                    </div>
+                    <div class="rating"></div>
+                    <div class="nama">skincare</div>
+                    <div class="harga">Rp. 200.000,00</div>
+                    <div class="footercard">
+                        <button class="beli">Beli Sekarang</button>
+                        <button class="detail">Lihat Detail</button>
+                    </div>
+                </div> 
+            </div>
+        </div>
+     </div>
+</body>
 </html>

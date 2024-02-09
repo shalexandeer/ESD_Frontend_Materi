@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap');
+
+*{
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+li, a {
+    color: #9C9C9C;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 100px;
+}
+
+.logo{
+    cursor: pointer;
+    color: #466BF3;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.nav_links {
+    list-style: none;
+}
+
+.nav_links li {
+    display:  inline-block;
+    padding: 0px 20px;
+}
+
+.nav_links li a {
+    transition: all 0.3s ease 0s;
+}
+
+.nav_links li a hover{
+    color:#466BF3
+}
+
+button.keranjang {
+    background-color: #ECF1FE; ;
+    border :none;
+    padding: 12px 24px;
+    border-radius: 12px;
+    color:#466BF3;
+    cursor:pointer;
+    transition: all 0.3s ease 0s;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+button.keranjang:hover{
+    background-color: #e2e0ff;
+} 
+
+.container{
+    width: 1440;
+    background-color: #F4F4F4
+}
+
+.hero{
+    padding-top: 48px;
+    padding-left: 100px;
+}
+
+.sub-headline{
+    font-size: 18px;
+    color:#466BF3;
+    font-weight: 600;
+    padding-bottom: 12px;
+}
+
+.headline{
+    font-size: 36px;
+    color:black;
+    font-weight: 700;
+}
+
+.filter{
+    padding : 24px 100px
+}
+
+.filter_links{
+    list-style: none;
+    text-decoration: none;
+}
+
+.filter_links li {
+    display:  inline-block;
+    padding-right: 12px;
+}
+
+.filter_links li button {
+    padding: 8px 16px;
+    border-radius: 12px;
+    border-color: #E9ECEF ;
+    color:#3E5569;
+    cursor:pointer;
+    transition: all 0.3s ease 0s;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.filter_links .satu{
+    border-color: #466BF3 ;
+    color:#466BF3;
+    background-color: #ECF1FE;
+}
+
+.listproduk {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 43px;
+    padding-left: 75px;
+}
+
+.cards{
+    display: grid;
+    border-radius: 24px;
+    padding: 24px;
+    gap:24px
+}
+
+.gambar{
+    width: 100%;
+    border: 1px solid #E9ECEF;
+    border-radius: 24px;
+    max-width: 336px;
+    height: 280px;
+    padding-bottom: 16px;
+}
+
+.kategori{
+    display: flex;
+    padding-top: 16px;
+}
+
+.label{
+    font-size: 14px;
+    font-weight: 500;
+    background-color: #ECF1FE; 
+    border :none;
+    padding: 5px 16px;
+    border-radius: 12px;
+    color:#466BF3;
+    cursor:pointer;
+}
+
+.nama{
+    font-size: 24px;
+    font-weight: 600;
+    padding-bottom: 4px;
+}
+
+.harga{
+    font-size: 20px;
+    font-weight: 500;
+    color: red;
+    padding-bottom: 24px;
+}
+
+.footercard{
+    display:  inline-block;
+}
+
+.beli{
+    background-color: #466BF3; ;
+    border :none;
+    padding: 12px 24px;
+    border-radius: 12px;
+    color:#ffff;
+    cursor:pointer;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.detail{
+    background-color: #FFFF;
+    border :none;
+    padding: 12px 24px;
+    border-radius: 12px;
+    color:#466BF3;
+    cursor:pointer;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.obeng{
+    padding : 24px;
+    background-color: white;
+    border-radius: 24px;
+}
+
+.paracetamol{
+    padding : 24px;
+    background-color: white;
+    border-radius: 24px;
+}
+
+.skincare{
+    padding : 24px;
+    background-color: white;
+    border-radius: 24px;
+}
+
+ 
