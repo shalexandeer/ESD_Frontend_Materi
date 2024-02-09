@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+      <meta charset="UTF-8" />
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@100;200;300;400;500;600;700&family=Sacramento&family=Work+Sans:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+
+      <link href='https://unpkg.com/css.gg@2.0.0/icons/css/shopping-cart.css' rel='stylesheet'>
+      <style>
+        :root {
+          --primary-color: #466bf3;
+          --shade-blue-color: #d3dbf7;
+          /* semua warna yang dibutuhin dibikin variable disini biar enak make nya lagi */
+          /* agar variable warna ini bisa dipake, kita pindah semua variable ke external css aja */
+        }
+      </style>
+    </head>
+
+  <body>
+    <!-- <h1>Task nya suruh slicing ya ges</h1>
+    <h1>link figma</h1>
+    <p>
+      https://www.figma.com/file/4efNS3RXUHhVdsh26wi5Ik/Frontend-Design-Task?type=design&node-id=0%3A1&mode=design&t=REPnpMrbAzJZSXyU-1
+    </p> -->
+    <div class="container">
+
+      <nav>
+        <a href="tuku" class="logo">Tuku</a>
+        <ul>
+          <li><a href="#halamanutama">Halaman Utama</a></li>
+          <li><a href="#produk"><span>Produk</span></a></li>
+          <li><a href="#hubungikami">Hubungi Kami</a></li>
+        </ul>
+        
+        <button>Keranjang <i class="gg-shopping-cart"></i></button>
+      </nav>
+  
+      <header>
+        <div class="text">
+          <p>Produk Kami</p>
+          <h1>Temukan Produk Yang Cocok</h1>
+          <button id="inti">Semua Produk</button>
+          <button>Peralatan</button>
+          <button>Obat-obatan</button>
+          <button>Skincare</button>
+        </div>
+  
+        <div class="barang">
+          <div class="produk1">
+            <img src="image/obeng hijau.webp" alt="">
+            <div class="namerate">
+              <div class="category-name">
+                <p>Peralatan</p>
+              </div>
+              <p>⭐⭐⭐⭐⭐</p>
+            </div>
+            <div class="product-name-price">
+              <p id="product-name">Obeng 2ml</p>
+              <p id="harga">Rp. 100.000,00</p>
+            </div>
+            <div class="tombol">
+              <button id="beli-sekarang">
+                Beli Sekarang
+              </button>
+              <button id="lihat-detail">
+                Lihat Detail
+              </button>
+            </div>
+          </div>
+  
+          <div class="produk2">
+            <img src="image/paracetamol.jpeg" alt="">
+            <div class="namerate">
+              <div class="category-name">
+                <p>Obat-obatan</p>
+              </div>
+              <p>⭐⭐⭐⭐⭐</p>
+            </div>
+            <div class="product-name-price">
+              <p id="product-name">Paracetamol</p>
+              <p id="harga">Rp. 20.000,00</p>
+            </div>
+            <div class="tombol">
+              <button id="beli-sekarang">
+                Beli Sekarang
+              </button>
+              <button id="lihat-detail">
+                Lihat Detail
+              </button>
+            </div>
+          </div>
+  
+          <div class="produk3">
+            <img src="image/skincare.jpg" alt="">
+            <div class="namerate">
+              <div class="category-name">
+                <p>Skincare</p>
+              </div>
+              <p>⭐⭐⭐⭐⭐</p>
+            </div>
+            <div class="product-name-price">
+              <p id="product-name">Skincare</p>
+              <p id="harga">Rp. 100.000,00</p>
+            </div>
+            <div class="tombol">
+              <button id="beli-sekarang">
+                Beli Sekarang
+              </button>
+              <button id="lihat-detail">
+                Lihat Detail
+              </button>
+            </div>
+          </div>
+        </div>
+        
+  
+  
+      </header>
+    </div>
+
+    
+
+    <!-- 
+        guidelines:
+        pastikan kalian menggunakan flexbox dan grid untuk layout karena kemarin udah belajar latihan kan.
+
+        - use flexbox untuk navbar section
+        - use grid untuk daftar produk
+        selain itu kalian bebas mau pake flexbox atau grid untuk section yang lain. berkreasilah sesuai kemampuan kalian.
+        
+        untuk pengumpulan, kalian bikin branch baru dengan nama FE/nama kalian, lalu push ke branch kalian
+        nanti bakal kucek di branch kalian.
+    -->
+  </body>
+</html>

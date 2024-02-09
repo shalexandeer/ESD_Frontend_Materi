@@ -1,0 +1,205 @@
+body {
+    font-family: 'Work Sans', sans-serif;
+    background-color: mintcream;
+}
+
+:root {
+    --primary-color: #466bf3;
+    --shade-blue-color: #d3dbf7;
+    /* semua warna yang dibutuhin dibikin variable disini biar enak make nya lagi */
+    /* agar variable warna ini bisa dipake, kita pindah semua variable ke external css aja */
+  }
+
+.container {
+    max-width: 1440px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--shade-blue-color);
+    padding: 15px;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+nav .logo{
+    color: var(--primary-color);
+    list-style-type: none;
+    padding-left: 100px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 24px;
+}
+
+nav ul li {
+    list-style-type: none;
+
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+}
+
+nav span {
+    color: #466bf3;
+}
+
+nav button {
+    margin-right: 100px;
+    margin-top: 14px;
+    margin-bottom: 14px;
+    background-color: #d3dbf7;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    color: #466bf3;
+    border-radius: 12px;
+    padding-top: 12px;
+    padding-right: 24px;
+    padding-bottom: 12px;
+    padding-left: 24px;
+    border-style: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+
+header {
+    margin-top: 48px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.text p {
+    color: #466bf3;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.text button {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: black;
+    padding: 12px;
+    margin-right: 12px;
+    border-radius: 8px;
+    border-width: thin;
+    border-color: lightgray;
+}
+
+#inti {
+    border-color: #466bf3;
+    color: #466bf3;
+}
+
+.barang {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 24px;
+    gap: 43px;
+    margin-bottom: 48px;
+}
+
+.produk1, .produk2, .produk3 {
+    background-color: white;
+    /* margin: 43px; */
+    border-radius: 24px;
+}
+
+.barang img{
+    height: 280px;
+    width: 336px;
+    margin-top: 24px;
+    margin-right: 24px;
+    margin-left: 24px;
+    border: 1px solid lightgray;
+    border-radius: 24px;
+}
+
+.namerate {
+    display: flex;
+    margin-left: 24px;
+    align-items: center;
+    /* margin-top: 16px; */
+    padding: 0px;
+}
+
+.category-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #466bf3;
+    background-color: var(--shade-blue-color);
+    border-radius: 12px;
+    padding: 5px 16px 5px 16px;
+    margin-right: 6px;
+}
+
+.category-name p {
+    margin: 0px;
+}
+
+.product-name-price {
+    margin-left: 24px;
+}
+
+#product-name {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0px;
+}
+
+#harga {
+    font-size: 18px;
+    font-weight: 00;
+    color: red;
+    margin-top: 4px;
+    margin-bottom: 24px;
+}
+
+.tombol {
+    margin-left: 24px;
+    margin-bottom: 24px;
+}
+
+#beli-sekarang {
+    background-color: #466bf3;
+    border-radius: 12px;
+    color: white;
+    border-style: none;
+    border-color: #466bf3;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 12px 28px 12px 28px;
+}
+
+#lihat-detail {
+    background-color: white;
+    border-radius: 12px;
+    color: var(--primary-color);
+    border-style: none;
+    border-color: #466bf3;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 12px 28px 12px 28px;
+}
+
+/* @media only screen and (min-width: 1441px) {
+    nav {
+        width: 1900px;
+    }   
+    .barang img{
+        height: 390px;
+        width: 480px;
+        
+    }
+} */
