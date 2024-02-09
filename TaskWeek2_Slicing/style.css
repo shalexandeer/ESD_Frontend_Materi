@@ -1,0 +1,134 @@
+html {
+    height: 857px;
+    width: 1440px;
+}
+
+body {
+    background-color: #F4F4F4;
+    margin: 0%;
+}
+
+.tab-bar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    height: 76px;
+}
+
+.btn{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-right: 24px;
+    padding-left: 24px;
+
+    border: #FFFFFF;
+    border-radius: 12px;
+
+    background-color: #FFFFFF;
+    color: black;
+    font-family: 'Poppins';
+}
+
+.card{
+    width: 384px;
+    height: 529px;
+    background-color: #FFFFFF;
+    padding: 24px;
+    margin-top: 24px;
+    margin-left: 21.5px;
+    margin-right: 21.5px;
+    border-radius: 24px;
+}
+
+.logo{
+    width: 60px;
+    line-height: 36px;
+
+    margin-left: 100px;
+    margin-top: 13px;
+    margin-bottom: 13px;
+    margin-right: auto;
+}
+
+.nav{
+    justify-content: center;
+    display: inline-flex;
+    width: auto;
+    line-height: 24px;
+    margin: auto;
+    padding: auto;
+}
+
+.nav-item {
+    margin: 10px;
+}
+
+.title{
+    padding-top: 48px;
+    margin-bottom: 24px;
+}
+
+.opsi{
+    width: 128px;
+    height: 45px;
+    margin-left: 100px;
+    display: flex;
+}
+
+.product{
+    display: inline-flex;
+    justify-content: center;
+}
+
+.submenu{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 15px;
+}
+
+.kategori {
+    color: #3258E8;
+    background-color: hsl(227, 80%, 55%, 10%);
+    margin-right: 6px;
+
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 16px;
+    padding-right: 16px;
+
+    border: 1px white;
+    border-radius: 12px;
+}
+
+.btn-keranjang{
+    display: inline-block;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    margin-left: auto;
+    margin-right: 100px;
+
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 24px;
+    padding-right: 24px;
+
+    height: 48px;
+    width: 166px;
+
+    font-weight: 600;
+    color: #466BF3;
+    background-color: hsl(245, 88%, 61%, 10%);
+    border: 1px solid #FFFFFF;
+    border-radius: 12px;
+}
+
+.btn-keranjang img {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 8px;
+}
