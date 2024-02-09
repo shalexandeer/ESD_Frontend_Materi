@@ -1,37 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      :root {
-        --primary-color: #466bf3;
-        --shade-blue-color: #d3dbf7;
-        /* semua warna yang dibutuhin dibikin variable disini biar enak make nya lagi */
-        /* agar variable warna ini bisa dipake, kita pindah semua variable ke external css aja */
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Task nya suruh slicing ya ges</h1>
-    <h1>link figma</h1>
-    <p>
-      https://www.figma.com/file/4efNS3RXUHhVdsh26wi5Ik/Frontend-Design-Task?type=design&node-id=0%3A1&mode=design&t=REPnpMrbAzJZSXyU-1
-    </p>
-
-    <!-- 
-        guidelines:
-        pastikan kalian menggunakan flexbox dan grid untuk layout karena kemarin udah belajar latihan kan.
-
-        - use flexbox untuk navbar section
-        - use grid untuk daftar produk
-        selain itu kalian bebas mau pake flexbox atau grid untuk section yang lain. berkreasilah sesuai kemampuan kalian.
-        
-        untuk pengumpulan, kalian bikin branch baru dengan nama FE/nama kalian, lalu push ke branch kalian
-        nanti bakal kucek di branch kalian.
-    -->
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tuku</title>
+  <link rel="stylesheet" href="ea.css">
+  <!-- <link href='https://unpkg.com/css.gg@2.0.0/icons/css/shopping-cart.css' rel='stylesheet'> -->
+</head>
+<body>
+  <nav> 
+    <a class = "logo"> Tuku</a>
+    <ul>
+      <li>Halaman Utama</li>
+      <li class = "active">Produk</li>
+      <li>Hubungi Kami</li>
+    </ul>
+    <div class="nav-button">
+      <p style="margin-right: 11px">Keranjang</p>
+      <img src="aset/icons8-cart-50.png" width="25px" height="25px" alt="Logo keranjang" />
+    </div>
+    
+  </nav> 
+  <main>
+    <section>
+      <h1>Produk Kami</h1>
+      <h1 class="h1">Temukan Produk Yang Cocok</h1>
+        <ul class="category">
+          <li>Semua Produk</li>
+          <li>Peralatan</li>
+          <li>Obat-obatan</li>
+          <li>Skincare</li>
+        </ul>
+    </section>
+    <article>
+      <div class="card">
+        <div class="card-img">
+          <img src="aset/screw.jpg" width="100%" height="100%" alt="gambar screwdriver">
+        </div>
+        <div style="display: flex; align-items: center; margin-top: 16px; ">
+          <div class="button-card">
+            <p>Peralatan</p>
+          </div>
+          ⭐⭐⭐⭐⭐
+        </div>
+        <h3>Obeng 2ml</h3>
+        <h4>Rp. 100.000,00</h4>
+        <div style="display: flex">
+          <button type="button" class="card-btn-active">Beli Sekarang</button>
+          <button type="button" class="card-btn">Lihat detail</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img">
+          <img src="aset/0104k0131.jpg" alt="gambar obat paracetamol">
+        </div>
+        <div style="display: flex; align-items: center; margin-top: 16px; ">
+          <div class="button-card">
+            <p>Obat-Obatan</p>
+          </div>
+          ⭐⭐⭐⭐⭐
+        </div>
+        <h3>Paracetamol</h3>
+        <h4>Rp. 20.000,00</h4>
+        <div style="display: flex">
+          <button type="button" class="card-btn-active">Beli Sekarang</button>
+          <button type="button" class="card-btn">Lihat detail</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img">
+          <img src="aset/skincare.png" alt="gambar shampo">
+        </div>
+        <div style="display: flex; align-items: center; margin-top: 16px; ">
+          <div class="button-card">
+            <p>Skincare</p>
+          </div>
+          ⭐⭐⭐⭐⭐
+        </div>
+        <h3>Skincare</h3>
+        <h4>Rp. 200.000,00</h4>
+        <div style="display: flex">
+          <button type="button" class="card-btn-active">Beli Sekarang</button>
+          <button type="button" class="card-btn">Lihat detail</button>
+        </div>
+      </div>
+    </article>
+  </main>
+  
+</body>
 </html>
