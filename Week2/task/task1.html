@@ -1,26 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      :root {
-        --primary-color: #466bf3;
-        --shade-blue-color: #d3dbf7;
-        /* semua warna yang dibutuhin dibikin variable disini biar enak make nya lagi */
-        /* agar variable warna ini bisa dipake, kita pindah semua variable ke external css aja */
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Task nya suruh slicing ya ges</h1>
-    <h1>link figma</h1>
-    <p>
-      https://www.figma.com/file/4efNS3RXUHhVdsh26wi5Ik/Frontend-Design-Task?type=design&node-id=0%3A1&mode=design&t=REPnpMrbAzJZSXyU-1
-    </p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css" >
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap">
+
+  <style>
+    :root {
+      --primary-color: #466bf3;
+      --shade-blue-color: #d3dbf7;
+      /* semua warna yang dibutuhin dibikin variable disini biar enak make nya lagi */
+      /* agar variable warna ini bisa dipake, kita pindah semua variable ke external css aja */
+    }
+  </style>
+
+</head>
+<body>
+  <div>
+    <header>
+      <img class="log"src="logo.svg" alt="">
+      <nav class="navbarnya">
+        <ul>
+          <li>Halaman Utama</li>
+          <li class="navbartext">Produk</a></li>
+          <li>Hubungi kami</li>
+        </ul>
+      </nav>
+      <div class="keranjang">
+        <a class="car" href="#"><button>Keranjang <img class="troli" src="../assets/cart.png" alt=""> </button></a>
+        
+      </div>
+
+    </header>
+  </div>
+
+  <div class="main">
+    <main>
+      <p class="text1">
+        Produk kami
+      </p>
+      <h2 class="text2">
+          Temukan Produk yang cocok
+      </h2>
+      <nav class="daftar">
+        <ul>
+          <button class="tombolproduk">Semua produk</button>
+          <button>Peralatan</button>
+          <button>Obat-obatan</button>
+          <button>Skincare</button>
+        </ul>
+      </nav>
+      
+      <div class="kontainer">
+        <div class="produk1">
+          <img class="gambarobeng" src="../assets/obeng.svg" alt="">
+          <button class="alat">
+            Peralatan
+          </button>
+          <img class="rating1" src="../assets/Ratings.png">
+
+          <p class="judul1">
+            Obeng 2ml
+          </p>
+          
+          <ul class="harga1">
+            Rp.100.000,00
+          </ul>
+          <div class="kotakbawah">
+            <button class="beliskrng">
+              Beli Sekarang
+            </button>
+  
+            <button class="detail">
+              Lihat Detail
+            </button>
+          </div>
+          
+        </div>
+      
+
+        <div class="produk2">
+          <img class="gambarobat" src="../assets/obat.svg" alt="">
+          <button class="obat">
+            Obat-Obatan
+          </button>
+          <img class="rating2" src="../assets/Ratings.png">
+
+          <p class="judul2">
+            Paracetamol
+          </p>
+
+          <ul class="harga2">
+            Rp.20.000,00
+          </ul>
+
+          <div class="kotakbawah">
+            <button class="beliskrng">
+              Beli Sekarang
+            </button>
+  
+            <button class="detail">
+              Lihat Detail
+            </button>
+          </div>
+        </div>
+    
+        
+        
+        <div class="produk3">
+          <img src="../assets/skincare.svg" alt="">
+          <button class="skincare">
+            Skincare
+          </button>
+          <img class="rating3" src="../assets/Ratings.png">
+
+          <p class="judul3">
+            Skincare
+          </p>
+
+          <ul class="harga3">
+            Rp.200.000,00
+          </ul>
+
+          <div class="kotakbawah">
+            <button class="beliskrng">
+              Beli Sekarang
+            </button>
+  
+            <button class="detail">
+              Lihat Detail
+            </button>
+          </div>
+        
+        </div>
+      </div>
+    </main>
+  
+
+  </div>
+</body>
+</html>
+
+
+
 
     <!-- 
         guidelines:
@@ -29,6 +153,7 @@
         - use flexbox untuk navbar section
         - use grid untuk daftar produk
         selain itu kalian bebas mau pake flexbox atau grid untuk section yang lain. berkreasilah sesuai kemampuan kalian.
+        
+        untuk pengumpulan, kalian bikin branch baru dengan nama FE/nama kalian, lalu push ke branch kalian
+        nanti bakal kucek di branch kalian.
     -->
-  </body>
-</html>
