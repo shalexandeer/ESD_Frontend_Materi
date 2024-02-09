@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap');
+
+:root{
+    --main-color : #ffffff;
+    --second-color : #F4F4F4;
+
+    --main-font : 'Poppins', sans-serif;
+}
+
+body{
+    background-color: var(--second-color);
+    font-family: var(--main-font);  
+}
+
+*{
+    margin : 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+section{
+    margin-top:30px;
+    margin-left: 200px;
+}
+
+.container{
+    max-width: 1500px;
+}
+
+.navbar{
+    background-color: white;
+}
+
+.navbar .nav-wrapper{
+    background-color: white;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-inline: 150px;
+    height: 70px;
+}
+
+.nav-wrapper .logo{
+    font-size: 24px;
+    font-weight: 600;
+    color: #466BF3;
+}
+
+.nav-wrapper .menu-wrapper{
+    display: flex;
+    gap: 350px;
+}
+
+.nav-wrapper .menu-wrapper .menu{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.menu-wrapper .menu .menu-link{
+    font-size: 300;
+    color: #9C9C9C;
+}
+
+.menu-wrapper .menu .menu-link.active{
+    color: #3258E8;
+}
+
+.menu-wrapper .btn-keranjang{
+    font-size: 15px ;
+    color: blue;
+    font-weight: 500;
+    background-color: #C8D3FF;
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+
+.produk-kami {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    font-weight: 600;
+    color: blue;
+    margin-left: -50px;
+}
+.judul-tagline {
+    font-size: 35px;
+    font-weight: 800;
+    padding-bottom: 20px;
+    margin-left: -50px;
+}
+
+.category-wrapper{
+    margin-left: -50px;
+}
+.category-wrapper .category {
+    display: flex;
+    gap: 20px;
+}
+
+.category-wrapper .category .category-item{
+    padding: 10px 15px;
+    border: 1px solid grey;
+    border-radius: 10px;
+}
+
+.category-wrapper .category .category-item.active{
+    padding: 10px 15px;
+    background-color: #ECF1FE;
+    border: 1px solid #0D6EFD;
+    border-radius: 10px;
+}
+
+.category .category-item .category-link{
+    color: grey;
+}
+
+.category .category-item .category-link.active{
+    color: #0D6EFD;
+}
+
+.grid-container{
+    gap: 20px;
+    display: flex;
+}
+
+.gambar img{
+    justify-content: center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 20px;
+    margin-inline: 20px;
+    width: auto;
+    height: auto;
+}
+
+.category-produk{
+    margin-left: 20px;
+    align-items: center;
+    display: flex;
+}
+
+.category-produk .jenis-produk{
+    color: #3258E8;
+    background-color: #ECF1FE; 
+    border-radius: 10px;
+    padding: 5px 10px;
+    font-size: 14px;
+    align-items: center;
+}
+
+.category-produk img{
+    width: 100px;
+    height: auto;
+}
+
+.produk{
+    margin-top: 20px;
+    margin-left: 150px;
+    background-color: white;
+    border-radius: 25px;
+}
+
+.produk .nama-produk{
+    font-size: 24px;
+    font-weight: 600;
+    margin-left: 20px;
+}
+
+.produk .price{
+    margin-left: 20px;
+    font-size: 20px;
+    font-weight: 500;
+    color: red;
+}
+
+.button-beli{
+    padding: 15px 20px;
+}
+
+.button-beli .beli{
+    display: inline-block;
+    background-color: #3258E8;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+.button-beli .detail-barang{
+    display: inline-block;
+    color: #3258E8;
+    padding: 10px 20px;
+    text-decoration: none;
+}
