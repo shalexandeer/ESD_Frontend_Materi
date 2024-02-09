@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Box Model</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .boxmodel {
+        border: 8px solid black;
+        padding: 20px;
+        margin: 20px;
+      }
+      .boxmodel2 {
+        border: 1px solid black;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="display: grid; height: 900px; width: 500px">
+      <div style="background: blue">
+        <h1>kotak 1</h1>
+      </div>
+      <div
+        class="boxmodel"
+        style="background: green">
+        <div class="boxmodel2">
+          <h1>kotak 2</h1>
+        </div>
+      </div>
+      <div style="background: red">
+        <h1>kotak 3</h1>
+      </div>
+    </div>
+    <div style="display: flex; justify-content: space-between">
+      <a href="./2-stylingpage.html">Cara Styling CSS - Sebelumnya</a>
+      <a href="./4-layout.html">Belajar Layout - Selanjutnya</a>
+    </div>
+  </body>
+</html>
