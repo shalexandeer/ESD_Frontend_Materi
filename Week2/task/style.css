@@ -53,7 +53,7 @@ body {
 .content{
     display: flex;
     flex-direction: column;
-    /* grid-template-rows: repeat(3, 1fr); */
+    width: 100%;
     gap: 24px;
     background-color: #f4f4f4;
 }
@@ -94,7 +94,7 @@ body {
     grid-template-columns: repeat(3, 1fr);
     gap: 43px;
     padding: 0 100px;
-    
+    width: 100%;
 }
 .product{
     display: flex;
