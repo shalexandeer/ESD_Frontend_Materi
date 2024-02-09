@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Change Colors</title>
+  </head>
+  <body>
+    <h1>Body</h1>
+    <button data-color="red">red</button>
+    <button data-color="green">green</button>
+    <button data-color="blue">blue</button>
+    <a href="Form.html">Next - Form</a>
+  </body>
+  <script>
+    const h1 = document.querySelector("h1");
+
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll("button").forEach(function (button) {
+        button.onclick = function () {
+          h1.style.color = button.dataset.color;
+        };
+      });
+    });
+  </script>
+</html>
