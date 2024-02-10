@@ -20,29 +20,47 @@
     </div>
   </body>
   <script>
+    // bikin variable awal counter
     let counterValue = 0;
+    // ekstrak element dengan id counterValue yaitu h1
     const counter = document.querySelector("#counterValue");
 
     function add() {
+      // tambah nilai
       counterValue++;
+      // ganti nilai h1 dengan nilai counterValue
       counter.innerText = counterValue;
+      // jika counterValue lebih dari 0, maka button dengan id substract tidak disabled
+      // set attribute disabled menjadi false
       document.getElementById("substract").removeAttribute("disabled");
     }
 
     function substract() {
+      // kurangi nilai
       counterValue--;
+      // ganti nilai h1 dengan nilai counterValue
+      // jika counterValue kurang dari 1, maka button dengan id substract disabled
+      // set attribute disabled menjadi true
       counter.innerText = counterValue;
     }
 
+    // setelah seluruh element ke load, maka jalankan function di parameter kedua
     document.addEventListener("DOMContentLoaded", function () {
+      // jika counterValue kurang dari 1, maka button dengan id substract disabled
       document.getElementById("substract").setAttribute("disabled", true);
+      // ekstrak semua button didalam document
+      // loop setiap button
       document.querySelectorAll("button").forEach(function (button) {
+        // ketika button di loop, tambahkan attribute onclick pada masing masing button
         button.onclick = function () {
+          // jika button innerText sama dengan +, maka jalankan function add
           if (button.innerText === "+") {
             add();
           } else {
+            // jika button innerText sama dengan -, maka jalankan function substract
             substract();
             if (counterValue === 0)
+              // jika counterValue sama dengan 0, maka button dengan id substract disabled
               document
                 .getElementById("substract")
                 .setAttribute("disabled", true);

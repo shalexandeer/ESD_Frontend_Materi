@@ -28,16 +28,18 @@
     </div>
   </body>
   <script>
-    // list task
+    // ekstrak parent dari task
     const tasks = document.getElementById("tasks");
     // input task
     const input = document.getElementById("task");
+    // ekstrak form yang ada di dalam page
     const form = document.querySelector("form");
     const button = document.getElementById("submit");
 
     document.addEventListener("DOMContentLoaded", function () {
       button.setAttribute("disabled", true);
 
+      // mendengarkan event setiap kali input di ketik
       input.onkeyup = function () {
         // ketika input value < 0, maka button submit disable
         // kalo lebih dari 0, maka button submit enable
@@ -50,8 +52,11 @@
       };
 
       form.onsubmit = function () {
+        // membuat element li
         const li = document.createElement("li");
+        // kemudian isi li dengan nilai dari input value
         li.innerText = input.value;
+        // kemudian masukin li kedalam ul dengan id tasks
         tasks.append(li);
 
         // reset input

@@ -19,11 +19,17 @@
     </div>
   </body>
   <script>
+    // ekstrak element h1
     const h1 = document.querySelector("h1");
 
+    // ketika semua element di load, maka jalankan function
     document.addEventListener("DOMContentLoaded", function () {
+      // ekstrak semua button yang ada di page
+      // lakukan loop pada masing masing button
       document.querySelectorAll("button").forEach(function (button) {
+        // pada masing masing button tambahkan attribute onclick agar dapat di klik
         button.onclick = function () {
+          // ketika button di klik, maka ganti warna h1 dengan warna yang ada di data-color
           h1.style.color = button.dataset.color;
         };
       });

@@ -21,8 +21,11 @@
     </div>
   </body>
   <script>
+    // ketika semua element di load, maka jalankan function
     document.addEventListener("DOMContentLoaded", function () {
+      // ekstrak element select dengan id selectElement
       document.querySelector("#selectElement").onchange = function () {
+        // ketika select di change, maka ganti warna h1 dengan value dari select
         document.querySelector("#changeColor").style.color = this.value;
       };
     });

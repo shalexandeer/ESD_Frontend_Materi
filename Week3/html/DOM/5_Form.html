@@ -24,9 +24,14 @@
     </div>
   </body>
   <script>
+    // ketika semua element di load, maka jalankan function
     document.addEventListener("DOMContentLoaded", function () {
+      // ekstrak element form
+      // ketika form di submit, maka jalankan function
       document.querySelector("form").onsubmit = function () {
+        // ekstrak value dari input dengan id name kemudian ambil nilai dari attribute value
         const name = document.querySelector("#name").value;
+        // tampilkan alert dengan nama yang di input
         alert(`Hello ${name}`);
       };
     });
