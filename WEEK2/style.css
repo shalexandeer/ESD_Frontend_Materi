@@ -1,0 +1,169 @@
+body {
+    background-color : #F4F4F4;
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.mainNavbar {
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: space-between; /* Menempatkan elemen secara merata di sepanjang sumbu utama */
+    align-items: center; /* Memusatkan vertikal */
+    padding: 10px; /* Beri ruang di sekitar konten */
+    
+}
+
+.menuLink {
+    display: flex; /* Menjadikan menuLink sebagai flex container */
+    justify-content: center; /* Memusatkan tautan menu horizontal */
+    flex-grow: 1; /* Memperluas elemen untuk mengisi ruang yang tersisa di tengah */
+    color: #9C9C9C;
+}
+
+.menuLink a:active {
+    color: #3258E8; 
+}
+
+
+
+.menuLink a {
+    margin: 0 30px; /* Jarak antara tautan menu */
+}
+
+#titleName {
+    margin-left: 100px;
+    color: #466BF3; /* Mengatur warna teks */
+    font-weight: 600; /* Mengatur ketebalan teks menjadi semi-bold */
+    font-size: 24px; /* Mengatur ukuran teks */
+}
+
+
+.cart {
+    margin-right: 100px;
+    border: 1px;
+    padding: 10px 24px;
+    border-radius: 12px;
+    background-color: rgba(85, 70, 243, 0.1); /* Warna latar belakang dengan opasitas 0.1 */
+    color: #466BF3; /* Mengatur warna teks */
+}
+
+.content {
+    margin-left: 100px;
+}
+
+#productMe {
+    color: #3258E8;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 48px;
+    margin-bottom: 28px;
+}
+
+#findProduct {
+    color: #232631;
+    font-weight: bold;
+    font-size: 38px;
+   
+    
+}
+
+
+.filterProduct {
+    padding-top: 24px; /* Menambahkan jarak 24px di atas .filterProduct */
+}
+
+
+
+.filterProduct a {
+    margin-right: 12px; /* Menambahkan jarak kanan sebesar 12px antara setiap tautan */
+}
+
+/* Untuk menghindari margin yang berlebih di elemen terakhir, bisa menggunakan pseudo-class :last-child */
+.filterProduct a:last-child {
+    margin-right: 0; /* Menghilangkan margin kanan pada elemen terakhir */
+}
+
+#activeProduct {
+    border: 1px solid;
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: #0D6EFD;
+    background-color:#ECF1FE;
+}
+
+
+.grid-container {
+    margin-left: 100px; /* Margin kiri 100px */
+    margin-right: 102px; /* Margin kanan 102px */
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 43px; /* Menambahkan jarak antara kartu sebesar 43px */
+    padding: 10px;
+    margin-top: 24px;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 384px;
+    height: 529px;
+    background-color: #FFFFFF;
+    display: justify-items-start;
+    flex-direction: column;
+    border-radius: 24px;
+}
+
+.card-content {
+    text-align: left;
+    margin-top: 16px;
+    margin-left: 24px;
+}
+
+.card img {
+    margin-top: 24px;
+    margin-left: 24px;
+    margin-right: 24px;
+    border-radius: 24px;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.kategori {
+    margin-right: 24px;
+    margin-bottom: 12px;
+    border: 1px;
+    background-color: #ECF1FE;
+    color: #3258E8;
+    font-size: 14px;
+    padding: 10px 16px; /* Pastikan nilai padding sudah benar */
+    border-radius: 12px;
+
+}
+
+.nama-produk {
+    font-weight: 600;
+    font-size: 24px;
+   
+}
+
+.harga {
+    margin-top: 4px;
+    color: #FF4E4E;
+    font-size: 20px;
+}
+
+.beli {
+    font-size: 16px;
+    border: 1px;
+    padding: 10px 24px;
+    border-radius: 12px;
+    background-color: #3258E8; /* Warna latar belakang dengan opasitas 0.1 */
+    color: #FFFFFF; /* Mengatur warna teks */
+}
+  
