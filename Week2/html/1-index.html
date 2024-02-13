@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Frontend Week 2</title>
+    <link rel="stylesheet" href="style.css">
+
+  </head>
+  <body style="display: flex; flex-direction: column; gap: 32px">
+    <!-- dont forget to install "live server extension" -->
+
+    <!-- 
+    BODY Elements 
+    -->
+    <!-- Heading -->
+    <div>
+      <h1>ESD Laboratory</h1>
+      <h2>ESD Laboratory</h2>
+      <h3>ESD Laboratory</h3>
+      <h4>ESD Laboratory</h4>
+      <h5>ESD Laboratory</h5>
+      <h6>ESD Laboratory</h6>
+    </div>
+
+    <!-- Paragraph -->
+    <p>this is paragraph</p>
+
+    <!-- BR: a single line break -->
+    <br />
+
+    <!-- div: grouping section -->
+    <div>
+      <h1>this is group 1</h1>
+      <hr />
+      <p>paragraph group 1</p>
+    </div>
+
+    <!-- hr: horizontal line across the page -->
+    <div>
+      <h1>this is group 2</h1>
+      <p>paragraph group 2</p>
+    </div>
+
+    <!-- span : grouping inline elements -->
+    <h1>Halo <span style="color: aqua">Class</span> Kamis</h1>
+
+    <!-- 
+    Image Elements
+   -->
+    <!-- img: place an image -->
+    <div style="width: 300px">
+      <img
+        style="width: 100%; height: auto"
+        src="../assets/pakaian.png"
+        alt="if src not loaded, then load this instead" />
+    </div>
+
+    <!-- 
+    Style Elements
+  -->
+    <div style="display: flex; flex-direction: column">
+      <strong>Strong Text</strong>
+      <em>Emphasis Text</em>
+      <cite>never use it before</cite>
+      <code> let a = 1; let b = 2; function sum(a, b) { return a + b; } </code>
+      <!-- bold -->
+      <b></b>
+      <!-- italic -->
+      <i></i>
+      <!-- underline -->
+      <u></u>
+    </div>
+
+    <!-- 
+    Link Elements
+  -->
+    <!-- a: anchor -->
+    <a href="./2-stylingpage.html">
+      <!-- elements goes here -->
+      <h1>Link ke css</h1>
+    </a>
+
+    <div>
+      <!--
+      List
+    -->
+      <!-- ul: unordered list -->
+      <ul>
+        <li>list item 1</li>
+        <li>list item 2</li>
+        <li>list item 3</li>
+      </ul>
+      <!-- ol: ordered list -->
+      <ol>
+        <li>list item 1</li>
+        <li>list item 2</li>
+        <li>list item 3</li>
+      </ol>
+      <!-- dl: description list -->
+      <dl>
+        <dt>list item 1</dt>
+        <dd>list item 1 description</dd>
+        <dt>list item 2</dt>
+        <dd>list item 2 description</dd>
+        <dt>list item 3</dt>
+        <dd>list item 3 description</dd>
+      </dl>
+    </div>
+
+    <!-- 
+    Form Elements
+  -->
+    <!-- form: form element -->
+    <form
+      action="action.php"
+      method="get"
+      style="display: flex; flex-direction: column; gap: 16px">
+      <!-- elements with label -->
+      <label for="name">Name:</label>
+      <input
+        type="text"
+        id="name"
+        name="name" />
+
+      <!-- checkbox button -->
+      <label for="vehicle1"> I have a bike</label>
+      <input
+        type="checkbox"
+        id="vehicle1"
+        name="vehicle1"
+        value="Bike" />
+
+      <!-- select elements -->
+      <select
+        name="cars"
+        id="cars">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="fiat">Fiat</option>
+        <option
+          value="audi"
+          selected>
+          Audi
+        </option>
+      </select>
+      <!-- submit button -->
+
+      <button type="submit">Submit</button>
+
+      <!-- 
+      HTML Semantics 
+    -->
+      <!-- header -->
+      <header></header>
+      <!-- nav -->
+      <nav></nav>
+      <!-- main -->
+      <main></main>
+      <!-- section -->
+      <section></section>
+      <!-- article -->
+      <article></article>
+      <!-- aside -->
+      <aside></aside>
+      <!-- footer -->
+      <footer></footer>
+
+      <a href="./2-stylingpage.html">Lanjut CSS</a>
+    </form>
+  </body>
+</html>
