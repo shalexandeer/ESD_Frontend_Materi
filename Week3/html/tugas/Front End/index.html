@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="style.css">
+
+<body>
+    <header id="headerz">
+        <div class="awal" id="putih">
+            <h2 id="putih">Tuku</h2>
+        </div>
+
+        <div class="tombol">
+            <button class="halo">Keranjang</button>
+        </div>
+    </header>
+    <div class="tengah">
+        <form class="form">
+            <div>
+                <h3>Add</h3>
+                <br><hr>
+                <label for="title">Nama</label>
+                <br>
+                <input id="nama" placeholder="ex: jackson" type="text" />
+            </div>
+            <br>
+            <div>
+                <label for="price">No telp</label>
+                <br>
+                <input id="notelp" placeholder="ex: 081234678" type="text" />
+            </div>
+            <br>
+            <div>
+                <label for="title">Pesanan</label>
+                <br>
+                <input id="pesanan" placeholder="ex: ayam" type="text" />
+            </div>
+            <br>
+            <div>
+                <label for="price">Total Harga</label>
+                <br>
+                <input id="total" placeholder="ex: 9000000" type="text" />
+            </div>
+            <br>
+    
+            <button onclick="post()" class="baten" >Submit!</button>
+        </form>
+
+        <div class="deletingCard">
+            <h3>Delete</h3>
+            <br><hr>
+            <label for="title">Input #Id</label>
+            <br>
+            <input id="deleting" placeholder="ex: 3" type="text">
+            <br><br><br><br><br><br><br><br><br><br><br>
+
+            <button onclick="deletes()" class="baten">Submit!</button>
+        </div>
+    </div>
+
+
+    <!-- fetch di script -->
+    <div class="cards" id="card">
+
+    </div>
+    
+
+    <script src="script.js">
+
+    </script>
+</body>
+</html>

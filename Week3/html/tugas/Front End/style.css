@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(236, 235, 235);
+    font-family:  "Poppins", sans-serif;
+    background-color
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 10px 30px;
+    height: 62px;
+}
+
+header, #putih{
+    background-color: white;
+}
+
+header .tombol{
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    background-color: #c8d2f7;
+    padding: 10px 20px;
+}
+
+.awal, .halo{
+    color: #466bf3;
+    font-size: 16px;
+}
+
+.halo{
+    border: none;
+    background-color: #c8d2f7;
+    padding: 0px;
+    cursor: pointer;
+}
+.tengah{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 20px;
+}
+
+form, .deletingCard{
+    padding: 5px;
+    margin: 30px;
+    background-color: white;
+    border-style: solid;
+    border-color: white;
+    border-radius: 10px;
+    box-shadow: 4px 4px 5px grey;
+}
+
+form div label, form div input, form div, .deletingCard label, .deletingCard input{
+    background-color: white;
+}
+
+input{
+    border-radius: 5px;
+    border-color: rgb(236, 235, 235);
+}
+
+.baten{
+    border-radius: 10px;
+    border-color: #c8d2f7;
+    color: white;
+    background-color: #c8d2f7;
+    padding: 2px 5px;
+}
+
+.cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    column-gap: 20px;
+    text-align: left;
+}
+@media screen and (max-width: 768px) {
+    .cards {
+        display: grid;
+        column-gap: 20px;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.dalem{
+    padding: 5px;
+    margin: 30px;
+    background-color: white;
+    border-radius: 10px;
+    display: content;
+    border-style: solid;
+    border-color: white;
+    box-shadow: 4px 4px 5px grey;
+}
+
+.namaKastemer, .noTelpKastemer, .pesananKastemer, .totalKastemer{
+    background-color: white;
+    color: red;
+}
+
+.namaKastemer, .noTelpKastemer, .pesananKastemer{
+    padding: 0px 0px 5px;
+    color: #c8d2f7;
+}
+
+.namaKastemer, label{
+    color: #466bf3;
+}
+
+h3{
+    text-align: center;
+    background-color: #466bf3;
+    border-radius: 10px;
+    color: white;
+}
+
+.info{
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+}
+
+.idKastemer{
+    background-color: white;
+    color: green;
+}
