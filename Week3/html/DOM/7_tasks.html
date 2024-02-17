@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Tasks</title>
+  </head>
+  <body>
+    <h1>Tasks</h1>
+    <!-- masukin element li kedalem sini -->
+    <ul id="tasks">
+      <li>task 1</li>
+    </ul>
+    <form>
+      <input
+        id="task"
+        placeholder="New Task"
+        type="text" />
+      <input
+        id="submit"
+        type="submit" />
+    </form>
+    <div
+      style="position: absolute; bottom:0; flex; width: 100%; justify-content: space-between">
+      <a href="6_select.html">Previous - select html</a>
+    </div>
+  </body>
+  <script>
+    // ekstrak parent dari task
+    const tasks = document.getElementById("tasks");
+    // input task
+    const input = document.getElementById("task");
+    // ekstrak form yang ada di dalam page
+    const form = document.querySelector("form");
+    const button = document.getElementById("submit");
+
+    document.addEventListener("DOMContentLoaded", function () {
+      button.setAttribute("disabled", true);
+
+      // mendengarkan event setiap kali input di ketik
+      input.onkeyup = function () {
+        // ketika input value < 0, maka button submit disable
+        // kalo lebih dari 0, maka button submit enable
+        console.log(input.value);
+        if (input.value.length > 0) {
+          button.removeAttribute("disabled");
+          return;
+        }
+        button.setAttribute("disabled", true);
+      };
+
+      form.onsubmit = function () {
+        // membuat element li
+        const li = document.createElement("li");
+        // kemudian isi li dengan nilai dari input value
+        li.innerText = input.value;
+        // kemudian masukin li kedalam ul dengan id tasks
+        tasks.append(li);
+
+        // reset input
+        input.value = "";
+
+        // bikin button submit disable, ketika input kosong
+        button.setAttribute("disabled", true);
+        // ngilangin default behavior
+        return false;
+      };
+    });
+  </script>
+</html>
