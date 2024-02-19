@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Task</title>
+    <!-- taruh script react disini -->
+  </head>
+  <body>
+    <!-- render component disini -->
+    <div id="root"></div>
+  </body>
+  <script>
+    // aku ingin kalian untuk membuat sebuah component card dari design week 2
+    // menggunakan functional component untuk membuat card tersebut
+    // terdapat 3 component, yaitu Card, CardBody, dan CardActions
+    // masing masing component harus dapat menerima props.
+    // Card akan menerima props berupa berupa children
+    // CardBody akan menerima props berupa image, title, harga.
+    // CardActions akan menerima props berupa children
+    // didalam CardActions terdapat button yang akan menerima props berupa text dan onClick
+
+    // jawab dibawah ini:
+
+    class App extends React.Component {
+      render() {
+        return (
+          <div>
+            <App />
+          </div>
+        );
+      }
+    }
+
+    // untuk apa kode dibawah?
+    // jawab : ...........
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<App />);
+  </script>
+</html>

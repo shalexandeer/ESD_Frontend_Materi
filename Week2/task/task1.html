@@ -1,146 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#466bf3",
+              shade: "#d3dbf7",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="//unpkg.com/alpinejs" defer></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: '#466bf3',
-            shade: '#d3dbf7'
-          }
-        }
-      }
-    }
-  </script>
-</head>
-
-<body>
-  <main class="bg-slate-200 min-h-screen" x-data="{ products: [{ id: 1, category: 'peralatan', rating: 5, name: 'Obeng 2ml', price: '100000', imageUrl: 'https://t.ly/yEhmL' }, { id: 2, category: 'obat', rating: 5, name: 'Paracetamol', price: '20000', imageUrl: 'https://t.ly/5HDtr' }, { id: 3, category: 'skincare', rating: 5, name: 'Skincare', price: '200000', imageUrl: 'https://t.ly/hi6mN' }], categories: [{ id: 1, name: 'Semua Produk', value: 'all' }, { id: 2, name: 'Peralatan', value: 'peralatan' }, { id: 3, name: 'Obat-obatan', value: 'obat' }, { id: 4, name: 'Skincare', value: 'skincare' }], activeValue: 'all', get filteredProducts() {
+  <body>
+    <main
+      class="bg-slate-200 min-h-screen"
+      x-data="{ products: [{ id: 1, category: 'peralatan', rating: 5, name: 'Obeng 2ml', price: '100000', imageUrl: 'https://t.ly/yEhmL' }, { id: 2, category: 'obat', rating: 5, name: 'Paracetamol', price: '20000', imageUrl: 'https://t.ly/5HDtr' }, { id: 3, category: 'skincare', rating: 5, name: 'Skincare', price: '200000', imageUrl: 'https://t.ly/hi6mN' }], categories: [{ id: 1, name: 'Semua Produk', value: 'all' }, { id: 2, name: 'Peralatan', value: 'peralatan' }, { id: 3, name: 'Obat-obatan', value: 'obat' }, { id: 4, name: 'Skincare', value: 'skincare' }], activeValue: 'all', get filteredProducts() {
       return this.activeValue === 'all' ? this.products : this.products.filter(product => product.category === this.activeValue);
     }
-}">
-    <header class="bg-white drop-shadow-sm h-20"
-      x-data="{ activeNav: 'produk', navList: [{ id: 1, name: 'Halaman Utama', value: 'utama' }, { id: 2, name: 'Produk', value: 'produk' }, { id: 3, name: 'Hubungi Kami', value: 'hubungi' }] }">
-      <div class="mx-auto max-w-7xl w-full flex items-center justify-between h-full p-4">
-        <h1 class="text-xl font-semibold text-primary">Tuku</h1>
+}"
+    >
+      <header
+        class="bg-white drop-shadow-sm h-20"
+        x-data="{ activeNav: 'produk', navList: [{ id: 1, name: 'Halaman Utama', value: 'utama' }, { id: 2, name: 'Produk', value: 'produk' }, { id: 3, name: 'Hubungi Kami', value: 'hubungi' }] }"
+      >
+        <div
+          class="mx-auto max-w-7xl w-full flex items-center justify-between h-full p-4"
+        >
+          <h1 class="text-xl font-semibold text-primary">Tuku</h1>
 
-        <nav class="md:flex items-center space-x-10 hidden">
-          <template x-for="nav in navList" :key="nav.id">
-            <a :class="activeNav === nav.value && '!text-primary'"
-              class="text-neutral-500 font-light hover:underline text-sm md:text-base" href="#"
-              @click="activeNav = nav.value" x-text="nav.name"></a>
-          </template>
-        </nav>
+          <nav class="md:flex items-center space-x-10 hidden">
+            <template x-for="nav in navList" :key="nav.id">
+              <a
+                :class="activeNav === nav.value && '!text-primary'"
+                class="text-neutral-500 font-light hover:underline text-sm md:text-base"
+                href="#"
+                @click="activeNav = nav.value"
+                x-text="nav.name"
+              ></a>
+            </template>
+          </nav>
 
-        <div>
-          <button class="px-4 py-2 hidden md:inline-flex rounded-md items-center text-primary bg-shade"><svg
-              xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-shopping-cart mr-2.5">
-              <circle cx="8" cy="21" r="1" />
-              <circle cx="19" cy="21" r="1" />
-              <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
-            </svg>Keranjang</button>
+          <div>
+            <button
+              class="px-4 py-2 hidden md:inline-flex rounded-md items-center text-primary bg-shade"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-shopping-cart mr-2.5"
+              >
+                <circle cx="8" cy="21" r="1" />
+                <circle cx="19" cy="21" r="1" />
+                <path
+                  d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"
+                /></svg
+              >Keranjang
+            </button>
 
-          <div class="md:hidden relative" x-data="{ open: false }">
-            <button class="rounded-md p-2" @click="open = !open" style="background-color: var(--shade-blue-color);"><svg
-                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-menu text-primary">
-                <line x1="4" x2="20" y1="12" y2="12" />
-                <line x1="4" x2="20" y1="6" y2="6" />
-                <line x1="4" x2="20" y1="18" y2="18" />
-              </svg></button>
+            <div class="md:hidden relative" x-data="{ open: false }">
+              <button
+                class="rounded-md p-2"
+                @click="open = !open"
+                style="background-color: var(--shade-blue-color)"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-menu text-primary"
+                >
+                  <line x1="4" x2="20" y1="12" y2="12" />
+                  <line x1="4" x2="20" y1="6" y2="6" />
+                  <line x1="4" x2="20" y1="18" y2="18" />
+                </svg>
+              </button>
 
-            <div class="absolute top-0 right-0 bg-neutral-200 drop-shadow-sm rounded-md p-2 w-44" x-show="open"
-              @click.outside="open = false">
-              <nav class="flex flex-col w-full space-y-1.5">
-                <template x-for="nav in navList" :key="nav.id">
-                  <a :class="activeNav === nav.value && '!text-primary border-primary'"
-                    class="text-neutral-500 font-light p-2 text-sm border border-neutral-300 rounded-md text-center"
-                    href="#" x-text="nav.name" @click="activeNav = nav.value"></a>
-                </template>
-              </nav>
+              <div
+                class="absolute top-0 right-0 bg-neutral-200 drop-shadow-sm rounded-md p-2 w-44"
+                x-show="open"
+                @click.outside="open = false"
+              >
+                <nav class="flex flex-col w-full space-y-1.5">
+                  <template x-for="nav in navList" :key="nav.id">
+                    <a
+                      :class="activeNav === nav.value && '!text-primary border-primary'"
+                      class="text-neutral-500 font-light p-2 text-sm border border-neutral-300 rounded-md text-center"
+                      href="#"
+                      x-text="nav.name"
+                      @click="activeNav = nav.value"
+                    ></a>
+                  </template>
+                </nav>
 
-              <span class="w-full bg-neutral-500 h-[0.5px] block mb-2.5"></span>
+                <span
+                  class="w-full bg-neutral-500 h-[0.5px] block mb-2.5"
+                ></span>
 
-              <button class="px-4 py-2 inline-flex rounded-md items-center w-full bg-shade text-primary"><svg
-                  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="lucide lucide-shopping-cart mr-2.5">
-                  <circle cx="8" cy="21" r="1" />
-                  <circle cx="19" cy="21" r="1" />
-                  <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
-                </svg>Keranjang</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <div class="p-4 mx-auto max-w-7xl w-full space-y-5">
-      <div class="space-y-5">
-        <h6 class="font-semibold text-sm md:text-base text-primary">Produk Kami</h6>
-        <h1 class="font-bold text-xl md:text-[36px]">Temukan Produk Yang Cocok</h1>
-        <div class="flex items-center space-x-2.5 overflow-x-auto">
-          <template x-for="category in categories" :key="category.id">
-            <button :class="activeValue === category.value ? '!border-primary text-primary' : ''"
-              @click="activeValue = category.value"
-              class="px-4 py-2 flex-shrink-0 rounded-md bg-slate-200 border border-slate-400"
-              x-text="category.name"></button>
-          </template>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
-        <template x-for="product in filteredProducts" :key="product.id">
-          <div class="rounded-md bg-white p-4 space-y-3.5">
-            <div class="h-80 w-full relative rounded-md border border-neutral-200">
-              <img class="object-cover h-full w-full rounded-md" :src="product.imageUrl" alt="product.name"
-                loading="lazy">
-            </div>
-
-            <div class="flex overflow-x-auto items-center space-x-2.5">
-              <div class="rounded-full bg-shade capitalize text-primary text-sm px-4 py-1 flex-shrink-0"
-                x-text="product.category"></div>
-
-              <div class="flex items-center space-x-1" x-data="{ rating: product.rating }">
-                <template x-for="i in rating" :key="i">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                    class="w-6 h-6 text-yellow-500">
-                    <path fill-rule="evenodd"
-                      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
-                      clip-rule="evenodd" />
-                  </svg>
-                </template>
+                <button
+                  class="px-4 py-2 inline-flex rounded-md items-center w-full bg-shade text-primary"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-shopping-cart mr-2.5"
+                  >
+                    <circle cx="8" cy="21" r="1" />
+                    <circle cx="19" cy="21" r="1" />
+                    <path
+                      d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"
+                    /></svg
+                  >Keranjang
+                </button>
               </div>
             </div>
-
-            <div>
-              <h5 class="text-xl font-semibold" x-text="product.name"></h5>
-              <p class="text-red-500 text-lg">Rp. <span x-text="product.price"></span></p>
-            </div>
-
-            <div class="flex flex-col lg:flex-row lg:items-center lg:space-x-2.5">
-              <button class="rounded-md bg-primary text-white font-semibold px-4 py-2 w-full lg:w-fit">Beli
-                Sekarang</button>
-              <button
-                class="rounded-md bg-transparent text-primary font-semibold px-4 py-2 hover:bg-shade ease-out transition-colors w-full lg:w-fit">Lihat
-                Detail</button>
-            </div>
           </div>
-        </template>
-      </div>
-    </div>
-  </main>
-</body>
+        </div>
+      </header>
 
+      <div class="p-4 mx-auto max-w-7xl w-full space-y-5">
+        <div class="space-y-5">
+          <h6 class="font-semibold text-sm md:text-base text-primary">
+            Produk Kami
+          </h6>
+          <h1 class="font-bold text-xl md:text-[36px]">
+            Temukan Produk Yang Cocok
+          </h1>
+          <div class="flex items-center space-x-2.5 overflow-x-auto">
+            <template x-for="category in categories" :key="category.id">
+              <button
+                :class="activeValue === category.value ? '!border-primary text-primary' : ''"
+                @click="activeValue = category.value"
+                class="px-4 py-2 flex-shrink-0 rounded-md bg-slate-200 border border-slate-400"
+                x-text="category.name"
+              ></button>
+            </template>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+          <template x-for="product in filteredProducts" :key="product.id">
+            <div class="rounded-md bg-white p-4 space-y-3.5">
+              <div
+                class="h-80 w-full relative rounded-md border border-neutral-200"
+              >
+                <img
+                  class="object-cover h-full w-full rounded-md"
+                  :src="product.imageUrl"
+                  alt="product.name"
+                  loading="lazy"
+                />
+              </div>
+
+              <div class="flex overflow-x-auto items-center space-x-2.5">
+                <div
+                  class="rounded-full bg-shade capitalize text-primary text-sm px-4 py-1 flex-shrink-0"
+                  x-text="product.category"
+                ></div>
+
+                <div
+                  class="flex items-center space-x-1"
+                  x-data="{ rating: product.rating }"
+                >
+                  <template x-for="i in rating" :key="i">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      class="w-6 h-6 text-yellow-500"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </template>
+                </div>
+              </div>
+
+              <div>
+                <h5 class="text-xl font-semibold" x-text="product.name"></h5>
+                <p class="text-red-500 text-lg">
+                  Rp. <span x-text="product.price"></span>
+                </p>
+              </div>
+
+              <div
+                class="flex flex-col lg:flex-row lg:items-center lg:space-x-2.5"
+              >
+                <button
+                  class="rounded-md bg-primary text-white font-semibold px-4 py-2 w-full lg:w-fit"
+                >
+                  Beli Sekarang
+                </button>
+                <button
+                  class="rounded-md bg-transparent text-primary font-semibold px-4 py-2 hover:bg-shade ease-out transition-colors w-full lg:w-fit"
+                >
+                  Lihat Detail
+                </button>
+              </div>
+            </div>
+          </template>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>

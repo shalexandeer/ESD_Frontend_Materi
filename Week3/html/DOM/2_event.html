@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>events</title>
+    <script>
+      // bikin variable
+      let goodbye = "goodbye, world!";
+
+      // bikin function untuk change text greeting
+      function changeGreeting() {
+        // ekstrak element dengan id changeText
+        document.querySelector("#changeText").innerHTML = goodbye;
+      }
+    </script>
+  </head>
+  <body>
+    <h1 id="changeText">Hello world!</h1>
+    <button onclick="changeGreeting()">change text</button>
+    <a href="Counter.html">Counter App</a>
+    <div
+      style="position: absolute; bottom:0; flex; width: 100%; justify-content: space-between">
+      > <a href="1_HTML.HTML">Previous - HTML DOM</a>
+      <a href="3_Counter.html">NEXT - COUNTER APP</a>
+    </div>
+  </body>
+</html>
