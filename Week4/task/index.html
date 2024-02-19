@@ -2,41 +2,191 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Task</title>
-    <!-- taruh script react disini -->
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#466bf3",
+              shade: "#d3dbf7",
+            },
+          },
+        },
+      };
+    </script>
   </head>
   <body>
-    <!-- render component disini -->
     <div id="root"></div>
-  </body>
-  <script>
-    // aku ingin kalian untuk membuat sebuah component card dari design week 2
-    // menggunakan functional component untuk membuat card tersebut
-    // terdapat 3 component, yaitu Card, CardBody, dan CardActions
-    // masing masing component harus dapat menerima props.
-    // Card akan menerima props berupa berupa children
-    // CardBody akan menerima props berupa image, title, harga.
-    // CardActions akan menerima props berupa children
-    // didalam CardActions terdapat button yang akan menerima props berupa text dan onClick
+    <script type="text/babel">
+      // aku ingin kalian untuk membuat sebuah component card dari design week 2
+      // menggunakan functional component untuk membuat card tersebut
+      // terdapat 3 component, yaitu Card, CardBody, dan CardActions
+      // masing masing component harus dapat menerima props.
+      // Card akan menerima props berupa berupa children
+      // CardBody akan menerima props berupa image, title, harga.
+      // CardActions akan menerima props berupa children
+      // didalam CardActions terdapat button yang akan menerima props berupa text dan onClick
 
-    // jawab dibawah ini:
+      // jawab dibawah ini:
 
-    class App extends React.Component {
-      render() {
+      function CardBody(props) {
+        const { imageUrl, name, price, category, rating } = props;
+
         return (
-          <div>
-            <App />
+          <>
+            <div className="h-80 w-full relative rounded-md border border-neutral-200">
+              <img
+                className="object-cover h-full w-full rounded-md"
+                src={imageUrl}
+                alt={name}
+                loading="lazy"
+              />
+            </div>
+
+            <div className="flex overflow-x-auto items-center space-x-2.5">
+              <div className="rounded-full bg-shade capitalize text-primary text-sm px-4 py-1 flex-shrink-0">
+                {category}
+              </div>
+
+              <div className="flex items-center space-x-1">
+                {new Array(rating).fill(null).map((value, idx) => (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    className="w-6 h-6 text-yellow-500"
+                    key={idx}
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <h5 className="text-xl font-semibold">{name}</h5>
+              <p className="text-red-500 text-lg">
+                Rp. <span>{price}</span>
+              </p>
+            </div>
+          </>
+        );
+      }
+
+      function CardActions(props) {
+        const { children, onBuyClick, onDetailClick, buyText, detailText } =
+          props;
+
+        return (
+          <div className="flex flex-col lg:flex-row lg:items-center lg:space-x-2.5">
+            {children}
+            <button
+              className="rounded-md bg-primary text-white font-semibold px-4 py-2 w-full lg:w-fit"
+              onClick={onBuyClick}
+            >
+              {buyText}
+            </button>
+            <button
+              className="rounded-md bg-transparent text-primary font-semibold px-4 py-2 hover:bg-shade ease-out transition-colors w-full lg:w-fit"
+              onClick={onDetailClick}
+            >
+              {detailText}
+            </button>
           </div>
         );
       }
-    }
 
-    // untuk apa kode dibawah?
-    // jawab : ...........
-    const root = ReactDOM.createRoot(document.getElementById("root"));
-    root.render(<App />);
-  </script>
+      function Card(props) {
+        const { children } = props;
+
+        return (
+          <div className="rounded-md bg-white p-4 space-y-3.5">{children}</div>
+        );
+      }
+
+      class App extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            products: [
+              {
+                id: 1,
+                category: "peralatan",
+                rating: 5,
+                name: "Obeng 2ml",
+                price: "100000",
+                imageUrl: "https://t.ly/yEhmL",
+              },
+              {
+                id: 2,
+                category: "obat",
+                rating: 5,
+                name: "Paracetamol",
+                price: "20000",
+                imageUrl: "https://t.ly/5HDtr",
+              },
+              {
+                id: 3,
+                category: "skincare",
+                rating: 5,
+                name: "Skincare",
+                price: "200000",
+                imageUrl: "https://t.ly/hi6mN",
+              },
+            ],
+          };
+        }
+
+        render() {
+          return (
+            <main className="min-h-screen bg-slate-200">
+              <div className="p-4 mx-auto max-w-7xl w-full space-y-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+                  {this.state.products.map((product) => (
+                    <Card key={product.id}>
+                      <CardBody
+                        imageUrl={product.imageUrl}
+                        name={product.name}
+                        price={product.price}
+                        category={product.category}
+                        rating={product.rating}
+                      />
+
+                      <CardActions
+                        onBuyClick={() => alert("Buy clicked!")}
+                        onDetailClick={() => alert("Detail clicked!")}
+                        buyText="Beli sekarang"
+                        detailText="Lihat detail"
+                      />
+                    </Card>
+                  ))}
+                </div>
+              </div>
+            </main>
+          );
+        }
+      }
+
+      // untuk apa kode dibawah?
+      // jawab : Render App pada DOM
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(<App />);
+    </script>
+  </body>
 </html>
