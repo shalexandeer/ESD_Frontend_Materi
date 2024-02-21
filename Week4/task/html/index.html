@@ -1,0 +1,87 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Task</title>
+    <!-- taruh script react disini -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <!-- render component disini -->
+    <div id="root"></div>
+  </body>
+  <script>
+
+     
+    // aku ingin kalian untuk membuat sebuah component card dari design week 2
+    // menggunakan functional component untuk membuat card tersebut
+    // terdapat 3 component, yaitu Card, CardBody, dan CardActions
+    // masing masing component harus dapat menerima props.
+    // Card akan menerima props berupa berupa children
+    // CardBody akan menerima props berupa image, title, harga.
+    // CardActions akan menerima props berupa children
+    // didalam CardActions terdapat button yang akan menerima props berupa text dan onClick
+   
+    // jawab dibawah ini:
+   // Komponen CardActions
+function CardActions({ children }) {
+  return <div className="card-actions">{children}</div>;
+}
+
+// Komponen CardBody
+function CardBody({ image, title, harga }) {
+  return (
+    <div className="card-body">
+      <img src={image} alt="Product" />
+      <h2>{title}</h2>
+      <p>{harga}</p>
+    </div>
+  );
+}
+
+// Komponen Card
+function Card({ children }) {
+  return <div className="card">{children}</div>;
+}
+
+    class App extends React.Component {
+      render() {
+        return (
+          <div>
+            <Card>
+              <CardBody
+                image="../assets/obeng.jpg"
+                title="Obeng 2ml"
+                harga="Rp. 100.000,00"
+              />
+              <CardActions>
+                <button onClick={() => console.log("Button clicked!")}>
+                  Beli Sekarang
+                </button>
+                <button onClick={() => console.log("Detail clicked!")}>
+                  Lihat Detail
+                </button>
+              </CardActions>
+            </Card>
+          </div>
+        );
+      }
+    }
+
+    // untuk apa kode dibawah?
+    // jawab : buat render 
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<App />);
+
+  </script>
+</html>
