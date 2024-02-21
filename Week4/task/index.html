@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="style4.css">
+    <title>Task</title>
+
+ <!-- CDN or content delivery network -->
+    <!-- Package React -->
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin></script>
+
+    <!-- create virtual DOM and give access for us to modify the virtual DOM -->
+    <!-- Package react-dom -->
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin></script>
+
+    <!-- enabling us to write javascript inside the HTML tag -->
+    <!-- Package Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root">   </div>
+  </body>
+  <script type="text/babel">
+    
+    // aku ingin kalian untuk membuat sebuah component card dari design week 2
+    // menggunakan functional component untuk membuat card tersebut
+    // terdapat 3 component, yaitu Card, CardBody, dan CardActions
+    // masing masing component harus dapat menerima props.
+    // Card akan menerima props berupa berupa children
+    // CardBody akan menerima props berupa image, title, harga.
+    // CardActions akan menerima props berupa children
+    // didalam CardActions terdapat button yang akan menerima props berupa text dan onClick
+
+
+
+    // jawab dibawah ini:
+    function Card(props) {
+  return (
+    <div className="card">
+      {props.children}
+    </div>
+  );
+}
+
+function CardBody(props) {
+  return (
+    <div className="card-body">
+      <div className="grid-container">
+        <div className="grid-item" style={{backgroundColor: '#FFFFFF'}}>
+          <img src={props.image} alt={props.title} className = "Product-image" />
+          <h2>{props.title}</h2>
+          <p>Harga: {props.harga}</p>
+          {props.children}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function CardActions(props) {
+  return (
+    <div className="card-actions">
+      {props.children}
+    </div>
+  );
+}
+
+function Button(props) {
+  return (
+    <button onClick={props.onClick}>{props.text}</button>
+  );
+}
+
+class App extends React.Component {
+  render() {
+    return (
+      <div className="card-container">
+        <Card>
+          <CardBody image="images/Obeng.png"  title="Obeng" harga="Rp 100.000">
+            <CardActions>
+              <Button text="Beli" onClick={() => alert('Tombol Beli diklik!')} />
+              <Button text="Lihat Detail" onClick={() => alert('Tombol Lihat Detail diklik!')} />
+            </CardActions>
+          </CardBody>
+        </Card>
+        <Card>
+          <CardBody image="images/obat.png" title="Paracetamol" harga="Rp 100.000">
+            <CardActions>
+              <Button text="Beli" onClick={() => alert('Tombol Beli diklik!')} />
+              <Button text="Lihat Detail" onClick={() => alert('Tombol Lihat Detail diklik!')} />
+            </CardActions>
+          </CardBody>
+        </Card>
+        <Card>
+          <CardBody image="images/skincare.png" title="Skincare" harga="Rp 100.000">
+            <CardActions>
+              <Button text="Beli" onClick={() => alert('Tombol Beli diklik!')} />
+              <Button text="Lihat Detail" onClick={() => alert('Tombol Lihat Detail diklik!')} />
+            </CardActions>
+          </CardBody>
+        </Card>
+      </div>
+    );
+  }
+}
+
+// untuk apa kode dibawah?
+// jawab : Render App pada DOM
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);
+
+  </script>
+</html>
