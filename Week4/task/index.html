@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task</title>
+    <!-- taruh script react disini -->
+    <!-- CDN or content delivery network -->
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+
+    <!-- create virtual DOM -->
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+
+    <!-- enabling us to write javascript inside the HTML tag -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- render component disini -->
+    <div id="root"></div>
+  </body>
+  <script type="text/babel">
+    // aku ingin kalian untuk membuat sebuah component card dari design week 2
+    // menggunakan functional component untuk membuat card tersebut
+    // terdapat 3 component, yaitu Card, CardBody, dan CardActions
+    // masing masing component harus dapat menerima props.
+    // Card akan menerima props berupa berupa children
+    // CardBody akan menerima props berupa image, title, harga.
+    // CardActions akan menerima props berupa children
+    // didalam CardActions terdapat button yang akan menerima props berupa text dan onClick
+
+    // jawab dibawah ini:
+    function Card(props) {
+      return <div className="product">{props.children}</div>;
+    }
+
+    function CardBody(props) {
+      return (
+        <div className="content-wrap">
+          <div className="frame-img">
+            <img src={props.image} alt="" />
+          </div>
+          <div className="label-wrap">
+            <div className="tag-rating">
+              <p className="tag">{props.category}</p>
+              <div className="Rating">
+                <img src="image/Star.png" alt="" />
+                <img src="image/Star.png" alt="" />
+                <img src="image/Star.png" alt="" />
+                <img src="image/Star.png" alt="" />
+                <img src="image/Star.png" alt="" />
+              </div>
+            </div>
+            <div className="place">
+              <div className="nama-produk">{props.title}</div>
+              <div className="harga">{props.price}</div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    function CardAction(props) {
+      return <div className="button-wrap">{props.children}</div>;
+    }
+
+    class App extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {
+          products: [
+            {
+              id: 1,
+              title: "Obeng 2ml",
+              price: 100000,
+              image: "image/produk1.png",
+              rating: 4,
+              category: "Peralatan",
+            },
+            {
+              id: 2,
+              title: "Paracetamol",
+              price: 20000,
+              image: "image/produk2.png",
+              rating: 5,
+              category: "Obat - obatan",
+            },
+            {
+              id: 3,
+              title: "Skincare",
+              price: 200000,
+              rating: 2,
+              image: "image/produk3.png",
+              category: "Skincare",
+            },
+          ],
+        };
+      }
+      render() {
+        return (
+          <div>
+            <div className="tab-bar">
+              <nav className="nav-custom">
+                <div className="logo" style={{ fontSize: 24 }}>
+                  Tuku
+                </div>
+                <div className="nav-custom-link">
+                  <a href="#">Halaman Utama</a>
+                  <a href="#" style={{ color: "#3258e8" }}>
+                    Produk
+                  </a>
+                  <a href="#">Hubungi Kami</a>
+                </div>
+                <div className="nav-cta">
+                  <button className="cta-button">
+                    Keranjang
+                    <img src="image/keranjang.png" alt="Keranjang" />
+                  </button>
+                </div>
+              </nav>
+            </div>
+            <div className="content">
+              <div className="frame1">
+                <h2>Produk Kami</h2>
+                <h1>Temukan Produk Yang Cocok</h1>
+              </div>
+              <div className="frame2">
+                <button
+                  className="button1"
+                  style={{
+                    backgroundColor: "#ecf1fe",
+                    color: "#0d6efd",
+                    borderColor: "#0d6efd",
+                  }}
+                >
+                  Semua Produk
+                </button>
+                <button className="button2">Peralatan</button>
+                <button className="button3">Obat-obatan</button>
+                <button className="button4">Skincare</button>
+              </div>
+              <div className="frame3">
+                {this.state.products.map((product) => {
+                  return (
+                    <Card key={product.id}>
+                      <CardBody {...product} />
+                      <CardAction>
+                        <button className="primary-button">
+                          Beli Sekarang
+                        </button>
+                        <button className="sec-button">Lihat detail</button>
+                      </CardAction>
+                    </Card>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        );
+      }
+    }
+
+    // untuk apa kode dibawah?
+    // jawab : ...........
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<App />);
+  </script>
+</html>
