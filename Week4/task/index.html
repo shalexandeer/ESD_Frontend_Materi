@@ -1,18 +1,31 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Task</title>
-    <!-- taruh script react disini -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#466bf3",
+              shade: "#d3dbf7",
+            },
+          },
+        },
+      };
+    </script>
   </head>
   <body>
     <!-- render component disini -->
     <div id="root"></div>
   </body>
-  <script>
+  <script type="text/babel">
     // aku ingin kalian untuk membuat sebuah component card dari design week 2
     // menggunakan functional component untuk membuat card tersebut
     // terdapat 3 component, yaitu Card, CardBody, dan CardActions
@@ -22,14 +35,56 @@
     // CardActions akan menerima props berupa children
     // didalam CardActions terdapat button yang akan menerima props berupa text dan onClick
 
-    // jawab dibawah ini:
+    const Card = ({ children }) => {
+      return (
+        <>
+          <div className="w-96 h-[529px] bg-white rounded-xl p-6">{children}</div>
+        </>
+      );
+    };
+
+    const CardBody = ({ image, title, harga, category, rating }) => {
+      return (
+        <>
+          <div className="flex justify-center items-center border-2 rounded-md border-slate-100 h-[280px]">
+            <img src={image} alt={title} className=" object-cover" />
+          </div>
+          <div className="flex flex-row space-x-1 mt-4">
+            <div className="rounded-full text-sm font-medium bg-[#EBEEFD] px-5 py-1 text-[#3258E8]">
+              {category}
+            </div>
+            <div className="flex items-center space-x-1">
+              {Array.from({ length: rating }).map((_, index) => (
+                <svg
+                  key={index}
+                  class="w-4 h-4 text-yellow-300 ms-1"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 22 20"
+                >
+                  <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                </svg>
+              ))}
+            </div>
+          </div>
+          <div className="mt-3 space-x-1">
+            <h4 className="font-semibold text-2xl">{title}</h4>
+          </div>
+        </>
+      );
+    };
 
     class App extends React.Component {
       render() {
         return (
-          <div>
-            <App />
-          </div>
+          <>
+            <div className="bg-slate-100 h-screen p-5">
+              <Card>
+                <CardBody category="Obat-obatan" rating={2} title="Miow" />
+              </Card>
+            </div>
+          </>
         );
       }
     }
