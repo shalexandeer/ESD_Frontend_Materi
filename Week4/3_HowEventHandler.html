@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello</title>
+    <!-- CDN or content delivery network -->
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin></script>
+
+    <!-- create virtual DOM -->
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin></script>
+
+    <!-- enabling us to write javascript inside the HTML tag -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script type="text/babel">
+    // class component
+    class Hello extends React.Component {
+      handleClick = () => {
+        alert("Hello World!" + this.props.name);
+      };
+      render() {
+        return (
+          <div>
+            <h1>Hello World!</h1>
+            <button onClick={this.handleClick}>Click Here</button>
+          </div>
+        );
+      }
+    }
+
+    // functional component
+    function HelloFunctional() {
+      const handleClick = () => {
+        alert("Hello World!");
+      };
+
+      return (
+        <div>
+          <h1>Hello World!</h1>
+          <button onClick={handleClick}>Click here </button>
+          <InputField />
+        </div>
+      );
+    }
+
+    function InputField() {
+      const [value, setValue] = React.useState("");
+
+      const handleChange = (e) => {
+        setValue(e.target.value);
+      };
+
+      return (
+        <div>
+          <label htmlFor='halo'>Halo</label>
+          <input
+            id='halo'
+            type='text'
+            value={value}
+            onChange={handleChange}
+          />
+          <p>{value}</p>
+        </div>
+      );
+    }
+
+    function Navigate() {
+      return (
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <a href='2_UnderstandingProps.html'>Back_Understanding Props</a>
+          <a href='4_ConditionalRendering.html'>Next_Conditional Rendering</a>
+        </div>
+      );
+    }
+
+    class App extends React.Component {
+      render() {
+        return (
+          <div>
+            <Hello name={"chakra"} />
+            <HelloFunctional />
+            <Navigate />
+          </div>
+        );
+      }
+    }
+
+    // render the component
+    // take 2 parameter, first is the component, second is the location where the component will be rendered
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<App />);
+  </script>
+</html>

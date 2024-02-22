@@ -1,5 +1,5 @@
 body{
-    background-color: #bababa;
+    background-color: #F4F4F4;
     font-family: 'Poppins', sans-serif;
     margin: auto auto;
 }
@@ -53,20 +53,21 @@ body{
 
 .halaman:hover{
     color: #0066ff;
-        font-weight: 700; 
+    font-weight: 700; 
 }
 
 .nav .produk{
     width: 55px;
     height: 24px;
     color: #3258E8;
+    opacity: 1;
     font-weight: 400;
     text-decoration: none;
 }
 
 .produk:hover{
     color: #0066ff;
-    font-weight: 700;
+    font-weight: 700; 
 }
 
 
@@ -82,8 +83,9 @@ body{
 .contact-us:hover{
     color: #0066ff;
     font-weight: 700;
-    text-wrap: nowrap;
+    text-wrap: nowrap; 
 }
+
 
 .button .checkout{
     width: 166px;
@@ -121,7 +123,6 @@ body{
     align-items: center;
     justify-content: center;
 }
-
 .produk-kami .produk-kami-biru{
     text-align: left;
     margin: auto auto;
@@ -144,8 +145,8 @@ body{
 }
 
 .button-catalog .catalog-all{
-    background-color: #ECF1FE;
-    border-color: #0066ff;
+    background-color: #F4F4F4;
+    border-color: #E9ECEF;
     border-style: solid;
     border-radius: 8px;
     width: 128px;
@@ -158,10 +159,14 @@ body{
 
 .catalog-all .all{
     font-family: 'Poppins', sans-serif;
-    color: #0D6EFD;
+    color: #3E5569;
     text-decoration: none;
     font-size: 14px;
     font-weight: 600;
+}
+
+.button-catalog .catalog-all:hover{
+    background-color: #bacbf6 ;
 }
 
 .button-catalog .catalog-peralatan{
@@ -189,8 +194,8 @@ body{
 }
 
 .button-catalog .catalog-obat{
-    background-color: #F4F4F4;
-    border-color: #E9ECEF;
+    background-color: #ECF1FE;
+    border-color: #0066ff;
     border-style: solid;
     border-radius: 8px;
     width: 120px;
@@ -200,13 +205,9 @@ body{
     cursor: pointer;
 }
 
-.button-catalog .catalog-obat:hover{
-    background-color: #bacbf6 ;
-}
-
 .catalog-obat .obat{
     font-family: 'Poppins', sans-serif;
-    color: #3E5569;
+    color: #0D6EFD;
     text-decoration: none;
     font-size: 14px;
     font-weight: 600;
@@ -305,76 +306,14 @@ body{
 }
 
 .content{
-    width: auto; height: 529px;
+    width: 384px; height: 529px;
     margin-left:  100px;
     margin-right: 100px;
     display: grid;
     padding-top: 24px;
     padding-bottom:48px ;
-    grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 70px;
 }
 
-
-.barang-1{
-    background-color: white;
-    width: 384px;
-    height: 529px;
-    border-radius: 24px;
-}
-
-.gambar-obeng{
-    margin: 24px 24px 16px 24px;
-}
-
-.barang-1 .tag-rating{
-    display: flex;
-    background-color: #466bf32c;
-    width: 102px;
-    height: 31px;
-    border-radius: 12px;
-    margin: 0px 0px 12px 24px;
-}
-
-
-.produk-peralatan{
-    color: #3258E8;
-    font-size: 14px;
-    font-weight: 600;
-    padding: 5px 16px;
-    text-align: center;
-    justify-content: center;
-}
-
-.barang-1 .rating{
-    margin: 3.5px 108px 3.5px 6px;
-}
-
-.barang-1 .nama-barang{
-    height: 70px;
-    flex-direction: column;
-    justify-content: flex-end;
-    margin-right: 24px;
-    margin-bottom: 24px;
-}
-
-.barang-1 .nama-barang .obeng{
-    font-size: 24px;
-    font-weight: 600;
-    margin-left: 24px;
-    margin-right: 24px;
-    margin-bottom: 4px;
-}
-
-.barang-1 .nama-barang .harga{
-    color: #FF4E4E;
-    font-size: 20px;
-    font-weight: 600;
-    margin-left: 24px;
-    margin-right: 24px;
-    margin-bottom: 24px;
-}
-        
 .barang-2{
     background-color: white;
     width: 384px;
@@ -435,63 +374,5 @@ body{
     font-weight: 600;
     margin-left: 24px;
     margin-right: 24px;
-    margin-bottom: 24px;
-}
-
-.barang-3{
-    background-color: white;
-    width: 384px;
-    height: 529px;
-    border-radius: 24px;
-}
-
-.gambar-skincare{
-    margin: 24px 24px 16px 24px
-}
-
-.barang-3 .tag-rating{
-    display: flex;
-    background-color: #466bf32c;
-    width: 91px;
-    height: 31px;
-    border-radius: 12px;
-    margin: 0px 0px 12px 24px;
-}
-
-.produk-skincare{
-    color: #3258E8;
-    font-size: 14px;
-    font-weight: 600;
-    padding: 5px 16px;
-    text-align: center;
-    justify-content: center;
-}
-
-.barang-3 .rating{
-    margin: 3.5px 116px 3.5px 6px;
-}
-
-.barang-3 .nama-barang{
-    height: 70px;
-    flex-direction: column;
-    justify-content: flex-end;
-    margin-right: 24px;
-    margin-bottom: 24px;
-}
-
-.barang-3 .nama-barang .skincare{
-    font-size: 24px;
-    font-weight: 600;
-    margin-left: 24px;
-    margin-right: 24px;
-    margin-bottom: 4px;
-}
-
-.barang-3 .nama-barang .harga{
-    color: #FF4E4E;
-    font-size: 20px;
-    font-weight: 600;
-    margin-left: 24px;
-    margin-right: 126px;
     margin-bottom: 24px;
 }

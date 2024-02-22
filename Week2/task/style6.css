@@ -1,0 +1,253 @@
+body{
+    background-color: #F4F4F4;
+    font-family: 'Poppins', sans-serif;
+    margin: auto auto;
+}
+
+.nav {
+    background-color: white;
+}
+
+.nav .container{
+    width: auto;
+    height: auto;
+    display: flex;
+    margin-left: 100px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.nav .brand{
+    font-size: 24px;
+    font-weight: 600;
+    color: #466BF3;
+}
+
+
+.nav .menu{
+    width: auto ;
+    height: auto;
+    display: flex;
+    margin-left: auto;
+    margin-right: 181.2px;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav .halaman{
+    text-wrap: nowrap;
+    width: 135px;
+    height: 24px;
+    padding-right: 30;
+    font-size: 16px;
+    color: #9C9C9C;
+    opacity: 1;
+    text-decoration: none;
+}
+
+.halaman:hover{
+    color: #0066ff;
+    font-weight: 700; 
+}
+
+.nav .produk{
+    width: 55px;
+    height: 24px;
+    color: #9C9C9C;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.produk:hover{
+    color: #0066ff;
+    font-weight: 700;
+}
+
+
+.nav .contact-us{
+    width: 113px;
+    height: 24px;
+    font-size: 16px;
+    color: #3258E8;
+    opacity: 1;
+    text-decoration: none;
+}
+
+.contact-us:hover{
+    color: #0066ff;
+    font-weight: 700;
+    text-wrap: nowrap;
+}
+
+.content{
+    background-color: #3258E8;
+    width: 1530px;
+    height: 380px;
+    margin: auto auto;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+.kontak-kami{
+    width: auto;
+    height: 76px;
+    text-align: left;
+    font-size: 70px;
+    font-weight: 600;
+    color: #F4F4F4;
+    margin-top: 155px;
+    padding-left: 100px;
+}
+
+.sub{
+    width: auto;
+    height: 76px;
+    padding-left: 100px;
+    padding-top: 10px;
+    font-size: 28px;
+    font-weight: 300;
+    color: #F4F4F4;
+}
+
+.content-2{
+    height: 270px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap:2px
+}
+.likdin{
+    width: 200px;
+    height: 200px;
+    margin: auto auto;
+}
+.linkdin-button{
+    background-color: #F4F4F4;
+    border-style: none;
+    width: 200px;
+    height: 200px;
+    border-radius: 12px;
+    padding: 12px;
+    cursor: pointer;
+}
+
+.linkdin-button:hover{
+    border-color: #3258E8;
+    border-style: solid;
+}
+.linkedin{
+    width: 150px;
+    height: 150px;
+    margin: auto auto;
+}
+
+.tuku{
+    font-family: 'Poppins', 'sans-serif';
+    font-size: 20px;
+    font-weight: 600;
+    margin: auto auto;
+    padding-bottom: 10px; 
+    padding-right: 5px;
+}
+.insta{
+    width: 200px;
+    height: 200px;
+    margin: auto auto;
+}
+.insta-button{
+    background-color: #F4F4F4;
+    border-style: none;
+    width: 200px;
+    height: 200px;
+    border-radius: 12px;
+    padding: 12px;
+    cursor: pointer;
+}
+
+.insta-button:hover{
+    border-color: #3258E8;
+    border-style: solid;
+}
+
+.insta-logo{
+    width: auto;
+    width: 140px;
+    margin-bottom: 10px;
+}
+
+.tuku-insta{
+    font-family: 'Poppins', 'sans-serif';
+    font-size: 20px;
+    font-weight: 600;
+    margin: auto auto;
+}
+
+.facebook{
+    width: 200px;
+    height: 200px;
+    margin: auto auto;
+}
+
+.fb-button{
+    background-color: #F4F4F4;
+    border-style: none;
+    width: 200px;
+    height: 200px;
+    border-radius: 12px;
+    padding: 12px;
+}
+
+.fb-button:hover{
+    border-color: #3258E8;
+    border-style: solid;
+}
+
+.fb{
+    width: 155px;
+    height: 155px;
+    margin: auto auto;
+}
+
+.tuku-fb{
+    font-family: 'Poppins', 'sans-serif';
+    font-size: 20px;
+    font-weight: 600;
+    margin: auto auto;
+}
+
+.yutub{
+    width: 200px;
+    height: 200px;
+    margin: auto auto;
+}
+
+.yt-button{
+    background-color: #F4F4F4;
+    border-style: none;
+    margin: auto auto;
+    width: auto;
+    height: 200px;
+    border-radius: 12px;
+    padding: 12px;
+}
+
+.yt-button:hover{
+    border-color: #3258E8;
+    border-style: solid;
+}
+
+.yt{
+    width: 150px;
+    height: auto;
+}
+
+.yt-tuku{
+    font-family: 'Poppins', 'sans-serif';
+    font-size: 20px;
+    font-weight: 600;
+    text-wrap: nowrap;
+    margin: auto auto;
+}

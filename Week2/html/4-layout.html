@@ -8,9 +8,9 @@
     <title>Layout</title>
     <style>
       /* for flex */
-      .flex-container {
+      /* .flex-container {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
       }
 
       .content-wrapper {
@@ -18,13 +18,15 @@
         flex-direction: row;
         align-items: center;
         justify-content: center;
-      }
+      } */
 
       /* for grid */
       .grid-container {
+        width: 1240px; height: 529px;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        column-gap: 20px;
+        column-gap: 43px;
+      
       }
 
       @media screen and (max-width: 768px) {
@@ -32,43 +34,37 @@
           display: grid;
           column-gap: 20px;
           grid-template-columns: 1fr 1fr;
+          justify-content: center;
         }
       }
     </style>
   </head>
   <body>
     <div style="display: flex; flex-direction: column; gap: 64px">
-      <!-- CSS Flexbox -->
-      <div class="flex-container">
-        <div
-          class="content-wrapper"
-          style="background-color: brown; padding: 20px">
-          <h1>box</h1>
-          <p>oke</p>
-        </div>
-        <div style="background-color: green; padding: 20px">
-          <h1>box</h1>
-        </div>
-        <div style="background-color: blue; padding: 20px">
-          <h1>box</h1>
-        </div>
-      </div>
+        <!-- CSS Flexbox -->
+        <!-- <div class="flex-container">
+          <div
+            class="content-wrapper"
+            style="background-color: brown; padding: 10px">
+            <h1>box</h1>
+          </div>
+          <div style="background-color: green; padding: 20px">
+            <h1>box</h1>
+          </div>
+          <div style="background-color: blue; padding: 20px">
+            <h1>box</h1>
+          </div>
+        </div> -->
 
-      <!-- Grid -->
+        <Grid>
       <div class="grid-container">
-        <div style="background-color: brown; padding: 20px">
+        <div style="background-color: brown;" >
           <h1>box</h1>
         </div>
-        <div style="background-color: green; padding: 20px">
+        <div style="background-color: green;" >
           <h1>box</h1>
         </div>
-        <div style="background-color: blue; padding: 20px">
-          <h1>box</h1>
-        </div>
-        <div style="background-color: blue; padding: 20px">
-          <h1>box</h1>
-        </div>
-        <div style="background-color: blue; padding: 20px">
+        <div style="background-color: blue;">
           <h1>box</h1>
         </div>
       </div>

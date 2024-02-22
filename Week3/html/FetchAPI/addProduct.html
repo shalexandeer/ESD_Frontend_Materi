@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Add Products</title>
+  </head>
+  <body>
+    <h1>Add Products</h1>
+    <form>
+      <div style="display: flex; flex-direction: column">
+        <label for="title">Title</label>
+        <input
+          autofocus
+          id="title"
+          placeholder="title"
+          type="text" />
+      </div>
+      <div style="display: flex; flex-direction: column">
+        <label for="price">price</label>
+        <input
+          autofocus
+          id="price"
+          placeholder="price"
+          type="text" />
+      </div>
+      <div style="display: flex; flex-direction: column">
+        <label for="description">description</label>
+        <input
+          autofocus
+          id="description"
+          placeholder="description"
+          type="text" />
+      </div>
+      <div style="display: flex; flex-direction: column">
+        <label for="image">image</label>
+        <input
+          autofocus
+          id="image"
+          placeholder="image"
+          type="file" />
+      </div>
+      <div style="display: flex; flex-direction: column">
+        <label for="category">category</label>
+        <select
+          name=""
+          id="category"></select>
+      </div>
+      <input type="submit" />
+    </form>
+  </body>
+  <script>
+    // ketika semua element di load, maka jalankan function
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("https://fakestoreapi.com/products/categories")
+        // fetch data dari url kemudian tangkap response
+        .then((res) => res.json())
+        // ekstrak data dari response
+        .then((data) => {
+          // ekstrak element select dengan id category
+          const select = document.querySelector("#category");
+          // loop data kemudian tambahkan tiap html yang di loop ke dalam select
+          data.forEach((category) => {
+            const option = document.createElement("option");
+            option.value = category;
+            option.textContent = category;
+            select.appendChild(option);
+          });
+        });
+    });
+    // ekstrak form yang ada di dalam page
+    const form = document.querySelector("form");
+
+    // ketika form di submit, maka jalankan function
+    form.onsubmit = function () {
+      // ekstrak value dari input kemudian ambil nilai dari attribute value
+      const title = document.querySelector("#title").value;
+      const price = document.querySelector("#price").value;
+      const description = document.querySelector("#description").value;
+      const image = document.querySelector("#image").value;
+      const category = document.querySelector("#category").value;
+
+      //  buat object product sebagai body yang akan dikirimkan ke database, optional!
+      const product = {
+        title,
+        price,
+        description,
+        image,
+        category,
+      };
+      // fetch data dari url
+      fetch("https://fakestoreapi.com/products", {
+        // menggunakan method post untuk add data
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        // ubah object product menjadi json
+        body: JSON.stringify(product),
+      })
+        // fetch data dari url kemudian tangkap response
+        .then((res) => res.json())
+        // ekstrak data dari response
+        .then((data) => {
+          console.log(data);
+        });
+
+      return false;
+    };
+  </script>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+  </head>
+  <body>
+    <h1>Form</h1>
+    <form>
+      <input
+        autofocus
+        id="name"
+        placeholder="name"
+        type="text" />
+      <input type="submit" />
+    </form>
+    <div
+      style="position: absolute; bottom:0; flex; width: 100%; justify-content: space-between">
+      <a href="4_Colors.html">Previous - colors </a>
+      <a href="6_select.html">NEXT - select html</a>
+    </div>
+  </body>
+  <script>
+    // ketika semua element di load, maka jalankan function
+    document.addEventListener("DOMContentLoaded", function () {
+      // ekstrak element form
+      // ketika form di submit, maka jalankan function
+      document.querySelector("form").onsubmit = function () {
+        // ekstrak value dari input dengan id name kemudian ambil nilai dari attribute value
+        const name = document.querySelector("#name").value;
+        // tampilkan alert dengan nama yang di input
+        alert(`Hello ${name}`);
+      };
+    });
+  </script>
+</html>

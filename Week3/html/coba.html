@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book App</title>
+<link href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/+esm" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="header">
+  <a class="brand">Si Buku</a>
+</div>
+<div class="container">
+  <a class="headline">Semua Buku</a>
+</div>
+<div class="content">
+  <div class="buku1">
+    <img class="img-buku1" src="../asset/kosmos.jpg">
+    <h2 class="title-1">Bumi Manusia</h2>
+    <p class="author-1">Pramoedya Ananta Toer</p>
+    <p class="desc-1">Roman Tetralogi Buru mengambil latar belakang dan cikal bakal nation Indonesia di awal abad ke-20. Dengan membacanya waktu kita dibalikkan sedemikian rupa dan hidup di era membibitnya pergerakan nasional mula-mula, juga pertautan rasa, kegamangan jiwa, percintaan, dan pertarungan kekuatan anonim para srikandi yang mengawal penyemaian bangunan nasional yang kemudian kelak melahirkan Indonesia modern.</p>
+    <button class="review-btn" onclick="toggleOverlay('overlay-1')">Review</button>
+    <div id="overlay-1" class="overlay">
+      <div class="overlay-content">
+        <form id="reviewForm-1" class="review-form">
+          <input type="hidden" name="bookId" value="">
+          <label for="reviewer-1">Your Name:</label><br>
+          <input type="text" id="reviewer1" name="reviewer" required><br>
+          <label for="rating-2">Rating (1-5):</label><br>
+          <input type="number" id="rating-1" name="rating" min="1" max="5" required><br>
+          <label for="reviewText-1">Your Review:</label><br>
+          <textarea id="reviewText-1" name="review" required></textarea><br>
+          <button type="submit">Submit Review</button>
+        </form>
+        <button onclick="toggleOverlay('overlay-1')">Close</button>
+      </div>
+    </div>
+  </div>
+  <div class="buku2">
+    <img class="img-buku2" src="../asset/pulang.jpg">
+    <h2 class="title-2">Pulang</h2>
+    <p class="author-2">Tere Liye</p>
+    <p class="desc-2">Aku tahu sekarang, lebih banyak luka di hati bapakku dibanding di tubuhnya. Juga mamakku, lebih banyak tangis di hati Mamak dibanding di matanya." Sebuah kisah tentang perjalanan pulang, melalui pertarungan demi pertarungan, untuk memeluk erat semua kebencian dan rasa sakit.</p>
+    <button class="review-btn" onclick="toggleOverlay('overlay-1')">Review</button>
+    <div id="overlay-1" class="overlay">
+      <div class="overlay-content">
+        <form id="reviewForm-1" class="review-form">
+          <input type="hidden" name="bookId" value="">
+          <label for="reviewer-1">Your Name:</label><br>
+          <input type="text" id="reviewer1" name="reviewer" required><br>
+          <label for="rating-2">Rating (1-5):</label><br>
+          <input type="number" id="rating-1" name="rating" min="1" max="5" required><br>
+          <label for="reviewText-1">Your Review:</label><br>
+          <textarea id="reviewText-1" name="review" required></textarea><br>
+          <button type="submit">Submit Review</button>
+        </form>
+        <button onclick="toggleOverlay('overlay-1')">Close</button>
+      </div>
+    </div>
+  </div>
+  <div class="buku3">
+    <img class="img-buku3" src="../asset/bumi-manusia.jpg">
+    <h2 class="title-3">Pulang</h2>
+    <p class="author-3">Carl Sagan</p>
+    <p class="desc-3">Buku Kosmos pada dasarnya merupakan buku ilmu pengetahuan, tetapi dengan gaya yang khas, kita dapat melihat bahwa ilmu pengetahuan dapat menjadi santapan masyarakat luas. Buku ini tidak hanya berguna untuk memperluas cakrawala kita, tetapi juga mengajak kita untuk menghayati dan mencintai penemuan ilmiah</p>
+    <button class="review-btn" onclick="toggleOverlay('overlay-1')">Review</button>
+    <div id="overlay-1" class="overlay">
+      <div class="overlay-content">
+        <form id="reviewForm-1" class="review-form">
+          <input type="hidden" name="bookId" value="">
+          <label for="reviewer-1">Your Name:</label><br>
+          <input type="text" id="reviewer1" name="reviewer" required><br>
+          <label for="rating-2">Rating (1-5):</label><br>
+          <input type="number" id="rating-1" name="rating" min="1" max="5" required><br>
+          <label for="reviewText-1">Your Review:</label><br>
+          <textarea id="reviewText-1" name="review" required></textarea><br>
+          <button type="submit">Submit Review</button>
+        </form>
+        <button onclick="toggleOverlay('overlay-1')">Close</button>
+      </div>
+    </div>
+
+
+
+        <script src="../js/script.js"></script>
+        <script>
+        // Fungsi untuk menampilkan atau menyembunyikan overlay
+        function toggleOverlay(overlayId) {
+        const overlay = document.getElementById(overlayId);
+        if (overlay.style.display === 'block') {
+        overlay.style.display = 'none';
+        } else {
+        overlay.style.display = 'block';
+        }
+        }
+
+        // Fungsi untuk mengirim review
+        async function submitReview(formId) {
+          const form = document.getElementById(formId);
+          const formData = new FormData(form);
+          const bookId = formData.get('bookId'); 
+          const url = `/books/${bookId}/reviews`; 
+
+          try {
+            const response = await fetch(url, {
+              method: 'POST',
+              body: formData
+            });
+
+            if (response.ok) {
+              // Clear form and close overlay if review is submitted successfully
+              alert('Review submitted successfully!');
+              toggleOverlay(formId.replace('reviewForm', 'overlay'));
+              form.reset();
+            } else {
+              // Display error message if submission fails
+              const data = await response.json();
+              alert(data.message || 'Failed to submit review');
+            }
+          } catch (error) {
+            // Handle any unexpected errors
+            console.error('Error submitting review:', error);
+            alert('An error occurred while submitting the review');
+          }
+        }
+
+        // Tambahkan event listener pada setiap formulir review
+        document.getElementById('reviewForm-1').addEventListener('submit', function(event) {
+          event.preventDefault(); 
+          submitReview('reviewForm-1'); 
+        });
+
+        // Tambahkan event listener untuk setiap tombol "Close" pada overlay
+        document.getElementById('overlay-1').addEventListener('click', function(event) {
+          if (event.target.tagName === 'DIV') {
+            toggleOverlay('overlay-1'); 
+          }
+        });
+        </script>
+</body>
+</html>

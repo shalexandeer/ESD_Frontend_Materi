@@ -5,33 +5,109 @@
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Tuku | Semua Produk</title>
+    <link href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/+esm" rel="stylesheet"/>
+    <link href="style.css" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
       :root {
         --primary-color: #466bf3;
         --shade-blue-color: #d3dbf7;
-        /* semua warna yang dibutuhin dibikin variable disini biar enak make nya lagi */
-        /* agar variable warna ini bisa dipake, kita pindah semua variable ke external css aja */
+        
       }
     </style>
   </head>
   <body>
-    <h1>Task nya suruh slicing ya ges</h1>
-    <h1>link figma</h1>
-    <p>
-      https://www.figma.com/file/4efNS3RXUHhVdsh26wi5Ik/Frontend-Design-Task?type=design&node-id=0%3A1&mode=design&t=REPnpMrbAzJZSXyU-1
-    </p>
-
-    <!-- 
-        guidelines:
-        pastikan kalian menggunakan flexbox dan grid untuk layout karena kemarin udah belajar latihan kan.
-
-        - use flexbox untuk navbar section
-        - use grid untuk daftar produk
-        selain itu kalian bebas mau pake flexbox atau grid untuk section yang lain. berkreasilah sesuai kemampuan kalian.
-        
-        untuk pengumpulan, kalian bikin branch baru dengan nama FE/nama kalian, lalu push ke branch kalian
-        nanti bakal kucek di branch kalian.
-    -->
+    <nav class="nav">
+      <div class="container">
+        <div class="brand">Tuku</div>
+        <div class="menu">
+          <a class="halaman" href="halamanutama.html">Halaman Utama</a>
+          <a class="produk" href="task1.html">Produk</a>
+          <a class="contact-us" href="hubungikami.html">Hubungi Kami</a>
+        </div>
+          <div class="button">
+            <button class="checkout">
+              <a class="keranjang" href="">Keranjang</a>
+                <img class="logo" src="/Week2/assets/keranjang.png" alt="logo-keranjang">
+          </button>
+          </div>
+      </div>
+    </nav>
+    <div class="container2">
+      <div class="produk-kami">
+        <h1 class="produk-kami-biru">Produk Kami</h1>
+        <h3 class="produk-kami-besar">Temukan Produk yang cocok</h3>
+        <div class="button-catalog" >
+          <button class="catalog-all" >
+            <a class="all" href="task1.html" >Semua Produk</a>
+          </button>
+          <button class="catalog-peralatan">
+            <a class="peralatan" href="peralatan.html">Peralatan</a>
+          </button>
+          <button class="catalog-obat" href="obat.html">
+            <a class="obat" href="obat.html">Obat-obatan</a>
+          </button>
+          <button class="catalog-skincare">
+            <a class="skincare" href="skincare.html">Skincare</a>
+          </button>
+        </div>
+      </div>
+    </div>
+      <div class="content">
+        <div class="barang-1">
+            <img class="gambar-obeng" src="../assets/obeng.png" alt="gambar-obeng">
+            <div class="tag-rating">
+              <a class="produk-peralatan">Peralatan</a>
+              <img class="rating" src="../assets/Ratings.png" alt="gambar-bintang">
+            </div> 
+            <div class="nama-barang">
+              <a class="obeng">Obeng 2ml</a>
+              <a class="harga">Rp.100.000,00</a>
+            </div>
+            <button class="primary">
+              <a class="beli-sekarang"  href="">Beli Sekarang</a>
+            </button>
+            <button class="secondary">
+              <a class="lihat-detail" href="">Lihat Detail</a>
+            </button>
+        </div>
+        <div class="barang-2">
+            <img class="gambar-obat" src="../assets/obat.png" alt="gambar-obat">
+            <div class="tag-rating">
+              <a class="produk-obat">Obat-obatan</a>
+              <img class="rating" src="../assets/Ratings.png" alt="gambar-bintang">
+          </div>
+          <div class="nama-barang">
+            <a class="obat">Paracetamol</a>
+            <a class="harga">Rp.20.000,00</a>
+          </div>
+          <button class="primary">
+            <a class="beli-sekarang" href="">Beli Sekarang</a>
+          </button>
+          <button class="secondary">
+            <a class="lihat-detail" href="">Lihat Detail</a>
+      </div>
+      <div class="barang-3">
+        <img class="gambar-skincare" src="../assets/skincare.png" alt="gambar-skincare">
+        <div class="tag-rating">
+          <a class="produk-skincare">Skincare</a>
+          <img class="rating" src="../assets/Ratings.png" alt="gambar-bintang">
+        </div>
+        <div class="nama-barang">
+          <a class="skincare">Skincare</a>
+          <a class="harga">Rp.200.000,00</a>
+        </div>
+        <button class="primary">
+          <a class="beli-sekarang" href="">Beli Sekarang</a>
+        </button>
+        <button class="secondary">
+          <a class="lihat-detail" href="">Lihat Detail</a>
+        </button>
+      </div>
+    </div>
   </body>
 </html>

@@ -1,0 +1,120 @@
+body{
+    background-color: #F4F4F4;
+    font-family: 'Poppins', sans-serif;
+    margin: auto auto;
+}
+
+.nav {
+    background-color: white;
+}
+
+.nav .container{
+    width: auto;
+    height: auto;
+    display: flex;
+    margin-left: 100px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.nav .brand{
+    font-size: 24px;
+    font-weight: 600;
+    color: #466BF3;
+}
+
+
+.nav .menu{
+    width: auto ;
+    height: auto;
+    display: flex;
+    margin-left: auto;
+    margin-right: 181.2px;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav .halaman{
+    text-wrap: nowrap;
+    width: 135px;
+    height: 24px;
+    padding-right: 30;
+    font-size: 16px;
+    color: #3258E8;
+    opacity: 1;
+    text-decoration: none;
+}
+
+.halaman:hover{
+    color: #0066ff;
+    font-weight: 700; 
+}
+
+.nav .produk{
+    width: 55px;
+    height: 24px;
+    color: #9C9C9C;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.produk:hover{
+    color: #0066ff;
+    font-weight: 700;
+}
+
+
+.nav .contact-us{
+    width: 113px;
+    height: 24px;
+    font-size: 16px;
+    color: #9C9C9C;
+    opacity: 1;
+    text-decoration: none;
+}
+
+.contact-us:hover{
+    color: #0066ff;
+    font-weight: 700;
+    text-wrap: nowrap;
+}
+
+.about-us{
+    width: 1238px;
+    height: 529px;
+    margin-left: 100px;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.logo{
+    width: 350px;
+    height: auto;
+    margin: auto;
+}
+
+.text{
+    margin: auto auto;
+}
+
+
+.headline{
+    font-size: 100px;
+    color: #3258E8;
+    font-weight: 600;
+    
+}
+.paragraph{
+    font-size: 24px;
+    font-weight: 400;
+    display: flex;
+    text-align: justify;
+    
+}
