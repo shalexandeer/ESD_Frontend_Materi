@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEEK4</title>
+    <link rel="stylesheet" href="style.css"/>
+    <!-- taruh script react disini -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+     <!-- render component disini -->
+    <div id="root"></div>
+</body>
+<script type="text/babel">
+    // aku ingin kalian untuk membuat sebuah component card dari design week 2
+    // menggunakan functional component untuk membuat card tersebut
+    // terdapat 3 component, yaitu Card, CardBody, dan CardActions
+    // masing masing component harus dapat menerima props.
+    // Card akan menerima props berupa berupa children
+    // CardBody akan menerima props berupa image, title, harga.
+    // CardActions akan menerima props berupa children
+    // didalam CardActions terdapat button yang akan menerima props berupa text dan onClick
+
+    // jawab dibawah ini:
+    function Card(props) {
+        return (
+            <div className="card">
+                {props.children}
+            </div>
+        );
+    }
+
+    function CardBody(props) {
+        return (
+            <div className="card-body">
+                <img src={props.image} alt={props.title} />
+                <h2>{props.title}</h2>
+                <p>{props.harga}</p>
+            </div>
+        );
+    }
+
+    function CardActions(props) {
+        return (
+            <div className="card-actions">
+                {props.children}
+            </div>
+        );
+    }
+
+    function Button(props) {
+        return (
+            <button onClick={props.onClick}>{props.text}</button>
+        );
+    }
+
+    const handleButtonClick = (productId) => {
+        console.log("Button clicked for product id:", productId);
+    };
+
+    const products = [
+        { id: 1, image: "asset/obeng.svg", title: "obeng", harga: "Rp.100.000,00" },
+        { id: 2, image: "asset/paracetamol.svg", title: "Paracetamol", harga: "Rp. 20.000,00" },
+        { id: 3, image: "asset/soap.svg", title: "Skincare", harga: "Rp. 200.000,00" }
+    ];
+
+    class App extends React.Component {
+        render() {
+            return (
+                <div className="content">
+                    {products.map(product => (
+                        <Card key={product.id}>
+                            <CardBody
+                                image ={product.image}
+                                title={product.title}
+                                harga={product.harga}
+                            />
+                            <CardActions>
+                                <Button id="button1" onClick={() => handleButtonClick(product.id)} text="Beli Sekarang" />
+                                <Button id="button2" onClick={() => handleButtonClick(product.id)} text="Lihat Detail" />
+                            </CardActions>
+                        </Card>
+                    ))}
+                </div>
+            );
+        }
+    }
+    // untuk apa kode dibawah?
+    // jawab : ReactDOM.createRoot(element) digunakan untuk membuat sebuah root React dan
+    // document.getElementById("root") digunakan untuk mencari elemen  yang memiliki id "root"
+    // root.render(<App />) digunakan untuk merender komponen App ke dalam root yang telah diambil sebelumnya.
+
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<App />);
+</script>
+
+</html>
