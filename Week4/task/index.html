@@ -5,14 +5,23 @@
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0" />
+
+
     <title>Task</title>
-    <!-- taruh script react disini -->
+    <script 
+    src="https://unpkg.com/react@18/umd/react.development.js"
+    crossorigin></script>
+    <script 
+    src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    crossorigin>
+    </script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> 
   </head>
   <body>
     <!-- render component disini -->
     <div id="root"></div>
   </body>
-  <script>
+  <script type="text/babel">
     // aku ingin kalian untuk membuat sebuah component card dari design week 2
     // menggunakan functional component untuk membuat card tersebut
     // terdapat 3 component, yaitu Card, CardBody, dan CardActions
@@ -23,7 +32,7 @@
     // didalam CardActions terdapat button yang akan menerima props berupa text dan onClick
 
     // jawab dibawah ini:
-
+    
     class App extends React.Component {
       render() {
         return (

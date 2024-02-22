@@ -21,7 +21,7 @@
   <script type="text/babel">
     // if statement
     function IfStatement() {
-      const age = 18;
+      const age = 18.5;
       if (age >= 18) {
         return <h1>You are an adult</h1>;
       }
@@ -51,10 +51,13 @@
     }
 
     function Navigate() {
+      return(
+        <>
       <div style={{ display: "flex", flexDirection: "column" }}>
         <a href='3_HowEventHandler.html'>Back_ How EventHandler in React</a>
         <a href='.html'>Next_ </a>
-      </div>;
+      </div>
+      </>)
     }
 
     class App extends React.Component {
@@ -71,7 +74,7 @@
             <TernaryOperator />
             <hr />
             <h1>Practice 2</h1>
-            <LogIn />
+            <LogIn isLoggedIn = {false} />
             <hr />
             <Navigate />
           </div>

@@ -33,8 +33,8 @@
 
     // Practice 1
     // this is for practicing how to pass data / shared data from one component to another
-    function Car() {
-      return <h2>I am a {}!</h2>;
+    function Car(props) {
+      return <h2>I am a {props.name} my pronouns are {props.pron}!</h2>;
     }
 
     function Garage() {
@@ -42,7 +42,10 @@
       return (
         <div>
           <h1>Who lives in my garage?</h1>
-          <Car />
+          <Car 
+          name = {car}
+          pron = 'helikopter'
+          />
         </div>
       );
     }
