@@ -1,0 +1,142 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --primary-color: #466bf3;
+  --shade-blue-color: #ECF1FE;;
+  --paragraph-color: #9C9C9C;
+  --heading-color: #232631;
+  --button-background-color: #ECF1FE;
+  --stroke-color: #E9ECEF;
+  --danger-color: #FF4E4E;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+  background-color: #9C9C9C;
+}
+
+.card {
+  display: grid;
+  gap: 12px;
+  border-radius: 50px;
+  padding: 12px;
+  border: 12px solid #9C9C9C; 
+  background-color: #ffffff;
+  width: 336px;
+}
+
+@media screen and (min-width: 645px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 80%;
+    margin: 0 auto; 
+  }
+}
+
+.card-content{
+  display: grid;
+  justify-content: space-around;
+  gap: 16px;
+}
+
+.card-content img{
+  width: 100%;
+  border: 1px solid var(--stroke-color);
+  border-radius: 24px;
+  max-width: 336px;
+  height: 280px;
+}
+
+.card-info-wrapper{
+  display: grid;
+  justify-content: space-around;
+  gap: 12px;
+}
+
+.card-category{
+  display: flex;
+  justify-content: space-around;
+  gap: 6px;
+  align-items: center;
+}
+
+.card-category button{
+  padding: 5px 16px;
+  background: var(--button-background-color);
+  border: none;
+  border-radius: 12px;
+  color: var(--primary-color);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.card-info{
+  display: grid;
+  gap: 4px;
+}
+
+.card-info h1{
+  font-size: 24px;
+  color: var(--heading-color);
+  font-weight: 600;
+}
+
+.card-info p{
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--danger-color);
+}
+
+.card-footer{
+  display: grid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (width: 50%){
+  .card-footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.card-footer button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 15%;
+  padding: 14px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 12px;
+}
+
+.card-footer button:hover {
+  background-color: var(--primary-color); 
+  color: #ffffff; 
+}
+
+.card-footer button:nth-child(2):hover {
+  background-color: var(--shade-blue-color); 
+  color: var(--primary-color); 
+}
+
+.card-footer button:nth-child(1){
+  background-color: var(--primary-color);
+  border: none;
+  color: #ffffff;
+}
+.card-footer button:nth-child(2){
+  background: none;
+  border: none;
+  color: var(--primary-color);
+}
+
