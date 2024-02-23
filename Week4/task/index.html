@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Task</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- taruh script react disini -->
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin></script>
+
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin></script>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <!-- render component disini -->
+    <div id="root"></div>
+  </body>
+  <script>
+    // aku ingin kalian untuk membuat sebuah component card dari design week 2
+    // menggunakan functional component untuk membuat card tersebut
+    // terdapat 3 component, yaitu Card, CardBody, dan CardActions
+    // masing masing component harus dapat menerima props.
+    // Card akan menerima props berupa berupa children
+    // CardBody akan menerima props berupa image, title, harga.
+    // CardActions akan menerima props berupa children
+    // didalam CardActions terdapat button yang akan menerima props berupa text dan onClick
+
+    // jawab dibawah ini:
+    function CardBody(props){
+      const { image, title, harga } = props;
+       return (
+        <div class="content-wrapper">
+            <div class="product-image">
+              <div class="img">
+                <img src={image} alt={title} style="width: 252px; height: 237px;"/>
+              </div>
+            </div>
+                <div class="label-product">
+                  <ul class="type">
+                    <li class="type-product">{title}</li>
+                    <li class="rating-product"><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i></li>
+                  </ul>
+                </div>
+                <div class="info">
+                  <ul class="info-product">
+                    <li class="name-product">{title}</li>
+                    <li class="price-product">Rp. {harga}</li>
+                  </ul>
+              </div>
+          </div>
+       );
+    }
+
+    function CardActions(props){
+      const { btnPrimary, btnSec } = props;
+      return (
+        <div class="button-wrapper">
+            <div class="menu-primary"><a href="#" class="btn-primary onClick={btnPrimary}">Beli Sekarang</a></div>
+            <div class="menu-sec"><a href="#" class="btn-sec onClick={btnSec} ">Lihat Detail</a></div>
+          </div>
+      )
+    }
+
+    function Card(props){
+      const {children} = props;
+      return (
+        <div class="card">
+          {children}
+        </div>
+      )
+    }
+
+    const products = [
+        {
+          id: 1,
+          title: "Pakaian",
+          harga: "200000",
+          image: "img/pakaian.png"
+        },
+    ]
+
+    class App extends React.Component {
+      render() {
+        return (
+          <div class="item">
+            <div class="grid-item">
+              <div class="content-wrapper">
+                {products.map((product) =>(
+                  <Card key={product.id}>
+                    <CardBody
+                      image={product.image}
+                      title={product.title}
+                      harga={product.harga}
+                      />
+                    <CardActions />
+                  </Card>
+                ))}
+              </div>
+            </div>
+          </div>
+        );
+      }
+    }
+
+    // untuk apa kode dibawah?
+    // jawab : Digunakan untuk merender komponen <App /> ke dalam elemen DOM dengan id root, sehingga react dapat menampilkan outputnya di dalam HTML..
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<App />);
+  </script>
+</html>
