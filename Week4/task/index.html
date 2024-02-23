@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task</title>
+  <!-- taruh script react disini -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+
+  <!-- Package react-dom -->
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+  <!-- Package Babel -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+  <!-- render component disini -->
+  <div id="root"></div>
+  <script type="text/babel">
+    // aku ingin kalian untuk membuat sebuah component card dari design week 2
+    // menggunakan functional component untuk membuat card tersebut
+    // terdapat 3 component, yaitu Card, CardBody, dan CardActions
+    // masing masing component harus dapat menerima props.
+    // Card akan menerima props berupa berupa children
+    // CardBody akan menerima props berupa image, title, harga.
+    // CardActions akan menerima props berupa children
+    // didalam CardActions terdapat button yang akan menerima props berupa text dan onClick
+
+    // jawab dibawah ini:
+    function Card({ children }) {
+      return (
+        <div className="product" style={{ margin: '48px 24px 100px 100px', border: '2px solid lightgrey', borderRadius: '29px', width: '397px' }}>
+          <div className="card">
+            {children}
+          </div>
+        </div>
+      );
+    }
+
+    function CardBody({ image, title, harga }) {
+      return (
+        <div>
+          <img
+            style={{ border: '2px solid hsl(0, 0%, 83%, 30%)', borderRadius: '24px', width: '336px', height: '280px', marginTop: '24px', marginRight: '24px', marginLeft: '24px', padding: '5px' }}
+            src={image}
+            alt={title}
+          />
+          <div style={{ marginBottom: '24px', marginRight: '24px', marginLeft: '24px', padding: '5px 5px 0px 0px' }}>
+            <div style={{ display: 'flex' }}>
+              <p className="kategori" style={{ fontFamily: 'Poppins', fontSize: '14px', fontWeight: '600' }}>Peralatan</p>
+              <p>
+                <img src="./assets/star.png" alt="Rating" />
+                <img src="./assets/star.png" alt="Rating" />
+                <img src="./assets/star.png" alt="Rating" />
+                <img src="./assets/star.png" alt="Rating" />
+                <img src="./assets/star.png" alt="Rating" />
+              </p>
+            </div>
+            <h4 style={{ fontFamily: 'Poppins', fontSize: '24px', margin: '4px' }}>{title}</h4>
+            <h5 style={{ fontFamily: 'Poppins', fontSize: '20px', color: '#FF4E4E', marginBottom: '24px', marginTop: '4px' }}>{harga}</h5>
+          </div>
+        </div>
+      );
+    }
+
+    function CardActions({ children }) {
+      return (
+        <div>
+          {children}
+        </div>
+      );
+    }
+
+    const Button = ({ text, onClick }) => {
+      return (
+        <button style={{ backgroundColor: '#3258E8', color: 'white', fontWeight: '500', marginBottom: '24px' }} onClick={onClick}>{text}</button>
+      );
+    };
+
+    class App extends React.Component {
+      render() {
+        return (
+          <Card>
+            <CardBody image="./Assets/obeng.jpg" title="Obeng 2ml" harga="Rp.100.000,00" />
+            <CardActions>
+              <Button text="Add to Cart" style={{ backgroundColor: '#3258E8', color: 'white', fontWeight: '500', marginBottom: '24px' }} onClick={() => console.log('Added to cart')} />
+              <Button text="View Details" style={{ color: '#3258E8', fontWeight: '600', marginBottom: '24px' }} onClick={() => console.log('View details')} />
+            </CardActions>
+          </Card>
+        );
+      }
+    }
+
+
+    // untuk apa kode dibawah?
+    // jawab : Untuk membuat sebuah root di dalam DOM dengan menggunakan element dengan ID root. Kemudian kode ini menggunakan ReactDOM.createRoot() untuk membuat root
+    // di dalam element tersebut Setelah itu, kode tersebut menggunakan root.render() untuk merender komponen <App /> ke dalam root yang telah dibuat. Dan komponen <App /> akan dirender di dalam elemen dengan ID root di dalam DOM.
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<App />);
+  </script>
+</body>
+</html>
