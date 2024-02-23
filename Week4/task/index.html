@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Task</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+      .card-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #D3DBF7;
+        padding: 20px;
+      }
+    
+      .card {
+        width: 400px;
+        height: 600px;
+        background-color: #FFFFFF;
+        border-radius: 20px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
+    
+      .image-container {
+        border: 2px solid #D3DBF7;
+        border-radius: 10px;
+        overflow: hidden;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    
+      .image-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    
+      .category {
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+        background-color: #EBEEFD;
+        padding: 5px 20px;
+        color: #3258E8;
+        text-align: center;
+      }
+    
+      .rating {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+      }
+    
+      .rating span {
+        width: 20px;
+        height: 20px;
+        font-size: 20px;
+        color: #FFC107;
+        margin-right: 5px;
+      }
+    
+      .title {
+        font-weight: bold;
+        font-size: 24px;
+        margin-top: 10px;
+      }
+    
+      .button-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+      }
+    
+      .button {
+        flex: 1;
+        padding: 10px 20px;
+        background-color: #466bf3;
+        color: #FFFFFF;
+        border-radius: 10px;
+        cursor: pointer;
+        margin: 0 5px;
+        text-align: center;
+      }
+    </style>
+    
+
+  </head>
+  <body>
+    <!-- render component disini -->
+    <div id="root"></div>
+  </body>
+  
+    <!-- // aku ingin kalian untuk membuat sebuah component card dari design folder taskanswer pada folder ini  pada index html css dan assetnya  -->
+    <!-- // menggunakan functional component untuk membuat card tersebut
+    // terdapat 3 component, yaitu Card, CardBody, dan CardActions
+    // masing masing component harus dapat menerima props.
+    // Card akan menerima props berupa berupa children
+    // CardBody akan menerima props berupa image, title, harga.
+    // CardActions akan menerima props berupa children
+    // didalam CardActions terdapat button yang akan menerima props berupa text dan onClick
+
+    // jawab dibawah ini: --> 
+
+    <script type="text/babel">
+      // Functional component untuk Card
+      const Card = ({ children }) => {
+        return (
+          <div className="card">
+            {children}
+          </div>
+        );
+      };
+  
+      // Functional component untuk CardBody
+      const CardBody = ({ image, title, category, rating }) => {
+        return (
+          <>
+            <div className="image-container">
+              <img src={image} alt={title} />
+            </div>
+            <div className="category">
+              {category}
+            </div>
+            <div className="rating">
+              {[...Array(rating)].map((_, index) => (
+                <span key={index} className="text-yellow-500">  &#9733; </span>
+              ))}
+            </div>
+            
+            <div className="title">
+              {title}
+            </div>
+          </>
+        );
+      };
+  
+      // Functional component untuk CardActions
+      const CardActions = ({ children }) => {
+        return (
+          <div className="button-container">
+            {children}
+          </div>
+        );
+      };
+  
+      // Functional component untuk Button di dalam CardActions
+      const Button = ({ text, onClick }) => {
+        return (
+          <button className="button" onClick={onClick}>
+            {text}
+          </button>
+        );
+      };
+  
+      // Class component App sebagai induk dari Card, CardBody, dan CardActions
+      class App extends React.Component {
+        render() {
+          return (
+            <div className="card-container">
+              <Card>  
+                <CardBody 
+                  image="https://via.placeholder.com/150" 
+                  category="Obeng" 
+                  rating={5} 
+                  title="Obeng2ml" 
+                />
+                <CardActions>
+                  <Button text="Buy Now" onClick={() => alert("Buy Now Clicked")} />
+                  <Button text="Lihat Detail" onClick={() => alert("Lihat Detail")} />
+                </CardActions>
+              </Card>
+            </div>
+          );
+        }
+      }
+  
+      // untuk apa kode dibawah?
+    // jawab : ...........
+    // kode dibawah ini digunakan untuk merender component App ke dalam DOM dengan menggunakan ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(<App />);
+    </script>
+  </html>
+  
