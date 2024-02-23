@@ -1,0 +1,286 @@
+
+*,
+html,
+body {
+    margin: 0;
+    padding: 0;
+    
+}
+
+body {
+    background-color: hsl(0, 0%, 96%);
+}
+
+p {
+    white-space: nowrap;
+}
+
+.header {
+    background-color: white;
+    width: 100%;
+    height: 76px;
+    margin: auto;
+    padding: 0px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    margin-left: 7%;
+}
+
+.navbar ul {
+    display: flex;
+    align-items: center;
+    font-family: Poppins;
+}
+
+.navbar ul li {
+    list-style: none;
+    margin: 0 15px;
+    
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: hsl(0, 0%, 61%);
+    font-size: 16px;
+}
+
+.navbar ul li a#Prd {
+    color:#466bf3; 
+}
+
+
+.keranjang {
+    display: flex;
+    background-color: hsla(245, 88%, 61%, 10%);
+    width: 8%;
+    border-radius: 12px;
+    padding: 8px;
+    margin-right: 7%;
+}
+
+.keranjang p {
+    margin: auto;
+    width: 10%;
+    font-family: Poppins;
+    font-size: 16px;
+    color: #466bf3;
+    font-weight: 500;
+    margin-right: 65px;
+}
+
+.icon_keranjang {
+    margin: auto;
+    width: 15%;
+}
+
+.main {
+    font-family: Poppins;
+}
+
+.Kami{
+    margin-top: 3%;
+    margin-left: 7%;
+    color: #466bf3;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.main h1 {
+    margin-top: 1%;
+    margin-left: 7%;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.big-Title {
+    height: 77px;
+}
+
+.Type-product {
+    justify-content: space-between;
+    margin-top: 34px;
+    margin-left:  7%;
+}
+
+.Type-product ul {
+    display: flex;
+    list-style: none;
+    font-size: 14px;
+    
+}
+
+.Type-product ul li {
+    margin-right: 15px;
+    margin-left: 0;
+}
+
+.Type-product ul li a {
+    text-decoration: none;
+    color: hsl(0, 0%, 46%);
+}
+
+#Semua {
+    width: 128px;
+    background-color: hsla(223, 90%, 96%, 100%);
+    border-radius: 8px;
+    padding: 10px;
+    color: #466bf3;
+    border-style: solid;
+    border-width: 2px;
+}
+
+
+#Peralatan {
+    width: 128px;
+    border-radius: 8px;
+    padding: 10px;
+    border-color: hsla(210, 17%, 93%, 0.577);
+    border-style: solid;
+    border-width: 2px;
+}
+
+#Obat {
+    width: 128px;
+    border-radius: 8px;
+    padding: 10px;
+    border-color: hsla(210, 17%, 93%, 0.577);
+    border-style: solid;
+    border-width: 2px;
+}
+
+#Skincare {
+    width: 128px;
+    border-radius: 8px;
+    padding: 10px;
+    border-color: hsla(210, 17%, 93%, 0.577);
+    border-style: solid;
+    border-width: 2px;
+}
+
+.Card {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    margin-left: 7%;
+    margin-top: 34px;
+    margin-bottom: 50px;
+    font-family: Poppins;
+}
+
+.Produk1 {
+    width: 384px;
+    height: 529px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 24px;
+}
+
+.Gambar {
+    margin: 18px 0px 0px 18px;
+    width: 90%;
+    border-radius: 24px;
+    border-style: solid;
+    border-color: rgba(128, 128, 128, 0.208);
+    border-width: 2px;
+}
+
+.Tagar {
+    display: flex;
+    width: 228px;
+}
+
+.Tagg {
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+    width: 102px;
+    color: #466bf3;
+    background-color: hsla(223, 90%, 96%, 100%);
+    border-radius: 12px;
+    padding: 6px;
+    margin-top: 3%;
+    margin-left: 7%;
+}
+
+.Ratings {
+    margin: auto;
+    width: 50%;
+    margin-top: 12px;
+    margin-left: 5px;
+}
+
+.Card h3 {
+    font-size: 24px;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.harga {
+    font-size: 20px;
+    color: hsl(0, 100%, 65%);
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+.Button-Wrap {
+    display: flex;
+    margin-top: 15px;
+    margin-left: 20px;
+    justify-content: center;
+}
+
+.Beli {
+    background-color: hsla(227, 80%, 55%, 100%);
+    color: #ffffff;
+    width: 160px;
+    border-radius: 16px;
+    padding: 10px;
+    font-size: 16px;
+    padding: 5%;
+    font-weight: 400;
+    align-items: center;
+    margin-right:7%
+}
+
+.Detail {
+    background-color: white;
+    width: 160px;
+    border-radius: 16px;
+    padding: 10px;
+    font-size: 16px;
+    padding: 5%;
+    font-weight: 400;
+    align-items: center;
+    color: #466bf3;
+    margin-right:5%
+}
+
+.Produk2 {
+    width: 384px;
+    height: 529px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 24px;
+}
+
+.Produk3{
+    width: 384px;
+    height: 529px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 24px;
+}
+
+button {
+    cursor: pointer;
+    border:none;
+}
+
+.Button-Wrap {
+    display: flex;
+    margin-top: 15px;
+    margin-left: 20px;
+    justify-content: center;
+
+}

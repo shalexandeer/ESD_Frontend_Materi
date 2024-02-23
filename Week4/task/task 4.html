@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- script react  -->
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <header class="header">
+        <img src="/Assets/logo.svg" class="logo">
+        <nav class="navbar">
+            <ul>
+                <li><a href="#" id="Utama">Halaman Utama</a></li>
+                <li><a href="#" id="Prd">Produk</a></li>
+                <li><a href="#" id="Contact">Hubungi Kami</a></li>
+            </ul>
+        </nav>
+        <div class="keranjang">
+            <p>keranjang</p>
+            <img src="/Assets/mdi_cart-outline.png" class="icon_keranjang">
+        </div>
+    </header>
+    <main class="main">
+        <div class="big-Title">
+            <p class="Kami">Produk Kami</p>
+            <h1>Temukan Produk Yang Cocok</h1>
+        </div>
+        <div class="Type-product">
+            <ul>
+                <li><a href="#" id="Semua">Semua Produk</a></li>
+                <li><a href="#" id="Peralatan">Peralatan</a></li>
+                <li><a href="#" id="Obat">Obat-obatan</a></li>
+                <li><a href="#" id="Skincare">Skincare</a></li>
+            </ul>
+        </div>
+        <!-- render component disini -->
+        <div class="Card" id="root"></div>
+    </main>
+</body>
+<script type="text/babel">
+    // aku ingin kalian untuk membuat sebuah component card dari design week 2
+    // menggunakan functional component untuk membuat card tersebut
+    // terdapat 3 component, yaitu Card, CardBody, dan CardActions
+    // masing masing component harus dapat menerima props.
+    // Card akan menerima props berupa berupa children
+    // CardBody akan menerima props berupa image, title, harga.
+    // CardActions akan menerima props berupa children
+    // didalam CardActions terdapat button yang akan menerima props berupa text dan onClick
+
+    // jawab dibawah ini:
+
+  function Card({children}) {
+    if(children === "Produk1"){
+      return <div className={children}><CardBody image="../Assets/Frame 1402.png" tagg="Peralatan" title="Obeng 2ml" price="Rp. 100.000,00"/></div>
+    }
+    else if(children === "Produk2"){
+      return <div className={children}><CardBody image="/Assets/Frame 1403.png" tagg="Obat-obatan" title="Paracetamol" price="Rp. 20.000,00"/></div>
+    }
+    else if(children === "Produk3"){
+      return <div className={children}><CardBody image="/Assets/Frame 1404.png" tagg="Skincare" title="Skincare" price="Rp. 200.000,00"/></div>
+    }
+  }
+
+  function CardBody({ image, title, price, tagg }) {
+    return (
+      <>
+        <img className="Gambar" src={image} alt="" />
+        <div className="Tagar">
+          <p className="Tagg">{tagg}</p>
+          <img src="/Assets/Ratings.png" className="Ratings" alt="" />
+        </div>
+        <h3 className="title">{title}</h3>
+        <p className="harga">{price}</p>
+        <CardActions children={title}/>
+      </>
+    );
+  }
+
+  function CardActions({children}) {
+    function BeliButton(){
+      if(children == "Obeng 2ml"){
+        alert("Obeng 2ml terbeli");
+      }
+      else if(children == "Paracetamol"){
+        alert("Paracetamol terbeli");
+      }
+      else if(children == "Skincare"){
+        alert("Skincare terbeli");
+      }
+    }
+    
+    function DetailButton(){
+      if(children == "Obeng 2ml"){
+        alert("Obeng 2ml merupakan obeng");
+      }
+      else if(children == "Paracetamol"){
+        alert("Paracetamol merupakan obat-obatan tidak terlarang");
+      }
+      else if(children == "Skincare"){
+        alert("Skincare merupakan skincare");
+      }
+    }
+
+    return (
+      <div className="Button-Wrap">
+        <button id="Beli" className="Beli" onClick={BeliButton}>Beli Sekarang</button>
+        <button id="Lihat" className="Detail" onClick={DetailButton}>Lihat Detail</button>
+      </div>
+    );
+  }
+  
+  class App extends React.Component {
+    render() {
+      return (
+        <>
+          <Card children="Produk1"/>
+          <Card children="Produk2"/>
+          <Card children="Produk3"/>
+        </>
+      );
+    }
+  }
+
+  // untuk apa kode dibawah?
+  // jawab : kode dibawah digunakan untuk membuat root render dari aplikasi react dan merender / menampilkan komponen app ke dalam elemen dom dengan id root 
+  const root = ReactDOM.createRoot(document.getElementById("root"));
+  root.render(<App />);
+</script>
+</html>

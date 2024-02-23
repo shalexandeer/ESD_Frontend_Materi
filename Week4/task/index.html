@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Task</title>
+    <!-- script react  -->
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <!-- render component disini -->
+    <div id="root"></div>
+  </body>
+  <script type="text/babel">
+    // aku ingin kalian untuk membuat sebuah component card dari design week 2
+    // menggunakan functional component untuk membuat card tersebut
+    // terdapat 3 component, yaitu Card, CardBody, dan CardActions
+    // masing masing component harus dapat menerima props.
+    // Card akan menerima props berupa berupa children
+    // CardBody akan menerima props berupa image, title, harga.
+    // CardActions akan menerima props berupa children
+    // didalam CardActions terdapat button yang akan menerima props berupa text dan onClick
+
+    // jawab dibawah ini:
+    
+    function Card(){
+      return (
+        <div className="Card-Container"> {children} </div>
+      );
+    }
+
+    function CardBody(props){
+      return (
+        <div class="Produk1">
+          <img src="/Week2/task/Assets/Frame 1402.png" class="Obeng"/>
+          <div class="Tagar">
+            <p span class="Tagg">Peralatan</p>
+            <img src="/Week2/task/Assets/Ratings.png" class="Ratings"/>
+          </div>
+          <h3 class="title">Obeng 2ml</h3>
+          <p class="harga">Rp. 100.000,00</p>
+        </div>
+      );
+    }
+
+    function CardActions(props){
+      return (
+        <div className="Card-Actions"> {props.children} </div>
+      );
+    }
+
+    class App extends React.Component {
+      render() {
+        return (
+          <div>
+            <App />
+          </div>
+        );
+      }
+    }
+
+    // untuk apa kode dibawah?
+    // jawab : ...........
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<App />);
+  </script>
+</html>
