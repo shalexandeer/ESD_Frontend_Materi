@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Product</title>
+    <!-- Link ke CSS dan Google Fonts -->
+    <link rel="stylesheet" href="../css/style-editproduct.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap">
+
+    <style>
+        :root {
+            --primary-color: #8888f8;
+            --shade-blue-color: #ECF1FE;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Logo -->
+        <div class="logo">4 Sehat 5 Rungkat</div>
+        <!-- Navigation -->
+        <nav class="header-nav">
+            <ul>
+                <li><a href="homeproduct.html">Home Product</a></li>
+                <li><a href="addproduct.html">Add Product</a></li>
+            </ul>
+        </nav>
+
+        <!-- Chart Container -->
+        <div class="chart-container">
+            <button class="chart-btn">
+                <span class="chart-text">Keranjang</span>
+                <img class="chart-img" src="../assets/keranjang.png" alt="Keranjang Icon">
+            </button>
+        </div>
+    </header>
+
+    <div class="form-container">
+        <h2 class="greetings1">Edit Produk</h2>
+        <form id="editProductForm">
+            <div class="form-group">
+                <label for="productId">ID Produk</label>
+                <input type="text" id="productId" name="productId" required>
+            </div>
+            <div class="form-group">
+                <label for="productName">Nama Produk</label>
+                <input type="text" id="productName" name="productName" required>
+            </div>
+            <div class="form-group">
+                <label for="productPrice">Harga</label>
+                <input type="number" id="productPrice" name="productPrice" required>
+            </div>
+            <div class="form-group">
+                <label for="productQuantity">Jumlah</label>
+                <input type="number" id="productQuantity" name="productQuantity" required>
+            </div>
+            <div class="form-group">
+                <label for="productDescription">Deskripsi</label>
+                <textarea id="productDescription" name="productDescription" rows="5" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="productImage">Gambar Produk</label>
+                <input type="file" id="productImage" name="productImage" accept="image/*" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Simpan</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Link ke JavaScript -->
+    <script src="../js/script-putproduct.js"></script>
+</body>
+</html>
