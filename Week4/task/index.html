@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="style.css">
+    <title>Task</title>
+    <!-- taruh script react disini -->
+    <!-- CDN or content delivery network -->
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin></script>
+
+    <!-- create virtual DOM -->
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin></script>
+
+    <!-- enabling us to write javascript inside the HTML tag -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <!-- Navbar Section -->
+    <header>
+      <nav class="set navbar">
+        <div class="set logo">
+          <p>Tuku</p>
+        </div>
+        <div class="set menu-options">
+          <a >Halaman Utama</a>
+          <a class="active">Produk</a>
+          <a >Hubungi Kami</a>
+        </div>
+        <div>
+          <button class="set cart-button">
+              <span style="margin-right: 10px;">Keranjang</span>
+              <img src="../assets/cart.png" alt="Cart Icon" style="width: 20px; height: 20px;">
+          </button>
+        </div>
+      </nav>
+    </header>
+    <section>
+      <div class="set">
+        <h4>Produk Kami</h4>
+        <h1>Temukan Produk Yang Cocok</h1>
+      </div>
+      <div class="button-container">
+        <button class="set btn btn-active">Semua Produk</button>
+        <button class="set btn">Peralatan</button>
+        <button class="set btn">Obat-obatan</button>
+        <button class="set btn">Skincare</button>
+      </div>
+    </section>
+    
+    <!-- render component disini -->
+    <div id="root"></div>
+  </body>
+  <script type="text/babel">
+    // aku ingin kalian untuk membuat sebuah component card dari design week 2
+    // menggunakan functional component untuk membuat card tersebut
+    // terdapat 3 component, yaitu Card, CardBody, dan CardActions
+    // masing masing component harus dapat menerima props.
+    // Card akan menerima props berupa berupa children
+    // CardBody akan menerima props berupa image, title, harga.
+    // CardActions akan menerima props berupa children
+    // didalam CardActions terdapat button yang akan menerima props berupa text dan onClick
+
+    // jawab dibawah ini:
+      // CardActions component
+      const CardActions = (props) => {
+        return (
+          <div className="btn-contain">
+            {props.children}
+          </div>
+        );
+      };
+
+      // CardBody component
+      const CardBody = (props) => {
+        return (
+          <div>
+            <img className="img-produk" src={props.image} alt={props.title} />
+            <div className="category">
+              <button className="set tag">{props.category}</button>
+              {/* Star icons can be added dynamically based on a rating prop */}
+              {/* For simplicity, assuming a fixed number of stars */}
+              {[...Array(5)].map((star, index) => (
+                <img key={index} src="../assets/star.png" alt="Star Icon" style={{ width: '20px', height: '20px' }} />
+              ))}
+            </div>
+            <h2 className="set">{props.title}</h2>
+            <p className="set price">{props.price}</p>
+          </div>
+        );
+      };
+
+      // Card component
+      const Card = (props) => {
+        return (
+          <div className="card">
+            {props.children}
+          </div>
+        );
+      };
+
+    class App extends React.Component {
+      products = [
+          { image: "../assets/obeng.png", category: "Peralatan", title: "Obeng 2ml", price: "Rp. 100.000,00" },
+          { image: "../assets/paracetamol.png", category: "Obat-obatan", title: "Paracetamol", price: "Rp. 20.000,00" },
+          { image: "../assets/skincare.png", category: "Skincare", title: "Skincare", price: "Rp. 200.000,00" },
+        ];
+      render() {
+        return (
+          <div className="content card-container">
+          {this.products.map((product, index) => (
+              <Card key={index}>
+                <CardBody {...product} />
+                <CardActions>
+                  <button className="set btn-primary">Beli Sekarang</button>
+                  <button className="set btn-detail">Lihat Detail</button>
+                </CardActions>
+              </Card>
+          ))}
+        </div>
+        );
+      }
+    }
+
+    // untuk apa kode dibawah?
+    // jawab : ...........
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<App />);
+  </script>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Task Answer</title>
+    <link
+      rel="stylesheet"
+      href="../css/style.css" />
+
+    <!-- link font -->
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet" />
+  </head>
+  <body>
+    <div
+      class="container-wrapper"
+      style="background-color: white">
+      <div class="container">
+        <nav>
+          <h1>TUKU</h1>
+          <div class="nav-item">
+            <a href="#">Home</a>
+            <a href="#">Produk</a>
+            <a href="#">Hubungi Kami</a>
+          </div>
+          <div style="display: flex; align-items: center; gap: 16px">
+            <button class="nav-button">Keranjang</button>
+            <div
+              id="hamburgerIcon"
+              class="hamburger">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="container-wrapper">
+      <div class="container">
+        <main id="container-content">
+          <div class="heading-page">
+            <p>Produk Kami</p>
+            <h1>Temukan Produk Yang Cocok</h1>
+          </div>
+          <div id="category-product-button">
+            <button>Semua Produk</button>
+            <button>Peralatan</button>
+            <button>Obat-obatan</button>
+            <button>Skincare</button>
+          </div>
+          <div id="product-list">
+            <div class="card">
+              <div class="card-content">
+                <img
+                  src="../assets/obeng.jpg"
+                  alt="obeng" />
+                <div class="card-info-wrapper">
+                  <div class="card-category">
+                    <button>Peralatan</button>
+                  </div>
+                  <div class="card-info">
+                    <h1>Obeng 2ml</h1>
+                    <p>Rp. 100.000,00</p>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer">
+                <button>Beli Sekarang</button>
+                <button>Lihat Detail</button>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-content">
+                <img
+                  src="../assets/obeng.jpg"
+                  alt="obeng" />
+                <div class="card-info-wrapper">
+                  <div class="card-category">
+                    <button>Peralatan</button>
+                  </div>
+                  <div class="card-info">
+                    <h1>Obeng 2ml</h1>
+                    <p>Rp. 100.000,00</p>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer">
+                <button>Beli Sekarang</button>
+                <button>Lihat Detail</button>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-content">
+                <img
+                  src="../assets/obeng.jpg"
+                  alt="obeng" />
+                <div class="card-info-wrapper">
+                  <div class="card-category">
+                    <button>Peralatan</button>
+                  </div>
+                  <div class="card-info">
+                    <h1>Obeng 2ml</h1>
+                    <p>Rp. 100.000,00</p>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer">
+                <button>Beli Sekarang</button>
+                <button>Lihat Detail</button>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+  <script>
+    const hamburger = document.querySelector("#hamburgerIcon");
+    document.addEventListener("DOMContentLoaded", function () {
+      hamburger.onclick = function () {
+        document.querySelector(".nav-item").classList.toggle("show");
+      };
+    });
+  </script>
+</html>
