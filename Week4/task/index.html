@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0" />
+    <title>Task</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- taruh script react disini -->
+    <!-- Package React -->
+    <script
+        src="https://unpkg.com/react@18/umd/react.development.js"
+        crossorigin></script>
+
+    <!-- create virtual DOM and give access for us to modify the virtual DOM -->
+    <!-- Package react-dom -->
+    <script
+        src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+        crossorigin></script>
+
+    <!-- enabling us to write javascript inside the HTML tag -->
+    <!-- Package Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+<!-- render component disini -->
+<div id="root"></div>
+</body>
+<script type="text/babel">
+    // aku ingin kalian untuk membuat sebuah component card dari design week 2
+      // menggunakan functional component untuk membuat card tersebut
+      // terdapat 3 component, yaitu Card, CardBody, dan CardActions
+      // masing masing component harus dapat menerima props.
+      // Card akan menerima props berupa berupa children
+      // CardBody akan menerima props berupa image, title, harga.
+      // CardActions akan menerima props berupa children
+      // didalam CardActions terdapat button yang akan menerima props berupa text dan onClick
+
+      
+    function CardBody(props) {
+        const { image, name, price, category } = props;
+        return (
+            <div>
+                <img
+                    src={image}
+                    alt={name}/>
+                <div className="category">
+                    <p>{category}</p>
+                    <img src="img/5stars.png" alt="" srcSet=""/>
+                </div>
+                <h3>{name}</h3>
+                <h4>Rp. {price}</h4>
+            </div>
+        );
+    }
+
+    function CardActions(props) {
+        const { buyButton, detailButton } = props;
+        return (
+            <div className="action">
+                <a className="btn active" onClick={buyButton}>Beli Sekarang</a>
+                <a className="btn" onClick={detailButton}>Lihat Detail</a>
+            </div>
+        );
+    }
+
+    function Card(props) {
+        const { children } = props;
+        return (
+            <div className="card">
+                {children}
+            </div>
+        );
+    }
+
+
+    class App extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = {
+                products: [
+                    {
+                        id: 1,
+                        category: "Peralatan",
+                        name: "Obeng 2ml",
+                        price: "100000",
+                        image: "img/obeng.png",
+                    },
+                    {
+                        id: 2,
+                        category: "Obat",
+                        name: "Paracetamol",
+                        price: "20000",
+                        image: "img/paracetamol.png",
+                    },
+                    {
+                        id: 3,
+                        category: "Skincare",
+                        name: "Skincare",
+                        price: "200000",
+                        image: "img/skincare.png",
+                    },
+                ],
+            };
+        }
+
+        render() {
+            return (
+                <div className="main">
+                  <div className="content">
+                    {this.state.products.map((product) => (
+                        <Card key={product.id}>
+                            <CardBody
+                                image={product.image}
+                                name={product.name}
+                                price={product.price}
+                                category={product.category}
+                            />
+                            <br/>
+                            <CardActions/>
+                        </Card>
+                    ))}
+                </div>
+                </div>
+            );
+        }
+    }
+
+    // untuk apa kode dibawah?
+    // jawab : untuk melakukan render component App ke dalam root dimana root sudah di deklarasikan di dalam body (line 16)
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<App />);
+</script>
+</html>
