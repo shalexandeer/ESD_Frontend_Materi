@@ -16,6 +16,7 @@
     crossorigin>
     </script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> 
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <!-- render component disini -->
@@ -32,20 +33,76 @@
     // didalam CardActions terdapat button yang akan menerima props berupa text dan onClick
 
     // jawab dibawah ini:
-    function Card() {
-
+    function Card(props) {
       return(
-        
+        <div class = "products">
+          <CardBody
+            image = "Images/obeng.png"
+            title = 'obeng'
+            harga = '12000'
+            category = 'Peralatan'
+            />
+          <CardBody
+            image = "Images/parasetamol.png"
+            title = 'paracetamol'
+            harga = '20000'
+            category = 'Peralatan'
+            />
+          <CardBody
+            image = "Images/nganu.png"
+            title = 'Skincare'
+            harga = '200000'
+            category = 'Peralatan'
+            />
+          {props.children}
+          </div>
+      );
+    }
+
+    function CardBody(props){
+      const img = props.image;
+      const title = props.title;
+      const harga = props.harga;
+      const cate = props.category;
+      return(
+      <div class = 'product '>
+        <div class = 'productimagecontainer'>
+          <img src={img} alt={title}/>
+          </div>
+        <div class = 'tulisananu'>
+          <p class = 'productcategory'>{cate}</p>
+          <img src="Images/Ratings.png" alt="" width = "120" height ="24"/>
+          </div>
+          <div class = 'namaharga'>
+            <p style={{ fontSize: '24', fontWeight: '700', margin: '0 0' }}>{title}</p>
+            <p style={{ fontSize: '2', fontWeight: '500', margin: '0 0', color: 'red' }}>Rp. {harga}</p>
+            <CardActions/>
+
+          </div>
+        </div>
       )
+    }
+
+    function CardActions(props){
+      return(
+        <div class = 'aksiproduk'>
+          <p style={{
+          padding: '12px 28px',
+          backgroundColor: '#3258e8',
+          borderRadius: '15px',
+          color: 'white',
+          fontWeight: 500
+        }}>Beli Sekarang</p>
+
+          </div>
+      );
     }
 
     
     class App extends React.Component {
       render() {
         return (
-          <div>
-            <App />
-          </div>
+           <Card/>
         );
       }
     }
