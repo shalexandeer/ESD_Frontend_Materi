@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ESD WEEK 4</title>
+    <!-- taruh script react disini -->
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+
+    <!-- create virtual DOM and give access for us to modify the virtual DOM -->
+    <!-- Package react-dom -->
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+
+    <!-- enabling us to write javascript inside the HTML tag -->
+    <!-- Package Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <!-- render component disini -->
+    <div>
+      <nav>
+        <h2 class="logo">Tuku</h2>
+        <ul>
+          <li><a href="#">Halaman Utama</a></li>
+          <li><a href="#">Produk</a></li>
+          <li><a href="#">Hubungi Kami</a></li>
+        </ul>
+        <button type="button">Keranjang<span><img
+          style="padding-left: 10px; padding-top: 5px; width: 18px; height: 18px;"
+          src="../assets/Vector.svg"/></span>
+        </button>
+      </nav>
+    </div>
+    <div class="content_1">
+      <h4>Produk Kami</h4>
+      <h1>Temukan Produk Yang Cocok</h1>
+    </div>
+    <div class="category">
+      <a href="#" class="category-box">Semua Produk</a>
+      <a href="#" class="category-box">Peralatan</a>
+      <a href="#" class="category-box">Obat-obatan</a>
+      <a href="#" class="category-box">Skincare</a>
+    </div>
+    <div id="root">
+      
+    </div>
+  </body>
+  <script type="text/babel">
+    // aku ingin kalian untuk membuat sebuah component card dari design week 2
+    // menggunakan functional component untuk membuat card tersebut
+    // terdapat 3 component, yaitu Card, CardBody, dan CardActions
+    // masing masing component harus dapat menerima props.
+    // Card akan menerima props berupa berupa children
+    // CardBody akan menerima props berupa image, title, harga.
+    // CardActions akan menerima props berupa children
+    // didalam CardActions terdapat button yang akan menerima props berupa text dan onClick
+
+    // jawab dibawah ini:
+
+    function Navbar() {
+      return (
+        <div>
+          <nav>
+            <h2 className="logo">Tuku</h2>
+            <ul>
+              <li>
+                <a href="#">Halaman Utama</a>
+              </li>
+              <li>
+                <a href="#">Produk</a>
+              </li>
+              <li>
+                <a href="#">Hubungi Kami</a>
+              </li>
+            </ul>
+            <button type="button">
+              Keranjang
+              <span>
+                <img
+                  style={{
+                    paddingLeft: "10px",
+                    paddingTop: "5px",
+                    width: "18px",
+                    height: "18px",
+                  }}
+                  src="../assets/Vector.svg"
+                  alt="Keranjang Icon"
+                />
+              </span>
+            </button>
+          </nav>
+        </div>
+      );
+    }
+    // Card component
+    function Card({ children }) {
+      return <div class="container_product">{children}</div>;
+    }
+
+    // CardBody component
+    function CardBody({ product }) {
+      const { image, title, price, category } = product;
+
+      return (
+        <div>
+          <div class="product_pict">
+            <img src={image} alt={title} />
+          </div>
+          <div class="container_rating">
+            <h4>{category}</h4>
+            <img src="../assets/Ratings.svg" alt="Ratings" />
+          </div>
+          <div class="container_name">
+            <span
+              style={{
+                color: "#000000",
+                fontWeight: 600,
+                fontSize: "24px",
+                paddingTop: "12px",
+              }}
+            >
+              {title}
+            </span>
+            <br />
+            <span
+              style={{
+                color: "#FF4E4E",
+                fontSize: "20px",
+                fontWeight: 500,
+                paddingTop: "4px",
+              }}
+            >
+              {price}
+            </span>
+          </div>
+        </div>
+      );
+    }
+
+    // CardActions component
+    function CardActions({ children, onClick }) {
+      return (
+        <div class="container_button">
+          <button type="button" id="button_1">
+            Beli Sekarang
+          </button>
+          <a href="#">Lihat Detail</a>
+        </div>
+      );
+    }
+
+    class App extends React.Component {
+      products = [
+        {
+          id: 1,
+          image: "../assets/peralatan.svg",
+          category: "Peralatan",
+          title: "Obeng 2ml",
+          price: "Rp. 100.000,00",
+        },
+        {
+          id: 2,
+          image: "../assets/obat.svg",
+          category: "Obat-obatan",
+          title: "Paracetamol",
+          price: "Rp. 20.000,00",
+        },
+        {
+          id: 3,
+          image: "../assets/skincare.svg",
+          category: "Skincare",
+          title: "Skincare",
+          price: "Rp. 200.000,00",
+        },
+      ];
+      render() {
+        return (
+          <div className="container">
+            {this.products.map((product) => (
+              <Card key={product.id}>
+                <CardBody product={product} />
+                <CardActions />
+              </Card>
+            ))}
+          </div>
+        );
+      }
+    }
+
+    // untuk apa kode dibawah?
+    // jawab : ...........
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<App />);
+  </script>
+</html>
