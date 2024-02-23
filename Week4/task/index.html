@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task</title>
+    <!-- taruh script react disini -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="/Week4/task/index.css">
+  </head>
+  <body>
+    <!-- render component disini -->
+    <div id="root"></div>
+  </body>
+  <script type="text/babel">
+    // aku ingin kalian untuk membuat sebuah component card dari design week 2
+    // menggunakan functional component untuk membuat card tersebut
+    // terdapat 3 component, yaitu Card, CardBody, dan CardActions
+    // masing masing component harus dapat menerima props.
+    // Card akan menerima props berupa berupa children
+    // CardBody akan menerima props berupa image, title, harga.
+    // CardActions akan menerima props berupa children
+    // didalam CardActions terdapat button yang akan menerima props berupa text dan onClick
+
+    // jawab dibawah ini:
+    // Komponen Card
+    const Card = ({ children }) => {
+      
+      return <div className = "Produk">
+        <div className="card">{children}</div>;
+      </div>
+      
+    };
+
+    // Komponen CardBody
+    const CardBody = ({ image, title, harga }) => {
+      return (
+        <div className="card-body">
+        <div className="image-container">
+            <img src={image} alt={title} />
+        </div>
+          <h2>{title}</h2>
+          <h4>{harga}</h4>
+        </div>
+      );
+    };
+
+  // Komponen CardActions
+  const CardActions = ({ children }) => {
+    return <div className="card-actions">{children}</div>;
+  };
+
+  // Button dalam CardActions
+  const Button = ({ text, onClick }) => {
+    return (
+      <button className = "button" type="button" onClick={onClick}>
+        {text}
+      </button>
+    );
+  };
+
+    
+  class App extends React.Component {
+  render() {
+    return (
+      <div className="produk">
+        <Card className = "card">
+          <CardBody
+            image="/Week2/task/obeng.png"
+            title="Obeng 2ml"
+            harga="Rp.100.000,00"
+          />
+          <CardActions>
+            <Button text="Beli Sekarang" onClick={() => console.log('Beli Sekarang')} />
+            <Button text="Lihat Detail" onClick={() => console.log('Lihat Detail')} />
+          </CardActions>
+        </Card>
+         
+        {/* Tambahkan Card lainnya di sini sesuai kebutuhan */
+        <Card className = "card">
+          <CardBody
+            image="/Week2/task/obat.png"
+            title="Obeng 2ml"
+            harga="Rp.100.000,00"
+          />
+          <CardActions>
+            <Button text="Beli Sekarang" onClick={() => console.log('Beli Sekarang')} />
+            <Button text="Lihat Detail" onClick={() => console.log('Lihat Detail')} />
+          </CardActions>
+        </Card>
+        }
+
+        {
+        <Card className = "card">
+          <CardBody
+            image="/Week2/task/skincare.png"
+            title="Obeng 2ml"
+            harga="Rp.100.000,00"
+          />
+          <CardActions>
+            <Button text="Beli Sekarang" onClick={() => console.log('Beli Sekarang')} />
+            <Button text="Lihat Detail" onClick={() => console.log('Lihat Detail')} />
+          </CardActions>
+        </Card>
+        }
+      </div>
+    );
+  }
+}
+
+
+    // untuk apa kode dibawah?
+    // jawab : ...........
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<App />);
+  </script>
+</html>

@@ -62,7 +62,7 @@
 }
 
 .main {
-    position: relative;
+    position: fixed;
     top: 62px;
     left: 0;
     width: 100%;

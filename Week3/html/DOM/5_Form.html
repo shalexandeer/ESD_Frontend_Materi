@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+  </head>
+  <body>
+    <h1>Form</h1>
+    <form>
+      <input
+        autofocus
+        id="name"
+        placeholder="name"
+        type="text" />
+      <input type="submit" />
+    </form>
+    <div
+      style="position: absolute; bottom:0; display:flex; width: 100%; justify-content: space-between">
+      <a href="4_Colors.html">Previous - colors </a>
+      <a href="6_select.html">NEXT - select html</a>
+    </div>
+  </body>
+  <script>
+    const form = document.querySelector("form");
+
+    document.addEventListener("DOMContentLoaded", function () {
+      form.onsubmit = function () {
+        const name = document.querySelector("#name").value;
+        alert(`Hello ${name}`);
+      };
+    });
+  </script>
+</html>

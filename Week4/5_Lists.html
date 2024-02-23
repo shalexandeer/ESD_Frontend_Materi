@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Conditional Rendering</title>
+    <!-- CDN or content delivery network -->
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin></script>
+
+    <!-- create virtual DOM -->
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin></script>
+
+    <!-- enabling us to write javascript inside the HTML tag -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script type="text/babel">
+    // example 1 using lists
+    const names = ["John", "Paul", "George", "Ringo"];
+
+    function Cars(props) {
+      return <li>{props.name}</li>;
+    }
+
+    // map is like data.forEach in vanilla js. but it easy as f*ck
+    function GarageFirst() {
+      return (
+        <ul>
+          {names.map((name, index) => (
+            <Cars
+              key={index}
+              name={name}
+            />
+          ))}
+        </ul>
+      );
+    }
+
+    // practice 3 using lists from object data
+    const cars = [
+      {
+        brand: "Ford",
+        model: "Mustang",
+      },
+      {
+        brand: "Toyota",
+        model: "Corolla",
+      },
+      {
+        brand: "Honda",
+        model: "Civic",
+      },
+    ];
+
+    function Car(props) {
+      return (
+        <li>
+          I am a {props.brand} with {props.model}
+        </li>
+      );
+    }
+
+    function GarageSecond() {
+      return (
+        <ul>
+          {cars.map((car, index) => (
+            <Car
+              key={index}
+              brand={car.brand}
+              model={car.model}
+            />
+          ))}
+        </ul>
+      );
+    }
+
+    class App extends React.Component {
+      render() {
+        return (
+          <div>
+            <GarageFirst />
+            <hr />
+            <p>Practice Here</p>
+            <GarageSecond />
+            <hr />
+            <Navigate />
+          </div>
+        );
+      }
+    }
+
+    // render the component
+    // take 2 parameter, first is the component, second is the location where the component will be rendered
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<App />);
+  </script>
+</html>
