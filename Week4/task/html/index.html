@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Task</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap">
+  <style>
+    :root {
+        --primary-color: #466bf3;
+        --shade-blue-color: #ECF1FE;
+    }
+  </style>
+  <!-- taruh script react disini -->
+  <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+  <!-- render component disini -->
+  <div id="root"></div>
+  <script type="text/babel">
+    // aku ingin kalian untuk membuat sebuah component card dari design week 2
+    // menggunakan functional component untuk membuat card tersebut
+    // terdapat 3 component, yaitu Card, CardBody, dan CardActions
+    // masing masing component harus dapat menerima props.
+    // Card akan menerima props berupa berupa children
+    // CardBody akan menerima props berupa image, title, harga.
+    // CardActions akan menerima props berupa children
+    // didalam CardActions terdapat button yang akan menerima props berupa text dan onClick
+
+    // jawab dibawah ini:
+    const Card = ({ children }) => {
+      return <div className="product-card">{children}</div>;
+    };
+
+    const CardBody = ({ image, title, harga }) => {
+      return (
+        <div>
+          <img className="product-img" src={image} alt={title} />
+          <nav className="type-nav">
+            <span className="type">Peralatan</span>
+            <span className="rating">
+              {[...Array(5)].map((star, index) => {
+                return <img className="star-img" src="../assets/star.png" alt="Star Icon" key={index} />;
+              })}
+            </span>
+          </nav>
+          <div className="product-information">
+            <span className="product-name">{title}</span>
+            <span className="product-price">{harga}</span>
+          </div>
+        </div>
+      );
+    };
+
+    const CardActions = ({ children, onBuyClick, onViewDetailClick }) => {
+      return (
+        <div className="details">
+          <span className="buy" onClick={onBuyClick}>Beli Sekarang</span>
+          <span className="product-details" onClick={onViewDetailClick}>Lihat detail</span>
+        </div>
+      );
+    };
+
+    class App extends React.Component {
+      render() {
+        return (
+          <div className="product-cards-container">
+            <Card>
+              <CardBody
+                image="../assets/obeng.png"
+                title="Obeng 2ml"
+                harga="Rp. 100.000,00"
+              />
+              <CardActions
+                onBuyClick={() => console.log('Beli Sekarang telah diklik')}
+                onViewDetailClick={() => console.log('Lihat detail telah diklik')}
+              />
+            </Card>
+            <Card>
+              <CardBody
+                image="../assets/obat.png"
+                title="Paracetamol"
+                harga="Rp. 20.000,00"
+              />
+              <CardActions
+                onBuyClick={() => console.log('Beli Sekarang telah diklik')}
+                onViewDetailClick={() => console.log('Lihat detail telah diklik')}
+              />
+            </Card>
+            <Card>
+              <CardBody
+                image="../assets/skincare.png"
+                title="Skincare"
+                harga="Rp. 200.000,00"
+              />
+              <CardActions
+                onBuyClick={() => console.log('Beli Sekarang telah diklik')}
+                onViewDetailClick={() => console.log('Lihat detail telah diklik')}
+              />
+            </Card>
+          </div>
+        );
+      }
+    }
+
+    // untuk apa kode dibawah?
+    // jawab : digunakan untuk merender komponen App ke dalam elemen dengan id root pada halaman HTML.
+    ReactDOM.render(<App />, document.getElementById('root'));
+  </script>
+</body>
+</html>

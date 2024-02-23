@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <button onclick="mutate();">Add</button>
+    <button onclick="render();">Render</button>
+    <p id="count">0</p>
+  </body>
+  <script>
+    // let count = 0;
+
+    // function add() {
+    //   count++;
+    //   document.getElementById("count").innerHTML = count;
+    // }
+
+    // declare
+    let count = 0;
+
+    // mutate
+    function mutate() {
+      count++;
+      console.log("clicking, count: ", count);
+    }
+
+    function render() {
+      document.getElementById("count").innerHTML = count;
+    }
+
+    // when button is clicked,
+    // mutate()
+    // render()
+  </script>
+</html>
