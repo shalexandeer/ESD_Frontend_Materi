@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Task</title>
+    <!-- taruh script react disini -->
+    <!-- react -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <!-- react dom -->
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <!-- render component disini -->
+    <div id="root"></div>
+  </body>
+  <script type="text/babel">
+    // aku ingin kalian untuk membuat sebuah component card dari design week 2
+    // menggunakan functional component untuk membuat card tersebut
+    // terdapat 3 component, yaitu Card, CardBody, dan CardActions
+    // masing masing component harus dapat menerima props.
+    // Card akan menerima props berupa berupa children
+    // CardBody akan menerima props berupa image, title, harga.
+    // CardActions akan menerima props berupa children
+    // didalam CardActions terdapat button yang akan menerima props berupa text dan onClick
+
+    // jawab dibawah ini:
+
+    function CardBody(props){
+      const {image, title, harga} = props;
+      return (
+        <div>
+          <img src={image} alt={title} />
+          <div className="card-body">
+            <h2>{title}</h2>
+            <p>{harga}</p>
+          </div>
+          <p>{harga}</p>
+        </div>
+      )
+    }
+
+    function CardActions(props){
+      const {children} = props;
+      return(
+        <div>
+          {children}
+        </div>
+      )
+    }
+
+    function Card(props){
+      const {children} = props;
+      return(
+        <div>
+          {children}
+        </div>
+      )
+    }
+
+    class App extends React.Component {
+      constructor(props){
+        super(props);
+        this.state = {
+          barang: [
+            {
+              id: 1,
+              title: "Obeng",
+              harga: "Rp 60.000",
+              image: "/aset/screw.jpg"
+            },
+            {
+              id: 2,
+              title: "Obat",
+              harga: "Rp 100.000",
+              image: "/aset/0104k0131.jpg"
+            },
+            {
+              id: 3,
+              title: "Skincare",
+              harga: "Rp 50.000",
+              image: "/aset/skincare.png"
+            },
+          ],
+        };
+      }
+
+      render() {
+        return (
+          <div>
+            {this.state.barang.map((barang)=>(
+            <Card key={barang.id}>
+              <CardBody
+                image={barang.image}
+                title={barang.title}
+                harga={barang.harga}
+              />
+            </Card>
+            ))}
+          </div>
+        );
+      }
+    }
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<App />);
+  </script>
+</html>

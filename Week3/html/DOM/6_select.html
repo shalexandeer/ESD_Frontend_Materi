@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Select Element</title>
+  </head>
+  <body>
+    <h1 id="changeColor">Select Element</h1>
+    <select id="selectElement">
+      <option value="black">black</option>
+      <option value="red">red</option>
+      <option value="blue">blue</option>
+    </select>
+    <div
+      style="position: absolute; bottom:0; flex; width: 100%; justify-content: space-between">
+      <a href="5_Form.html">Previous - form </a>
+      <a href="7_tasks.html">NEXT - tasks</a>
+    </div>
+  </body>
+  <script>
+    // ketika semua element di load, maka jalankan function
+    document.addEventListener("DOMContentLoaded", function () {
+      // ekstrak element select dengan id selectElement
+      document.querySelector("#selectElement").onchange = function () {
+        // ketika select di change, maka ganti warna h1 dengan value dari select
+        document.querySelector("#changeColor").style.color = this.value;
+      };
+    });
+  </script>
+</html>
