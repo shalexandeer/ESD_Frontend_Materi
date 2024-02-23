@@ -6,13 +6,26 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0" />
     <title>Task</title>
+    <link rel="stylesheet" href="style.css" />
     <!-- taruh script react disini -->
+    <!-- CDN or content delivery network -->
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin></script>
+
+    <!-- create virtual DOM -->
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin></script>
+
+    <!-- enabling us to write javascript inside the HTML tag -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   </head>
   <body>
     <!-- render component disini -->
     <div id="root"></div>
   </body>
-  <script>
+  <script type="text/babel">
     // aku ingin kalian untuk membuat sebuah component card dari design week 2
     // menggunakan functional component untuk membuat card tersebut
     // terdapat 3 component, yaitu Card, CardBody, dan CardActions
@@ -23,19 +36,145 @@
     // didalam CardActions terdapat button yang akan menerima props berupa text dan onClick
 
     // jawab dibawah ini:
+    const format = (price)=>{
+      return new Intl.NumberFormat("id-ID", {
+        style: "currency",
+        currency: "IDR"
+      }).format(price);
+    };
 
+    const Card = (props)=>{
+      const {children} = props
+      return(
+        <div className="card">{children}</div>
+      )
+    }
+
+    const CardBody = (props)=>{
+      const {title, price, rating, image, category} = props
+      return(
+        <div className="content-wrap">
+          <img className="product-img" src={"./assets"+image} alt="image product"/>
+            <div className="label-wrap">
+              <div className="product-label">
+                <span className="product-category">{category}</span>
+                <span className="product-rating">{
+                  new Array(rating).fill('⭐').map((e)=>e).join('')
+                }</span>
+              </div>
+              <div className="product-detail">
+                <p className="product-name">{title}</p>
+                <p className="product-price">{format(price)}</p>
+              </div>
+            </div>
+        </div>
+      )
+    }
+
+    const CardAction = (props)=>{
+      const {children} = props
+      return(
+        <div className="button-wrap">
+          {children}
+        </div>
+      )
+    }
+
+    const Button = (props)=>{
+      const { textDisplay, onClickButton, className } = props
+      return(
+        <button className={className} onClick={onClickButton}>
+          {textDisplay}
+        </button>
+      )
+    }
     class App extends React.Component {
+      constructor(props){
+        super(props)
+        this.state = {
+          products :[
+            {
+              "id":1,
+              "title": "Obeng 2ml",
+              "price": 100000,
+              "image": "/images/img-1.png",
+              "rating": 4,
+              "category": "Peralatan"
+            },
+            {
+              "id":2,
+              "title": "Paracetamol",
+              "price": 20000,
+              "image": "/images/img-2.png",
+              "rating": 5,
+              "category": "Obat - obatan"
+            },
+            {
+              "id":3,
+              "title": "Skincare",
+              "price": 200000,
+              "rating": 2,
+              "image": "/images/img-3.png",
+              "category": "Skincare"
+            }
+          ]
+        }
+      }
       render() {
         return (
-          <div>
-            <App />
-          </div>
+          <>
+            <nav>
+              <img src="./assets/images/logo.svg" alt="Logo" className="nav-logo"/>
+              <ul>
+                <li className="nav">Halaman Utama</li>
+                <li className="nav-active">Produk</li>
+                <li className="nav">Hubungi Kami</li>
+              </ul>
+              <div className="nav-button">
+                <p>Keranjang</p>
+                <img src="./assets/images/mdi_cart-outline.svg" alt="Cart"/>
+              </div>
+            </nav>
+            <main>
+              <div className="header">
+                <h3>Produk Kami</h3>
+                <h1>Temukan Produk Yang Cocok</h1>
+              </div>
+              <ul>
+                <li className="category-selected">Semua Produk</li>
+                <li className="category-disabled">Peralatan</li>
+                <li className="category">Obat-obatan</li>
+                <li className="category">Skin Care</li>
+              </ul>
+              <div className="wrapper">
+                {this.state.products.map((product)=>{
+                  return(
+                    <Card key = {product.id}>
+                      <CardBody {...product}/>
+                      <CardAction>
+                        <Button
+                          className={"button-buy"}
+                          onClickButton={()=>alert(`Button Buy ${product.title} Pressed`)}
+                          textDisplay={'Beli Sekarang'}
+                        />
+                        <Button
+                          className={"button-detail"}
+                          onClickButton={()=>alert(`Button Detail ${product.title} Pressed`)}
+                          textDisplay={'Lihat Detail'}
+                        />
+                      </CardAction>
+                    </Card>
+                  )
+                })}
+              </div>
+            </main>
+          </>
         );
       }
     }
 
     // untuk apa kode dibawah?
-    // jawab : ...........
+    // jawab : komponen App akan dirender pada element yang ber id root
     const root = ReactDOM.createRoot(document.getElementById("root"));
     root.render(<App />);
   </script>

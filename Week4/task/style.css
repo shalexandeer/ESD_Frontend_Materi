@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800&display=swap");
+
+:root {
+  --primary-color: #3258E8;
+  --shade-blue-color: #ECF1FE;
+  --border-blue-color: #E9ECEF
+  /* semua warna yang dibutuhin dibikin variable disini biar enak make nya lagi */
+  /* agar variable warna ini bisa dipake, kita pindah semua variable ke external css aja */
+}
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", "sans-serif";
+}
+body{
+  background-color: #F4F4F4;
+}
+nav{
+  height: 76px;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  align-items: center;
+  padding: 0 100px;
+}
+ul{
+  display: flex;
+}
+ul li{
+  cursor: pointer;
+  color: #9c9c9c;
+  list-style-type: none;
+  margin-right: 15px;
+}
+main{
+  padding: 48px 100px 0 100px;
+}
+h3{
+  font-size: 18px;
+  font-weight:600;
+  color: var(--primary-color);
+  margin-bottom: 12px;
+}
+h1{
+  font-size: 36px;
+  font-weight: bold;
+  color: #232631;
+}
+.nav-logo{
+  cursor: pointer;
+}
+.nav-active{
+  color: var(--primary-color);
+}
+.nav-button{
+  cursor: pointer;
+  display: flex;
+  background-color: rgba(70, 107, 243, .1);
+  color: #466BF3;
+  padding: 12px 24px;
+  border-radius: 12px;
+}
+.nav-button p {
+  font-size: 16px;
+  margin-right: 10px;
+}
+.category{
+  color: #3E5569;
+}
+.category-selected{
+  background-color: var(--shade-blue-color);
+  color: #0D6EFD;
+  border: 1px solid var(--primary-color);
+}
+.category-disabled{
+  cursor:default;
+}
+.header{
+  margin-bottom: 24px;
+}
+main ul li {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border-blue-color);
+  font-size: 14px;
+  font-weight:600;
+}
+.wrapper{
+  margin: 24px 0px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 43px;
+}
+.card{
+  padding: 24px;
+  background-color: white;
+  border-radius: 24px;
+}
+.product-category{
+  padding: 5px 16px;
+  background-color: var(--shade-blue-color);
+  color: var(--primary-color);
+  border-radius: 12px;
+}
+.product-name{
+  font-size: 24px;
+  font-weight: 600;
+}
+.product-price{
+  font-size: 20px;
+  font-weight: 600;
+  color: #FF4E4E;
+}
+button {
+  cursor: pointer;
+  padding: 12px 24px;
+  border: 0px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.button-buy{
+  background-color: var(--primary-color);
+  color: white;
+}
+.button-detail{
+  color: var(--primary-color);
+  background: none;
+}
+.product-img{
+  border: 1px solid var(--border-blue-color);
+  border-radius: 24px;
+  width: 100%;
+  height: 280px;
+}
+.product-label{
+  margin-bottom: 12px;
+}
+.product-detail{
+  margin: 16px 0 24px 0;
+}
