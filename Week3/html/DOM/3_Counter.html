@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>counter app</title>
+  </head>
+  <body>
+    <h1 id="counterValue">0</h1>
+    <div>
+      <button disabled onclick="substract()" id="substract">-</button>
+      <button onclick="add()">+</button>
+    </div>
+    <div
+      style="position: absolute; bottom:0; flex; width: 100%; justify-content: space-between">
+      <a href="2_event.html">Previous - Event</a>
+      <a href="4_Colors.html">NEXT - colors</a>
+    </div>
+  </body>
+  <script>
+    let counterValue = 0;
+    const counter = document.getElementById("counterValue");
+
+    // if(counterValue >= 0){
+    //   document.getElementById("substract").removeAttribute("disabled");
+    // }
+    // else if(document.getElementById("counterValue").innerText > 0){
+    //   document.getElementById("substract").removeAttribute("disabled");
+    // }
+
+    function add() {
+      counterValue += 1;
+      counter.innerText = counterValue;
+      // document.getElementById("substract").removeAttribute("disabled");
+    }
+
+    function substract() {
+      counterValue--;
+      counter.innerText = counterValue;
+    }
+
+    document.addEventListener("click", function () {
+      if(document.getElementById("counterValue").innerText > 0){
+        document.getElementById("substract").removeAttribute("disabled");
+      }
+      else{
+        document.getElementById("substract").setAttribute("disabled", true);
+      }
+    });
+  </script>
+</html>
+
+
+
+<!-- // document.getElementById("substract").setAttribute("disabled", true);
+// document.querySelectorAll("button").forEach(function (button) {
+//   button.onclick = function () {
+//     if (button.innerText === "+") {
+//       add();
+//     } else {
+//       substract();
+//       if (document.getElementById("counterValue").innerText === "0"){
+//         document.getElementById("substract").setAttribute("disabled", true);
+//       } 
+//       return;
+//     }
+//   };
+// }); -->

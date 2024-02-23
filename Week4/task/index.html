@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Task</title>
+    <!-- taruh script react disini -->
+
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin></script>
+
+    <!-- create virtual DOM and give access for us to modify the virtual DOM -->
+    <!-- Package react-dom -->
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin></script>
+
+    <!-- enabling us to write javascript inside the HTML tag -->
+    <!-- Package Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <header id="headerz">
+      <div class="awal" id="putih">
+        <h2 id="putih">Tuku</h2>
+      </div>
+
+      <div class="navigasi" id="putih">
+        <nav id="putih">
+          <ul id="putih">
+            <li id="satu">Halaman Utama</li>
+            <li id="putih">Produk</li>
+            <li id="satu">Hubungi Kami</li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="tombol">
+        <button class="halo">Keranjang</button>
+        <img class="logo" src="assets/Vector.png" alt="">
+      </div>
+    </header>
+
+    <div class="kalimatAwal">
+      <h3 id="k1">Produk Kami</h3>
+      <h1 id="k2">Temukan Produk yang Cocok</h1>
+    </div>
+
+    <div class="list">
+      <button class="b1">Semua produk</button>
+      <button class="b2">Peralatan</button>
+      <button class="b3">Obat-obatan</button>
+      <button class="b4">Skincare</button>
+    </div>
+
+    <!-- render component disini -->
+    <div class="card" id="root"></div>
+
+  </body>
+  <script type="text/babel">
+    // aku ingin kalian untuk membuat sebuah component card dari design week 2
+    // menggunakan functional component untuk membuat card tersebut
+    // terdapat 3 component, yaitu Card, CardBody, dan CardActions
+    // masing masing component harus dapat menerima props.
+    // Card akan menerima props berupa berupa children
+    // CardBody akan menerima props berupa image, title, harga.
+    // CardActions akan menerima props berupa children
+    // didalam CardActions terdapat button yang akan menerima props berupa text dan onClick
+
+
+    // jawab dibawah ini:
+
+    function Card({children}){
+      if(children == "card1"){
+        return <div className={children}><CardBody image="assets/Rectangle 322.png" title="Peralatan" title2="Obeng 2ml" harga="100.000,00"/></div>
+      }
+      else if(children == "card2"){
+        return <div className={children}><CardBody image="assets/Rectangle 322 (1).png" title="Obat-obatan" title2="Paracetamol" harga="20.000,00"/></div>
+      }
+      else if(children == "card3"){
+        return <div className={children}><CardBody image="assets/Rectangle 322 (2).png" title="Skincare" title2="Skincare" harga="200.000,00"/></div>
+      }
+      
+    }
+
+
+    function CardBody({image, title, title2, harga}){
+      return(
+        <>
+          <img className="img" src={image} alt=""></img>
+          <div id="putih" className="info">
+            <div id="putih" className="rating">
+              <p>{title}</p>
+              <img id="putih" className="bintang" src="assets/Ratings.png" alt=""></img>
+            </div>
+
+            <h2 id="putih">{title2}</h2>
+            <h3 id="putih">Rp.{harga}</h3>
+
+            <CardAction children={title}/>
+          </div>
+        </>
+      );
+    }
+
+
+    function CardAction({children}){
+      function peralatan(){
+        window.location.href = "breakpage/peralatan.html";
+      }
+      function obat(){
+        window.location.href = "breakpage/obat-obatan.html";
+      }
+      function skincare(){
+        window.location.href = "breakpage/skincare.html";
+      }
+
+      function tombol1(){
+        if(children == "Peralatan"){
+          alert("Obeng Berhasil Dibeli!!");
+        }
+        else if(children == "Obat-obatan"){
+          alert("Paracetamol Berhasil Dibeli!!");
+        }
+        else if(children == "Skincare"){
+          alert("Skincare Obeng Berhasil Dibeli!!");
+        }
+        
+      }
+
+      function tombol2(){
+        if(children == "Peralatan"){
+          return peralatan();
+        }
+        else if(children == "Obat-obatan"){
+          return obat();
+        }
+        else if(children == "Skincare"){
+          return skincare();
+        }
+      }
+
+      return(
+        <div id="putih" className="infoButton">
+          <button id="random" onClick={tombol1}>Beli Sekarang</button>
+          <button id="putih" onClick={tombol2}>Lihat Detail</button>
+        </div>
+      );
+    }
+    
+
+    class App extends React.Component {
+      render() {
+        return (
+          <>
+            <Card children="card1"/>
+            <Card children="card2"/>
+            <Card children="card3"/>
+          </>
+        );
+      }
+    }
+
+    // untuk apa kode dibawah?
+    // jawab : untuk menjalankan kodingan diatas
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<App />);
+  </script>
+</html>
