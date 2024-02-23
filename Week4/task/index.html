@@ -9,6 +9,7 @@
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <link rel="stylesheet" href="/Week4/task/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
     <!-- render component disini -->
@@ -35,12 +36,18 @@
     };
 
     // Komponen CardBody
-    const CardBody = ({ image, title, harga }) => {
+    const CardBody = ({ image,kategori, icon, title, harga }) => {
       return (
         <div className="card-body">
-        <div className="image-container">
+          <div className="image-container">
             <img src={image} alt={title} />
-        </div>
+          </div>
+          <div className = "buttonCard">
+            <div className = "box">
+              <p>{kategori}</p>
+            </div>
+            <i className="fa fa-star" style={{ color: 'orange' }}></i>
+          </div>
           <h2>{title}</h2>
           <h4>{harga}</h4>
         </div>
@@ -68,6 +75,8 @@
       <div className="produk">
         <Card className = "card">
           <CardBody
+            kategori = "Peralatan"
+            icon = ""
             image="/Week2/task/obeng.png"
             title="Obeng 2ml"
             harga="Rp.100.000,00"
@@ -81,6 +90,7 @@
         {/* Tambahkan Card lainnya di sini sesuai kebutuhan */
         <Card className = "card">
           <CardBody
+            kategori = "Obat-obatan"
             image="/Week2/task/obat.png"
             title="Obeng 2ml"
             harga="Rp.100.000,00"
@@ -95,6 +105,7 @@
         {
         <Card className = "card">
           <CardBody
+          kategori = "Skincare"
             image="/Week2/task/skincare.png"
             title="Obeng 2ml"
             harga="Rp.100.000,00"
