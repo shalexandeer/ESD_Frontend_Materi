@@ -1,37 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      :root {
-        --primary-color: #466bf3;
-        --shade-blue-color: #d3dbf7;
-        /* semua warna yang dibutuhin dibikin variable disini biar enak make nya lagi */
-        /* agar variable warna ini bisa dipake, kita pindah semua variable ke external css aja */
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Task nya suruh slicing ya ges</h1>
-    <h1>link figma</h1>
-    <p>
-      https://www.figma.com/file/4efNS3RXUHhVdsh26wi5Ik/Frontend-Design-Task?type=design&node-id=0%3A1&mode=design&t=REPnpMrbAzJZSXyU-1
-    </p>
-
-    <!-- 
-        guidelines:
-        pastikan kalian menggunakan flexbox dan grid untuk layout karena kemarin udah belajar latihan kan.
-
-        - use flexbox untuk navbar section
-        - use grid untuk daftar produk
-        selain itu kalian bebas mau pake flexbox atau grid untuk section yang lain. berkreasilah sesuai kemampuan kalian.
-        
-        untuk pengumpulan, kalian bikin branch baru dengan nama FE/nama kalian, lalu push ke branch kalian
-        nanti bakal kucek di branch kalian.
-    -->
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Tuku</title>
+</head>
+<body>
+    <header>
+        <nav class = "navbar">
+            <div class="container nav-wrapper">
+                <a href="#" class="logo">Tuku</a>
+                <div class="menu-wrapper">
+                    <ul class="menu">
+                        <li><a href="#" class="menu-link">Halaman Utama</a></li>
+                        <li><a href="#" class="menu-link active">Produk</a></li>
+                        <li><a href="#" class="menu-link">Hubungi Kami</a></li>
+                    </ul>
+                    <a href="#" class="button-member">Keranjang</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section>
+        <div class="judul-wrapper">
+            <p>Produk Kami</p>
+        </div>
+        <div class="judul-tagline">
+            <p>Temukan Produk Yang Cocok</p>        
+        </div>
+        <div class="category-wrapper">
+            <ul class="category">
+                <li class="category-item"><a href="#" class="cateogry-link">Semua Produk</a></li>
+                <li class="category-item"><a href="#" class="cateogry-link">Peralatan</a></li>
+                <li class="category-item"><a href="#" class="cateogry-link">Obat-obatan</a></li>
+                <li class="category-item"><a href="#" class="cateogry-link">Skincare</a></li>
+            </ul>
+    </section>
+    <div class="grid-container">
+        <div class="produk1">
+            <img src="assets/obeng.png" alt="obeng">
+            <div class="category-star">
+                <p>Peralatan</p>
+                <img src="assets/5star.png" alt="star">
+            </div>
+            <div class="nama-produk">
+                <p>Obeng 2ml</p>
+            </div>
+            <div class="price">
+                <p>Rp. 100.000,00</p>
+            </div>
+            <div class="produk-click">
+                <a href="#" class="option1">Beli Sekarang</a>
+                <a href="#" class="option2">Lihat Detail</a>
+            </div>
+        </div>
+        <div class="produk2">
+            <img src="assets/obat.png" alt="Obat">
+            <div class="category-star">
+                <p>Obat-obatan</p>  
+                <img src="assets/5star.png" alt="star">
+            </div>
+            <div class="nama-produk">
+                <p>Paracetamol</p>
+            </div>
+            <div class="price">
+                <p>Rp. 20.000,00</p>
+            </div>
+            <div class="produk-click">
+                <a href="#" class="option1">Beli Sekarang</a>
+                <a href="#" class="option2">Lihat Detail</a>
+            </div>
+        </div>
+        <div class="produk3">
+            <img src="assets/skinker.png" alt="Skincare">
+            <div class="category-star">
+                <p>Skincare</p>
+                <img src="assets/5star.png" alt="star">
+            </div>
+            <div class="nama-produk">
+                <p>Skincare</p>
+            </div>
+            <div class="price">
+                <p>Rp. 200.000,00</p>
+            </div>
+            <div class="produk-click">
+                <a href="#" class="option1">Beli Sekarang</a>
+                <a href="#" class="option2">Lihat Detail</a>
+            </div>
+        </div>
+    </div>    
 </html>
