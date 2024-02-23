@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>fetch API</title>
+  </head>
+  <body>
+    <h1>Fetch Product</h1>
+    <div id="list"></div>
+    <button>Fetch now</button>
+  </body>
+  <script>
+    // ekstrak button yang ada di element
+    const button = document.querySelector("button");
+    // ekstrak element dengan id list
+    const list = document.querySelector("#list");
+
+    // jangan lupaa
+    console.log("buat lihat perubahan");
+
+    async function fetchAPI() {
+      // fetch data dari url
+      try {
+        // ekstrak response dari fetch
+        const response = await fetch("https://fakestoreapi.com/product");
+        // ekstrak data dari response
+        const data = await response.json();
+        // loop data kemudian tambahkan tiap html yang di loop ke dalam list
+        data.forEach((product) => {
+          list.innerHTML += `<div><p>${product.title}</p><p>${product.price}</p><p>${product.description}</p></div>`;
+        });
+      } catch (error) {
+        // jika error, maka tampilkan alert dengan message error
+        alert(error.message);
+        console.log(error.message);
+      }
+    }
+
+    // ketika semua element di load, maka jalankan function
+    document.addEventListener("DOMContentLoaded", function () {
+      // ketika button di klik, maka jalankan function fetchAPI
+      button.onclick = fetchAPI;
+    });
+  </script>
+</html>
+
+<!--    try {
+        const response = await fetch("https://fakestoreapi.com/products");
+        const data = await response.json();
+        data.forEach((product) => {
+          list.innerHTML += `<div><p>${product.title}</p><p>${product.price}</p><p>${product.description}</p></div>`;
+        });
+      } catch (error) {
+        console.log(error.message);
+        console.log("error mas");
+      } -->

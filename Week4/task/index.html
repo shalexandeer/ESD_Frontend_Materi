@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Task</title>
+    <link
+      rel="stylesheet"
+      href="style.css" />
+
+    <!-- link font -->
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet" />
+    <!-- taruh script react disini -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <!-- render component disini -->
+    <div id="root"></div>
+  </body>
+  <script type="text/babel">
+    // aku ingin kalian untuk membuat sebuah component card dari design week 2
+    // menggunakan functional component untuk membuat card tersebut
+    // terdapat 3 component, yaitu Card, CardBody, dan CardActions
+    // masing masing component harus dapat menerima props.
+    // Card akan menerima props berupa berupa children
+    // CardBody akan menerima props berupa image, title, harga.
+    // CardActions akan menerima props berupa children
+    // didalam CardActions terdapat button yang akan menerima props berupa text dan onClick
+
+    // jawab dibawah ini:
+
+    function Card (props) {
+      const { children } = props;
+
+      return (
+        <div className="card">
+          {children}
+        </div>
+      )
+    }
+
+    function CardBody (props) {
+      const { image, title, harga } = props;
+
+      return (
+        <div className="card-content">
+          <img src={image} alt={title} />
+          <div className="card-info-wrapper">
+            <div className="card-category">
+              <button>Peralatan</button>
+            </div>
+            <div className="card-info">
+              <h1>{title}</h1>
+              <p>{harga}</p>
+            </div>
+          </div>
+          
+        </div>
+      )
+    }
+
+    function CardActions (props) {
+      const { children, secondaryChildren } = props;
+
+      return (
+        <div className="card-footer">
+          <button className="btn1">{children}</button>
+          <button className="btn2">{secondaryChildren}</button>
+        </div>
+      )
+    }
+
+    class App extends React.Component {
+      render() {
+        const products = [
+          { image: './img/obeng.png', title: 'Obeng 2ml', harga: 'Rp. 100.000,00' },
+          { image: './img/obat.png', title: 'Paracetamol', harga: 'Rp. 20.000,00' },
+          { image: './img/skincare.png', title: 'Skincare', harga: 'Rp. 200.000,00' },
+        ];
+
+        return (
+          <div id="product-list">
+            <Card>
+            {products.map((product, index) => (
+              <div key={index}>
+                <CardBody {...product} />
+                <CardActions children="Beli Sekarang" secondaryChildren="Lihat Detail" />
+              </div>
+            ))}
+            </Card>
+          </div>
+        );
+      }
+    }
+
+    // untuk apa kode dibawah?
+    // jawab : ...........
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<App />);
+  </script>
+</html>
