@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task</title>
+  <!-- taruh script react disini -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+  <!-- render component disini -->
+  <div id="root"></div>
+</body>
+<script type="text/babel">
+  // aku ingin kalian untuk membuat sebuah component card dari design week 2
+  // menggunakan functional component untuk membuat card tersebut
+  // terdapat 3 component, yaitu Card, CardBody, dan CardActions
+  // masing masing component harus dapat menerima props.
+  // Card akan menerima props berupa berupa children
+  // CardBody akan menerima props berupa image, title, harga.
+  // CardActions akan menerima props berupa children
+  // didalam CardActions terdapat button yang akan menerima props berupa text dan onClick
+
+  // jawab dibawah ini:
+  const products = [
+    {
+      image: "../../Week2/taskanswer/assets/obat.png",
+      title: "Paracetamol",
+      harga: "Rp.20.000,00",
+      category: "Obat-obatan",
+      star: 5,
+    },
+    {
+      image: "../../Week2/taskanswer/assets/obeng.jpg",
+      title: "Obeng",
+      harga: "Rp.100.000,00",
+      category: "Obat-obatan",
+      star: 5,
+    },
+    {
+      image: "../../Week2/taskanswer/assets/skincare.png",
+      title: "Skincare",
+      harga: "Rp.200.000,00",
+      category: "Obat-obatan",
+      star: "../../Week2/taskanswer/assets/star.png",
+    },
+  ];
+
+
+  function Card({ children }) {
+    return <div class="card">{children}</div>
+  }
+
+  function CardBody({ image, title, harga, category, star }) {
+    return <div class="card-content">
+      <img
+        src={image}
+        alt={title} />
+      <div class="card-info-wrapper">
+        <div class="card-category">
+          <button>{category}</button>
+          {Array.from(Array(star), (e, i) => {
+            return <img
+              src={"../../Week2/taskanswer/assets/star.png"}>
+            </img>
+          })}
+        </div>
+        <div class="card-info">
+          <h1>{title}</h1>
+          <p>{harga}</p>
+        </div>
+      </div>
+    </div>
+  }
+
+  function CardActions({ children }) {
+    return <div class="card-footer">{children}</div>
+  }
+
+  class App extends React.Component {
+    render() {
+      const handleClick = () => {
+        alert(`Hello world`);
+      };
+      return (
+        <div>
+          {products.map((item, index) => (
+            <Card key={index}>
+              <CardBody
+                image={item.image}
+                title={item.title}
+                harga={item.harga}
+                category={item.category}
+                star={item.star} />
+              <CardActions>
+                <button
+                  onClick={handleClick}>Beli Sekarang
+                </button>
+                <button
+                  onClick={handleClick}>Lihat Detail
+                </button>
+              </CardActions>
+            </Card>
+          ))}
+        </div>
+      );
+    }
+  }
+
+  // untuk apa kode dibawah?
+  // jawab : merupakan bagian dari sintaks JSX yang digunakan dalam aplikasi React untuk merender komponen atau elemen ke dalam DOM (Document Object Model). Sederhananya untuk menampilkan aplikasi React Anda dengan merender komponen App ke dalam elemen dengan id "root" di dalam DOM.
+
+  const root = ReactDOM.createRoot(document.getElementById("root"));
+  root.render(<App />);
+</script>
+
+</html>
