@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Task</title>
+    <!-- taruh script react disini -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        .barang {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            margin-top: 24px;
+            gap: 43px;
+            margin-bottom: 48px;
+        }
+        
+        .produk1, .produk2, .produk3 {
+            background-color: white;
+            /* margin: 43px; */
+            border-radius: 24px;
+        }
+        
+        .barang img{
+            height: 280px;
+            width: 336px;
+            margin-top: 24px;
+            margin-right: 24px;
+            margin-left: 24px;
+            border: 1px solid lightgray;
+            border-radius: 24px;
+        }
+        
+        .namerate {
+            display: flex;
+            margin-left: 24px;
+            align-items: center;
+            /* margin-top: 16px; */
+            padding: 0px;
+        }
+        
+        .category-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: #466bf3;
+            background-color: var(--shade-blue-color);
+            border-radius: 12px;
+            padding: 5px 16px 5px 16px;
+            margin-right: 6px;
+        }
+        
+        .category-name p {
+            margin: 0px;
+        }
+        
+        .product-name-price {
+            margin-left: 24px;
+        }
+        
+        #product-name {
+            font-size: 22px;
+            font-weight: 600;
+            margin: 0px;
+        }
+        
+        #harga {
+            font-size: 18px;
+            font-weight: 00;
+            color: red;
+            margin-top: 4px;
+            margin-bottom: 24px;
+        }
+        
+        .tombol {
+            margin-left: 24px;
+            margin-bottom: 24px;
+        }
+        
+        #beli-sekarang {
+            background-color: #466bf3;
+            border-radius: 12px;
+            color: white;
+            border-style: none;
+            border-color: #466bf3;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 12px 28px 12px 28px;
+        }
+        
+        #lihat-detail {
+            background-color: white;
+            border-radius: 12px;
+            color: var(--primary-color);
+            border-style: none;
+            border-color: #466bf3;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 12px 28px 12px 28px;
+        }
+    </style>
+  </head>
+  <body>
+    <!-- render component disini -->
+    <div id="root"></div>
+  </body>
+  <script>
+    // aku ingin kalian untuk membuat sebuah component card dari design week 2
+    // menggunakan functional component untuk membuat card tersebut
+    // terdapat 3 component, yaitu Card, CardBody, dan CardActions
+    // masing masing component harus dapat menerima props.
+    // Card akan menerima props berupa berupa children
+    // CardBody akan menerima props berupa image, title, harga.
+    // CardActions akan menerima props berupa children
+    // didalam CardActions terdapat button yang akan menerima props berupa text dan onClick
+
+    // jawab dibawah ini:
+    function Card(props) {
+        return (
+          <div className="barang">
+            {props.children}
+          </div>
+        );
+      }
+      
+      function CardBody(props) {
+        return (
+          <div className={`produk${props.index}`}>
+            <img src={props.image} alt="" />
+            <div className="namerate">
+              <div className="category-name">
+                <p>{props.category}</p>
+              </div>
+              <p>{props.rating}</p>
+            </div>
+            <div className="product-name-price">
+              <p id="product-name">{props.title}</p>
+              <p id="harga">{props.price}</p>
+            </div>
+            <div className="tombol">
+              <button id="beli-sekarang" onClick={props.onBuyNow}>
+                Beli Sekarang
+              </button>
+              <button id="lihat-detail" onClick={props.onViewDetail}>
+                Lihat Detail
+              </button>
+            </div>
+          </div>
+        );
+      }
+
+      class CardActions extends React.Component {
+        render() {
+          return (
+            <div className="card-actions">
+              {this.props.children}
+            </div>
+          );
+        }
+      }
+
+      class App extends React.Component {
+        render() {
+          return (
+            <div>
+              <Card>
+                <CardBody
+                  index={1}
+                  image="image/obeng hijau.webp"
+                  category="Peralatan"
+                  rating="⭐⭐⭐⭐⭐"
+                  title="Obeng 2ml"
+                  price="Rp. 100.000,00"
+                  onBuyNow={() => console.log("Beli Sekarang clicked!")}
+                  onViewDetail={() => console.log("Lihat Detail clicked!")}
+                />
+                <CardBody
+                  index={2}
+                  image="image/paracetamol.jpeg"
+                  category="Obat-obatan"
+                  rating="⭐⭐⭐⭐⭐"
+                  title="Paracetamol"
+                  price="Rp. 20.000,00"
+                  onBuyNow={() => console.log("Beli Sekarang clicked!")}
+                  onViewDetail={() => console.log("Lihat Detail clicked!")}
+                />
+                <CardBody
+                  index={3}
+                  image="image/skincare.jpg"
+                  category="Skincare"
+                  rating="⭐⭐⭐⭐⭐"
+                  title="Skincare"
+                  price="Rp. 100.000,00"
+                  onBuyNow={() => console.log("Beli Sekarang clicked!")}
+                  onViewDetail={() => console.log("Lihat Detail clicked!")}
+                />
+              </Card>
+            </div>
+          );
+        }
+      }
+    // untuk apa kode dibawah?
+    // jawab : Kode ini berfungsi untuk merender komponen App ke dalam elemen html yang memiliki id "root" menggunakan API eksperimental React yang disebut "Concurrent Mode".
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<App />);
+  </script>
+</html>
