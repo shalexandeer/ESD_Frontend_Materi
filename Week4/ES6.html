@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello</title>
+    <!-- CDN or content delivery network -->
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin></script>
+
+    <!-- create virtual DOM -->
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin></script>
+
+    <!-- enabling us to write javascript inside the HTML tag -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script type="text/babel">
+    // react uses es6 so you must be familiar with it
+    function regularFunction() {
+      // return something
+    }
+    const arrowFunction = () => {
+      // return something
+    };
+
+    // class component
+    class Hello extends React.Component {
+      render() {
+        return <h1>Hello World class!</h1>;
+      }
+    }
+
+    // functional component
+    function HelloFunctional() {
+      return <h1>Hello World!</h1>;
+    }
+
+    // anonymus function
+    const AnonymusFunction = () => {
+      // return something
+    };
+
+    // array methods
+    const numbers = [1, 2, 3, 4, 5];
+    const doubled = numbers.map((number) => number * 2);
+    console.log(doubled);
+
+    // destructuring
+    const person = {
+      name: "John",
+      age: 20,
+    };
+    const { name, age } = person;
+
+    // spread operator
+    const arr1 = [1, 2, 3];
+    const arr2 = [4, 5, 6];
+    const arr3 = [...arr1, ...arr2];
+
+    // modules
+    import { add } from "./functions.js";
+
+    // render the component
+    // take 2 parameter, first is the component, second is the location where the component will be rendered
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<App />);
+  </script>
+</html>

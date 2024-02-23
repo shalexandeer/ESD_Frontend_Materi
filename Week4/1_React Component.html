@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello</title>
+    <!-- CDN or content delivery network -->
+    <!-- Package React -->
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin></script>
+
+    <!-- create virtual DOM and give access for us to modify the virtual DOM -->
+    <!-- Package react-dom -->
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin></script>
+
+    <!-- enabling us to write javascript inside the HTML tag -->
+    <!-- Package Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root">
+      <!-- React will render the component here -->
+    </div>
+  </body>
+  <script type="text/babel">
+    // class component
+    class Hello extends React.Component {
+      render() {
+        return <h1>Hello World class!</h1>;
+      }
+    }
+
+    // functional component
+    function HelloFunctional() {
+      return <h1>Hello World!</h1>;
+    }
+
+    function navigate() {
+      window.location.href = "2_UnderstandingProps.html";
+    }
+
+    class App extends React.Component {
+      render() {
+        return (
+          <div>
+            <Hello />
+            <Hello />
+            <HelloFunctional />
+            <HelloFunctional />
+
+            <button onClick={navigate}>Understanding the props</button>
+          </div>
+        );
+      }
+    }
+
+    // render the component
+    // take 2 parameter, first is the component, second is the location where the component will be rendered
+    // v 16.8.0
+    ReactDOM.render(<App />, document.getElementById("root"));
+    // v 18
+    // const root = ReactDOM.createRoot(document.getElementById("root"));
+    // root.render(<App />);
+  </script>
+</html>
