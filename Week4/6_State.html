@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Conditional Rendering</title>
+    <!-- CDN or content delivery network -->
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin></script>
+
+    <!-- create virtual DOM -->
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin></script>
+
+    <!-- enabling us to write javascript inside the HTML tag -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script type="text/babel">
+    function State() {
+      const [count, setCount] = React.useState(0);
+
+      function mutate() {
+        setCount(count + 1);
+      }
+
+      console.log(count1);
+
+      return (
+        <div>
+          <h1>{count}</h1>
+          <h1>count1</h1>
+          <h1>{count1}</h1>
+          <button onClick={mutate}>Increment</button>
+        </div>
+      );
+    }
+
+    class App extends React.Component {
+      render() {
+        return (
+          <div>
+            <State />
+          </div>
+        );
+      }
+    }
+
+    // render the component
+    // take 2 parameter, first is the component, second is the location where the component will be rendered
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<App />);
+  </script>
+</html>
