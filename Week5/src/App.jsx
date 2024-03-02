@@ -5,15 +5,17 @@
 // import FocusInput from "./pages/UseRef";
 // import Counter from "./pages/UseState";
 import './style.css'
-import Header from "./Components/Header.jsx";
-import Content from "./Components/Content.jsx";
-import Cart from "./Components/Cart";
-import Recomendations from "./Components/Recomendations";
+import Header from "/Components/Header.jsx";
+import Content from "/Components/Content.jsx";
+import CartItems from '../Components/Cart';
+// import Cart from "./Components/Cart";
+// import Recomendations from "./Components/Recomendations";
 
 function App() {
   return (
     <>
       <Header/>
+      <CartItems/>
       <Content/>
     </>
   );
