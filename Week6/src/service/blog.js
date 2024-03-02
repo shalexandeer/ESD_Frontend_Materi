@@ -11,9 +11,10 @@ function getBlogById(id) {
   return axios.get(url);
 }
 
+
 const blogService = {
   getAllBlogs,
-  getBlogById
+  getBlogById,
 }
 
 export default blogService;

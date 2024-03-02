@@ -21,7 +21,7 @@ function App() {
             element={<Blogs />}
           />
           <Route
-            path='/blogs/:id'
+            path='/blogs/:id/:categoryId'
             element={<DetailBlog />}
           />
           <Route
