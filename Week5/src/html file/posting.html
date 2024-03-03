@@ -1,0 +1,147 @@
+<!-- AKAN MENAMPILKAN POST
+Buat catatan BARU => POSTING
+-->
+<!-- AKAN MENAMPILKAN POST
+Buat catatan BARU => POSTING
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Add User</title>
+</head>
+<body>
+  <header>
+    <h1>BajuBuddies</h1>
+  </header>
+    <h1>Add User</h1>
+    <form id="user-form"> 
+        <div style="display: flex; flex-direction: column">
+            <label for="username">Username</label>
+            <input
+                autofocus
+                id="username"
+                placeholder="Username"
+                type="text" />
+        </div>
+        <div style="display: flex; flex-direction: column">
+            <label for="foto_profil">Foto Profil</label>
+            <input
+                autofocus
+                id="foto_profil"
+                type="file"
+                accept="image/*" />
+        </div>
+        <div style="display: flex; flex-direction: column">
+            <label for="nama_lengkap">Nama Lengkap</label>
+            <input
+                autofocus
+                id="nama_lengkap"
+                placeholder="Nama Lengkap"
+                type="text" />
+        </div>
+        <div style="display: flex; flex-direction: column">
+            <label for="password">Password</label>
+            <input
+                autofocus
+                id="password"
+                placeholder="Password"
+                type="password" />
+        </div>
+        <div style="display: flex; flex-direction: column">
+            <label for="email">Email</label>
+            <input
+                autofocus
+                id="email"
+                placeholder="Email"
+                type="email" />
+        </div>
+        <div style="display: flex; flex-direction: column">
+            <label for="role">Role</label>
+            <select id="role" name="role">
+                <option value="admin">Admin</option>
+                <option value="user">Customer</option>
+            </select>
+        </div>
+        <input type="submit" />
+    </form>
+    <section id="user-Table">
+          <h2>User Baru</h2>
+    </section>
+    <a href="put.html" style="text-decoration: underline;">halaman show PUT</a>
+    <a href="getAndHapus.html" style="text-decoration: underline;">halaman get and hapus</a>
+
+</body>
+<script>
+const addUser = document.querySelector('#user-form');
+const username = document.getElementById('username');
+const fotoProfil = document.getElementById('foto_profil');
+const namaLengkap = document.getElementById('nama_lengkap');
+const password = document.getElementById('password');
+const email = document.getElementById('email');
+const role = document.getElementById('role');
+const userTable = document.getElementById('user-Table');
+
+function addUserRow(user) {
+    const newRow = document.createElement('tr');
+    newRow.innerHTML = `
+        <p>${user.id}</p>
+        <p>${user.username}</p>
+        <p><img src="https://42e0-111-94-134-70.ngrok-free.app${user.fotoProfil}" alt=""></p>
+        <p>${user.namaLengkap}</p>
+        <p>${user.password}</p>
+        <p>${user.email}</p>
+        <p>${user.role}</p>
+    `;
+    userTable.appendChild(newRow);
+}
+
+fetch('https://42e0-111-94-134-70.ngrok-free.app/user', {
+    mode: "cors",
+    method: "GET",
+    headers: {
+        "ngrok-skip-browser-warning": "true",
+    },
+})
+    .then(res => res.json())
+    .then(response => {
+        response.data.forEach(user => {
+            addUserRow(user);
+        });
+    });
+
+addUser.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const formData = new FormData();
+    formData.append('username', username.value);
+    formData.append('foto_profil', fotoProfil.files[0]); 
+    formData.append('nama_lengkap', namaLengkap.value);
+    formData.append('password', password.value);
+    formData.append('email', email.value);
+    formData.append('role', role.value);
+
+    fetch('https://42e0-111-94-134-70.ngrok-free.app/user', {
+        method: 'POST',
+        body: formData
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            addUserRow(data);
+            username.value = '';
+            fotoProfil.value = '';
+            namaLengkap.value = '';
+            password.value = '';
+            email.value = '';
+            role.value = 'admin';
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+});
+
+  </script>
+</html>

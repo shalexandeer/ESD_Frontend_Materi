@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Delete Product</title>
+  </head>
+  <body>
+    <h1>Delete Product</h1>
+    <form>
+      <input
+        id="number"
+        type="number" />
+      <input
+        id="submit"
+        type="submit" />
+    </form>
+  </body>
+  <script>
+
+    let id = 0;
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.querySelector("form");
+      const input = document.querySelector("#number");
+
+      input.oninput = function () {
+        id = input.value;
+        console.log(id);
+      };
+
+      form.onsubmit = function () {
+        fetch(`https://fakestoreapi.com/products/1`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((json) => console.log(json));
+        return false;
+      };
+    });
+  </script>
+</html>
