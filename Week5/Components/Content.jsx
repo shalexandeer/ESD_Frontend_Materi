@@ -1,3 +1,4 @@
+import CartItems from "./Cart";
 const Content = () =>{
     return(
         <div className="content">
@@ -5,6 +6,7 @@ const Content = () =>{
           Keranjang</p>
         <div className="content-content">
             <div id="cartItems">
+              <CartItems />
             </div>
             <div className="addtocart">
               <p style={{fontWeight: '700'}}>Rekomendasi obat untukmu</p>

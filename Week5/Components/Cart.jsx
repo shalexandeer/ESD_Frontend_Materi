@@ -11,15 +11,26 @@ const CartItems = () => {
             setItems(data);
             console.log(items)
         }
-    }
-    )
+        getItems();
+    },[]);
+    const dataToshow = items.map((item)=>(
+        <div className="itemContainer" key={item.id}>
+            <div className="itemDetails">
+                <div className="productName">
+                    {item.title}
+                </div>
+                <div className="productPrice">
+                    {item.price}
+                </div>
+                <div className="productQuant">
+                    {item.count}
+                </div>
+            </div>
+        </div>
+    ))
     return(
         <div>
-            <p>
-                {items.map(item =>(
-                    <li key = {item.id}>{item.title}</li>
-                ))}
-            </p>
+            {dataToshow}
         </div>
     );
 }

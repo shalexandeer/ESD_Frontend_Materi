@@ -14,9 +14,8 @@ import CartItems from '../Components/Cart';
 function App() {
   return (
     <>
-      <Header/>
-      <CartItems/>
-      <Content/>
+      <Header />
+      <Content />
     </>
   );
 };
