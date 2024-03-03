@@ -1,7 +1,7 @@
 import "./App.css";
 import Home from "./pages/Home";
 import Blogs from "./pages/Blogs/Blogs";
-import Contact from "./pages/Contact";
+import Contact from "./pages/Contact/Contact";
 import NoPage from "./pages/NoPage";
 import CommonLayout from "./components/layout/CommonLayout";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
