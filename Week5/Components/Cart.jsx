@@ -16,18 +16,19 @@ const CartItems = () => {
     const dataToshow = items.map((item)=>(
         <div className="itemContainer" key={item.id}>
             <div className="itemDetails">
-                <div className="productName">
+                <div className="itemname">
                     {item.title}
                 </div>
-                <div className="productPrice">
+                <div className="itemprice">
                     {item.price}
                 </div>
-                <div className="productQuant">
+                <div className="itemquant">
                     {item.count}
                 </div>
             </div>
         </div>
-    ))
+    ));
+
     return(
         <div>
             {dataToshow}
