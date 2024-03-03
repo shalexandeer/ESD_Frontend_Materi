@@ -9,7 +9,6 @@ function Main() {
         <div className="section__wrapper">
           <DataInfo />
           <div className="data__wrapper">
-            {/* Content for displaying movies will go here */}
           </div>
           <MovieModal />
         </div>
