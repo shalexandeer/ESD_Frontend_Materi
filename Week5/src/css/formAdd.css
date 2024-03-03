@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700");
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 80px;
+    background: rgb(102,164,238);
+    background: linear-gradient(140deg, rgb(29, 102, 192) 0%, rgb(108, 206, 255) 0%, rgb(198, 223, 255) 77%);
+}
+
+.container{
+    max-width: 700px;
+    width: 100%;
+    background: white;
+    padding: 25px 30px;
+    border-radius: 20px;
+}
+
+.container .title{
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+}
+
+.container .title::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background: rgb(102,164,238);
+    background: linear-gradient(140deg, rgb(29, 102, 192) 0%, rgb(108, 206, 255) 0%, rgb(198, 223, 255) 77%);
+}
+
+.container form .user-details{
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+}
+
+form .user-details .input-box{
+    margin-bottom: 15px;
+}
+
+.user-details .input-box .details{
+    font-weight: 500;
+    display: block;
+    margin-bottom: 50px;
+}
+
+form .user-details .input-box input{
+    height: 45px;
+    width: 100%;
+    outline: none;    
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 14px;
+
+}
+
+form .button{
+    height: 45px;
+    margin: 35px 0;
+}
+
+form .button input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    color: #fff;
+    border: #ccc;
+    cursor: pointer;
+    border-radius: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    background: linear-gradient(140deg, rgb(29, 102, 192) 0%, rgb(41, 171, 236) 0%, rgb(144, 192, 255) 77%);;
+}
+
+form .button-back button{
+    height: 30px;
+    width: 90px;
+    color: white;
+    justify-content: center;
+    margin-right: 20px;
+    border-radius: 10px;
+    border: #ccc;
+    background: linear-gradient(140deg, rgb(29, 102, 192) 0%, rgb(41, 171, 236) 0%, rgb(144, 192, 255) 77%);;;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+}

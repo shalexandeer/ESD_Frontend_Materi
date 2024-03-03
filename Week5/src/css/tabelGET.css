@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper{
+    background-color: rgb(235, 235, 235);
+    margin-left: 120px;
+    margin-right: 120px;
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+    top: 50px;
+}
+
+body{
+    font-family: 'Poppins',sans-serif;
+    overflow: hidden;
+}
+
+table{
+    width: 100%;    
+    border: 1;
+}
+
+.table_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgb(116, 195, 255);
+    border-radius: 15px 15px 0px 0px;
+}
+.table_header p{
+    color: rgb(0, 17, 90);
+    font-weight: 700;
+    margin-left: 20px;
+}
+.table_header button{
+    margin-right: 75px;
+    background: rgb(103, 130, 250); 
+    padding: 10px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+table{
+    width: 100%;
+    table-layout: fixed;
+    min-width: 1000px;
+}
+
+.table_section{
+    height: 650px;
+    overflow: auto;
+}
+
+thead th {
+    position: sticky;
+    top: 0;
+    background-color: rgb(165, 213, 241);
+    color: rgb(255, 255, 255);
+}
+
+th,td{
+    border-bottom: 1px solid #dddddd;
+    padding: 10px 15px;
+    word-break: break-all;
+    text-align: center;
+    background-color: white;
+}
+tbody button{
+    height: 30px;
+    width: 120px;
+    color: red;
+    cursor: pointer;
+}
