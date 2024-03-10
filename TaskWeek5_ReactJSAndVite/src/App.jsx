@@ -1,16 +1,27 @@
 import GetandDelete from "./pages/pageGetAndDelete";
-// import PagePOST from './pages/pagePost';
-// import UpdateProduct from './pages/pagePUT';
-
+import PagePOST from './pages/pagePost';
+import UpdateProduct from './pages/pagePUT';
+import { BrowserRouter, Route, Routes} from "react-router-dom";
 
 function App() {
   return (
-    <>
-      <GetandDelete/>
-      {/* <PagePOST/> */}
-      {/* <UpdateProduct/> */}
-    </>
-  )
+    <BrowserRouter>
+    <Routes>
+      <Route
+        path='/Dashboard'
+        element={<GetandDelete />}
+      />
+      <Route
+        path='/InsertProduct'
+        element={<PagePOST />}
+      />
+      <Route
+        path='/UpdateProduct'
+        element={<UpdateProduct />}
+      />
+    </Routes>
+  </BrowserRouter>
+);
 }
 
 export default App
