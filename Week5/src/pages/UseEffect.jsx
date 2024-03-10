@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
+import { useTheme } from "./UseContext";
 
 const DataFetcher = () => {
   // eslint-disable-next-line no-unused-vars
   const [data, setData] = useState(null);
   const [count, setCount] = useState(0);
+
+  const { theme } = useTheme();
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
